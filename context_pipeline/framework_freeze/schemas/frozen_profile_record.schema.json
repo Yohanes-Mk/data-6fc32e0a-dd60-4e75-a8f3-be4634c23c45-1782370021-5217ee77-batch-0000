@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Frozen framework profile record",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "goals",
+    "preferences",
+    "constraints",
+    "education",
+    "career_direction",
+    "experience",
+    "skills",
+    "recurring_responsibilities",
+    "areas"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "goals": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "preferences": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "career_direction": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "recurring_responsibilities": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "areas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

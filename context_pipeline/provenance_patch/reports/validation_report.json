@@ -1,0 +1,38 @@
+{
+  "blocking_issues": [],
+  "checksum_status": {
+    "changed_existing_files": [],
+    "passed": true
+  },
+  "confirmed_resolution_count": 2,
+  "counts": {
+    "attachment_filename_traces": 339,
+    "filename_populated_occurrences": 61,
+    "fleet": {
+      "filename_populated_occurrences": 0,
+      "missing_filenames": 92,
+      "patched_semantic_input_preserves_filename_metadata": true,
+      "total_attachment_occurrences": 92,
+      "unique_content_hashes": 88,
+      "unique_filenames": 0,
+      "unresolved_binaries": 92
+    },
+    "loss_classification_counts": {
+      "absent_upstream_raw_or_normalized": 278,
+      "lost_between_stage3r_attachment_link_and_stage3r_extraction_packet": 61
+    },
+    "patched_attachment_links": 339,
+    "patched_conversation_evidence_maps": 286,
+    "patched_semantic_evidence_inputs": 342
+  },
+  "metadata": {
+    "changed_existing_files": [],
+    "filename_loss_location": "Stage 3R extraction packets omit filename fields, and merged semantic evidence bundles carry only aggregate filename counts/samples rather than the per-occurrence attachment filename table.",
+    "policy_stage": "3R-P",
+    "stage4c_has_per_occurrence_filenames": false
+  },
+  "metadata_quality_status": "pass",
+  "rerun_stability_status": "pass",
+  "structural_validation_status": "pass",
+  "warnings": []
+}

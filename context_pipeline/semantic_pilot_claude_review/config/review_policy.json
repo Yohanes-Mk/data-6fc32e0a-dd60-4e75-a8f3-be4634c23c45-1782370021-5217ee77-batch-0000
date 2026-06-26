@@ -1,0 +1,69 @@
+{
+  "stage": "4B",
+  "name": "Independent Claude Code Semantic Cross-Review",
+  "execution_mode": "subscription_session_no_external_api",
+  "anti_anchoring": {
+    "phase1_blind": true,
+    "phase1_allowed_inputs": [
+      "semantic_pilot_repair/selection/selected_conversations.jsonl",
+      "semantic_pilot_repair/context_bundles/conversation_context_bundles.jsonl",
+      "stage2_stage3_files_for_reference_resolution_only",
+      "raw_export_only_when_reference_unresolvable"
+    ],
+    "phase1_forbidden_inputs": [
+      "semantic_pilot_repair/results/",
+      "semantic_pilot_repair/audit/",
+      "semantic_pilot_repair/reports/",
+      "stage4a_candidate_results_and_reports"
+    ]
+  },
+  "immutability": {
+    "treat_existing_files_as_immutable": true,
+    "verify_repair_checksums_before_and_after": true,
+    "write_only_under": "semantic_pilot_claude_review/"
+  },
+  "semantic_execution": {
+    "performed_by": "language_model",
+    "scripts_allowed_for": ["jsonl_io", "schema_validation", "reference_resolution",
+                            "counting", "checksums", "comparison_support"],
+    "scripts_forbidden_for": ["deciding_project_status", "deciding_knowledge_type",
+                              "deciding_confidence", "deciding_relationships",
+                              "keyword_or_regex_semantic_substitution"]
+  },
+  "strict_project_test": {
+    "min_criteria": 3,
+    "criteria": [
+      "intended_outcome", "more_than_one_continuing_action", "explicit_user_ownership",
+      "tasks_or_milestones", "deliverable_or_artifact", "resources_or_research",
+      "decisions_or_constraints", "repeated_appearance_over_time", "identifiable_state"
+    ]
+  },
+  "endorsement_policy": {
+    "values": ["explicit_acceptance", "explicit_rejection", "modification",
+               "implicit_continuation", "no_endorsement", "unclear", "not_applicable"],
+    "explicit_requires_user_authored_evidence": true,
+    "request_is_not_acceptance": true,
+    "silence_is_not_acceptance": true
+  },
+  "confidence_policy": {
+    "values": ["high", "medium", "low"],
+    "no_default_medium": true
+  },
+  "assistant_content_rules": {
+    "may_establish": ["assistant_suggestion", "proposed_plan", "generated_draft",
+                      "generated_explanation", "proposed_decision", "generated_output"],
+    "may_not_establish_alone": ["user_project", "user_decision", "stable_preference",
+                                "completed_task", "verified_fact"]
+  },
+  "tool_rules": {
+    "generic_ops_are_traces": ["web_search", "view", "bash_tool", "conversation_search",
+                               "file_creation"],
+    "platform_or_workflow_requires": "user_evaluating_adopting_building_or_repeated_use"
+  },
+  "relationship_policy": {
+    "types": ["part_of", "supports", "depends_on", "produces", "uses", "informed_by",
+              "supersedes", "contradicts", "evolved_into", "created_for", "blocked_by",
+              "possible_same_project", "associated_with"],
+    "no_co_occurrence_only_relationships": true
+  }
+}

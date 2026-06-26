@@ -1,0 +1,42 @@
+{
+  "stage": "4E",
+  "name": "50-Case Subscription-Only Semantic Calibration Batch",
+  "purpose": "Finalize reusable semantic rules before larger-scale Claude-history extraction. Not an open-ended pilot. Process exactly 50 cases (10 benchmark + 40 blind) in five checkpointed batches, evaluate recurring-rule generalization, and decide framework freeze.",
+  "evidence_boundary": "stage_3R_with_stage_3R_P_overlay",
+  "overlay_precedence": "stage_3R_P_takes_precedence_on_patched_metadata",
+  "execution_mode": "language_model_semantic_judgment_subscription_only",
+  "no_full_corpus": true,
+  "no_external_api": true,
+  "no_network": true,
+  "scripts_allowed_for": ["deterministic_selection","load_jsonl","write_jsonl","checksums","reference_resolution","schema_validation","counting","comparison","reporting_support"],
+  "scripts_forbidden_for": ["decide_project_status","decide_candidate_type","decide_project_boundary","decide_ownership","decide_title","decide_confidence","decide_endorsement","decide_relationship","decide_merge","keyword_regex_firstline_or_template_substitution"],
+  "ontology": {
+    "work_entities": ["project","subproject","initiative","recurring_responsibility","course","assignment","exam_preparation","job_application","client_engagement","research_effort","standalone_idea"],
+    "project_knowledge": ["goal","motivation","requirement","constraint","preference","decision","proposed_decision","task","open_question","milestone","direction_change","blocker","output","artifact","research_question","research_finding","source","workflow","status_update","next_step"],
+    "context_entities": ["person","organization","platform","tool","employer","client","course","institution"],
+    "non_project_interaction": ["one_off_request","generic_question","assistant_suggestion","assistant_draft","assistant_explanation","tool_execution_trace","attachment_source","transcript_fragment","unresolved_fragment"]
+  },
+  "strict_project_test": {"min_criteria": 3, "criteria": ["intended_outcome","continuing_actions","user_ownership_or_responsibility","tasks_or_milestones","deliverable_or_artifact","resources_or_research","decisions_or_constraints","repeated_appearance","identifiable_state"], "must_beat_alternatives": ["assignment","exam_preparation","job_application","client_engagement","recurring_responsibility","initiative","one_off_request","standalone_idea"], "do_not_force_into_project": true},
+  "confidence_policy": {"values": ["high","medium","low"], "no_default_tier": true, "use_low_when": ["fragmentary_evidence","uncertain_content_origin","unclear_status","ambiguous_boundaries","central_attachment_or_missing_source","conclusion_depends_on_assistant_content","conflicting_evidence","uncertain_identity_or_authorship"], "separate_status_current_confidence": true},
+  "endorsement_policy": {"values": ["explicit_acceptance","explicit_rejection","modification","implicit_continuation","no_endorsement","unclear","not_applicable"], "request_is_not_acceptance": true, "silence_is_not_acceptance": true, "explicit_requires_user_origin_evidence": true, "co_authorship_not_blanket_acceptance": true},
+  "status_policy": {"entity_status": ["idea","exploring","planned","active","paused","blocked","drifted","completed","abandoned","merged","historical","unknown"], "temporal_status": ["current_confirmed","current_inferred","historical_confirmed","historical_status_unknown","superseded","unknown"], "do_not_infer_current_from_date": true, "on_demand_recurring": {"availability": "on_demand", "current_execution": ["active","inactive"], "record_last_completed_phase": true, "reactivation_possibility": true}},
+  "attachment_policy": {"do_not_invent_filenames": true, "preserve_null_filename": true, "distinguish_occurrence_from_unique_hash": true, "occurrences_do_not_inflate_evidence": true, "unavailable_binary_not_inspected": true, "extracted_text_is_evidence": true, "use_3rp_filename_overlay": true},
+  "missing_source_policy": {"impact_record_when_material": true, "do_not_infer": true, "do_not_reconstruct": true},
+  "relationship_policy": {"types": ["part_of","supports","depends_on","produces","uses","informed_by","supersedes","contradicts","evolved_into","created_for","blocked_by","possible_same_project","associated_with"], "every_relationship_requires_evidence": true, "no_co_occurrence_only": true},
+  "clustering_policy": {"no_auto_merge_unless_authoritative_rule": true, "outcomes": ["strong_merge_candidate","possible_same_entity","parent_child_candidate","phase_relationship","shared_context_only","insufficient_evidence"]},
+  "profile_level_policy": {"require_recurrence_across_cases_or_explicit_general_statement": true, "do_not_promote_one_time_statements": true},
+  "provenance_policy": {"distinguish": ["user_authored","co_authored","assistant_generated","pasted_assistant","tool_or_log_output","transcript_source_material","documents","attachments"], "pasted_assistant_not_direct_user_evidence": true, "group_ownership_not_sole_ownership": true, "co_authorship_not_blanket_acceptance": true},
+  "evidence_priority": ["eligible_direct_user_evidence","explicit_user_endorsement_rejection_modification","user_provided_source_or_document_context","co_authored_content","assistant_output_with_later_user_interaction","unendorsed_assistant_suggestions","tool_and_log_output","transcript_source_content","missing_source_metadata"],
+  "human_review_policy": {
+    "queue_only_for": ["ownership","identity","work_entity_boundary","merge_decision","project_status","accepted_assistant_proposal","source_vs_artifact","profile_level_promotion"],
+    "never_queue": ["trivial_title_differences","empty_conversations","known_null_filenames","already_codified_employer_separation","already_confirmed_group_ownership","already_confirmed_marketing_umbrella","already_confirmed_statuses","cases_resolved_by_an_existing_recurring_rule"]
+  },
+  "framework_freeze_criteria": ["no_recurring_false_project_pattern","provenance_violations_effectively_zero","prior_question_types_auto_resolved_by_rules","genuinely_unresolved_human_review_rate_below_10pct","no_ambiguity_pattern_repeats_across_3plus_cases_without_a_rule","titles_ownership_status_relationships_consistently_useful","empty_cases_handled_without_forced_candidates"],
+  "stopping_criteria": {"another_pilot_requires_systemic_failure_across_at_least_3_cases": true, "isolated_exceptions_do_not_trigger_redesign": true},
+  "recurring_rules_file": "config/recurring_decision_rules.json",
+  "confirmed_resolutions_file": "config/confirmed_resolutions.json",
+  "carry_forward": {
+    "benchmark_extractions_reused_from": "Stage 4D (semantic_pilot_expanded) + AVATAR mc-10 (semantic_pilot_merged), updated by 3R-P resolutions and Stage 4E confirmed decisions",
+    "note": "Benchmark cases carry forward the authoritative Stage 4D/merged semantic extractions; blind cases are extracted fresh by language-model judgment."
+  }
+}

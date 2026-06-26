@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Claude Cross-Review Candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claude_candidate_id",
+    "conversation_id",
+    "candidate_type",
+    "canonical_title",
+    "description",
+    "why_it_matters",
+    "knowledge_layer",
+    "temporal_status",
+    "status",
+    "confidence",
+    "confidence_rationale",
+    "explicit_or_inferred",
+    "semantic_provenance",
+    "assistant_origin",
+    "user_endorsement",
+    "evidence_source_unit_ids",
+    "evidence_message_ids",
+    "related_candidate_ids",
+    "uncertainties",
+    "contradictions",
+    "requires_human_review",
+    "inclusion_rationale"
+  ],
+  "properties": {
+    "claude_candidate_id": {"type": "string", "pattern": "^claude:cand:[a-z0-9_]+$"},
+    "conversation_id": {"type": "string"},
+    "candidate_type": {
+      "type": "string",
+      "enum": [
+        "project", "subproject", "initiative", "recurring_responsibility",
+        "course", "assignment", "exam_preparation", "job_application",
+        "client_engagement", "standalone_idea",
+        "goal", "motivation", "requirement", "constraint", "preference",
+        "decision", "proposed_decision", "task", "open_question", "milestone",
+        "direction_change", "blocker", "output", "artifact", "research_question",
+        "research_finding", "source", "workflow",
+        "person", "organization", "platform", "employer", "client",
+        "institution",
+        "one_off_request", "generic_question", "assistant_suggestion",
+        "assistant_draft", "assistant_explanation", "tool_execution_trace",
+        "attachment_source", "transcript_fragment", "unresolved_fragment"
+      ]
+    },
+    "canonical_title": {"type": "string", "minLength": 3},
+    "description": {"type": "string"},
+    "why_it_matters": {"type": "string"},
+    "knowledge_layer": {
+      "type": "string",
+      "enum": ["work_entity", "project_knowledge", "context_entity", "non_knowledge"]
+    },
+    "temporal_status": {
+      "type": "string",
+      "enum": ["current", "historical", "future_intended", "point_in_time", "unknown"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "completed", "abandoned", "proposed", "in_progress", "one_time", "unknown"]
+    },
+    "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+    "confidence_rationale": {"type": "string"},
+    "explicit_or_inferred": {"type": "string", "enum": ["explicit", "inferred", "mixed"]},
+    "semantic_provenance": {
+      "type": "string",
+      "enum": ["user_statement", "assistant_output", "tool_trace", "attachment", "mixed"]
+    },
+    "assistant_origin": {"type": "boolean"},
+    "user_endorsement": {
+      "type": "string",
+      "enum": ["explicit_acceptance", "explicit_rejection", "modification",
+               "implicit_continuation", "no_endorsement", "unclear", "not_applicable"]
+    },
+    "evidence_source_unit_ids": {"type": "array", "items": {"type": "string"}},
+    "evidence_message_ids": {"type": "array", "items": {"type": "string"}},
+    "project_test_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "intended_outcome", "more_than_one_continuing_action",
+          "explicit_user_ownership", "tasks_or_milestones",
+          "deliverable_or_artifact", "resources_or_research",
+          "decisions_or_constraints", "repeated_appearance_over_time",
+          "identifiable_state"
+        ]
+      }
+    },
+    "related_candidate_ids": {"type": "array", "items": {"type": "string"}},
+    "uncertainties": {"type": "array", "items": {"type": "string"}},
+    "contradictions": {"type": "array", "items": {"type": "string"}},
+    "requires_human_review": {"type": "boolean"},
+    "inclusion_rationale": {"type": "string"}
+  }
+}

@@ -1,0 +1,1 @@
+{"blocks_next_stage": false, "explanation": "Project documents have dedicated packets but no fabricated conversation links.", "severity": "info", "type": "no_verified_project_document_conversation_links", "warning_id": "stage3r-warning-0001"}

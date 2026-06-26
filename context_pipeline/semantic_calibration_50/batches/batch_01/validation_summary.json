@@ -1,0 +1,15 @@
+{
+  "batch": "batch_01",
+  "all_references_resolved": true,
+  "schema_valid": true,
+  "candidates": 8,
+  "relationships": 3,
+  "empty_recorded_not_substituted": [
+    "bl-01",
+    "bl-02",
+    "bl-03",
+    "bl-04",
+    "bl-05"
+  ],
+  "errors": []
+}

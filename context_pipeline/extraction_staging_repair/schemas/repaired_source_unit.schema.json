@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stage 3R Repaired Source Unit",
+  "type": "object",
+  "required": [
+    "repaired_source_unit_id",
+    "segment_id",
+    "container_id",
+    "transport_author_role",
+    "content_origin",
+    "assertion_relationship",
+    "origin_confidence",
+    "origin_detection_method",
+    "requires_origin_review",
+    "extraction_eligibility",
+    "text",
+    "content_hash_sha256"
+  ],
+  "properties": {
+    "repaired_source_unit_id": {"type": "string"},
+    "segment_id": {"type": "string"},
+    "container_id": {"type": "string"},
+    "transport_author_role": {"type": "string"},
+    "content_origin": {"type": "string"},
+    "assertion_relationship": {"type": "string"},
+    "origin_confidence": {"type": "string"},
+    "origin_detection_method": {"type": "string"},
+    "requires_origin_review": {"type": "boolean"},
+    "extraction_eligibility": {"type": ["boolean", "string"]},
+    "text": {"type": "string"},
+    "content_hash_sha256": {"type": "string"}
+  },
+  "additionalProperties": true
+}

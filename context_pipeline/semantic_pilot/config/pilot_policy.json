@@ -1,0 +1,64 @@
+{
+  "assistant_policy": "Assistant-only candidates are assistant_origin=true and cannot be confirmed user decisions or facts without user evidence.",
+  "candidate_confidence_values": [
+    "high",
+    "medium",
+    "low"
+  ],
+  "endorsement_values": [
+    "explicit_acceptance",
+    "explicit_rejection",
+    "modification",
+    "implicit_continuation",
+    "no_endorsement",
+    "unclear"
+  ],
+  "packet_sample_size": 24,
+  "policy_name": "stage4a_semantic_pilot_policy",
+  "project_candidate_rule": "Project candidates require at least two signals among intended outcome, continuing work, actions/tasks, artifact/output, resources/research, decisions/constraints, repeated appearance, or identifiable state.",
+  "redaction_policy": "Use Stage 3 redacted source-unit text only; review snippets remain short.",
+  "relationship_types": [
+    "part_of",
+    "related_to",
+    "possible_same_project",
+    "depends_on",
+    "produces",
+    "uses",
+    "informed_by",
+    "supersedes",
+    "contradicts",
+    "evolved_into",
+    "paused_because_of",
+    "blocked_by",
+    "created_for",
+    "mentioned_with"
+  ],
+  "selection_method": "Deterministic metadata diversity: complexity buckets first by timestamp spread and packet eligibility, then project-document packets, then attachment-centered packets. No topic cherry-picking.",
+  "selection_targets": {
+    "design_or_attachment_centered": 2,
+    "extreme_complexity": 4,
+    "high_complexity": 6,
+    "low_complexity": 4,
+    "medium_complexity": 6,
+    "project_document": 2
+  },
+  "status_values": [
+    "idea",
+    "exploring",
+    "planned",
+    "active",
+    "paused",
+    "drifted",
+    "blocked",
+    "completed",
+    "abandoned",
+    "merged",
+    "unknown"
+  ],
+  "temporal_status_values": [
+    "current_at_observation",
+    "historical",
+    "superseded",
+    "unknown"
+  ]
+}

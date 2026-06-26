@@ -1,0 +1,1 @@
+{"codex_candidate_id": "stage4ar:candidate:0dbfd66c8b633eb8090c844138f83fc3", "category": "codex_only_but_should_be_dropped", "note": "Codex emitted a project for the transcript-formatting conversation; Claude deliberately classified it non-knowledge. This is a Codex false positive, not a Claude omission."}

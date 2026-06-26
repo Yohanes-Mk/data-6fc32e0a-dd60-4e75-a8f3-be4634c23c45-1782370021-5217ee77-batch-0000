@@ -1,0 +1,49 @@
+{
+  "batch": "batch_04",
+  "cases": 10,
+  "case_ids": [
+    "bl-21",
+    "bl-22",
+    "bl-23",
+    "bl-24",
+    "bl-25",
+    "bl-26",
+    "bl-27",
+    "bl-28",
+    "bl-29",
+    "bl-30"
+  ],
+  "candidates": 10,
+  "projects": 1,
+  "work_entities": 5,
+  "project_knowledge": 2,
+  "context_entities": 0,
+  "non_project": 3,
+  "empty_cases": [],
+  "relationships": 0,
+  "missing_source_impacts": 2,
+  "unresolved_items": 1,
+  "human_review_candidates": 1,
+  "rules_applied": {
+    "hr-020": 4,
+    "hr-019": 1,
+    "hr-002": 4,
+    "hr-011": 2,
+    "hr-014": 1,
+    "hr-018": 1,
+    "hr-017": 1,
+    "hr-021": 2
+  },
+  "confidence": {
+    "high": 5,
+    "medium": 5
+  },
+  "status_current_confidence": {
+    "high": 2,
+    "low": 4,
+    "medium": 4
+  },
+  "blocking_systemic_defect": false,
+  "checkpoint_status": "complete",
+  "quality_review_note": "Higher blind: C++/DB/Python coursework assignments, CSCI430 learning log artifact, physics-test authoring, YC exploration question, compound-interest explanation, career-mentor PROJECT (review: identity vs context-DB), espresso skill-building. First strict blind project appears (career-mentor)."
+}

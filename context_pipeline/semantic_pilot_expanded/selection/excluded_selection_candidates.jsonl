@@ -1,0 +1,3 @@
+{"candidate": "5bf2f2cd", "reason": "Highest single-day packet count (58) but all on one day; not selected as 'continuing-work' extreme to favor multi-day spans; recorded for transparency."}
+{"candidate": "Stage4C conversations", "reason": "All 10 Stage 4C-processed conversations excluded from the blind pool to keep blind cases unseen."}
+{"candidate": "19b86969 / 681bad4a", "reason": "Selected despite 0 packets/segments (near-empty) \u2014 retained per Part 2 (record empty cases, do not substitute)."}

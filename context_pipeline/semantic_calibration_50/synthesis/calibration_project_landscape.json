@@ -1,0 +1,125 @@
+{
+  "stage": "4E",
+  "primary_user": "Yohannes Nigusse (CS/Econ student; NSBE; Accenture intern; applied-AI/ML builder)",
+  "counts": {
+    "cases": 50,
+    "candidates": 63,
+    "work_entities": 25,
+    "strict_projects": 5,
+    "context_entities": 7,
+    "project_knowledge": 18,
+    "non_project": 13
+  },
+  "strict_projects": [
+    {
+      "candidate_id": "cal:cand:bl29_career_mentor_project",
+      "title": "Career-mentor / personal context project (scope cleanup & tradeoffs)",
+      "status": "drifted",
+      "temporal_status": "current_confirmed",
+      "confidence": "medium"
+    },
+    {
+      "candidate_id": "cal:cand:bl36_ai_aggregator_project",
+      "title": "AI Aggregator \u2014 end-to-end GenAI project (Ebbelaar-tutorial build)",
+      "status": "active",
+      "temporal_status": "current_confirmed",
+      "confidence": "high"
+    },
+    {
+      "candidate_id": "cal:cand:bl38_kibur_rag_chatbot",
+      "title": "Kibur RAG chatbot / CO-OP build (in progress)",
+      "status": "active",
+      "temporal_status": "current_confirmed",
+      "confidence": "medium"
+    },
+    {
+      "candidate_id": "cal:cand:cb04_b04_ai_roadmap",
+      "title": "Personal applied-AI-engineering learning & career roadmap",
+      "status": "active",
+      "temporal_status": "current_confirmed",
+      "confidence": "high"
+    },
+    {
+      "candidate_id": "cal:cand:cb05_b05_fleet_command",
+      "title": "Fleet Command \u2014 Unity hex-grid strategy game (SE: Computer Animation course project)",
+      "status": "active",
+      "temporal_status": "historical_status_unknown",
+      "confidence": "high"
+    }
+  ],
+  "work_entity_types": {
+    "assignment": 9,
+    "exam_preparation": 1,
+    "project": 5,
+    "recurring_responsibility": 2,
+    "job_application": 1,
+    "standalone_idea": 2,
+    "initiative": 2,
+    "client_engagement": 2,
+    "research_effort": 1
+  },
+  "domains": {
+    "academic": [
+      "cb-02",
+      "cb-07",
+      "bl-11",
+      "bl-13",
+      "bl-18",
+      "bl-22",
+      "bl-23",
+      "bl-24",
+      "bl-25",
+      "bl-32",
+      "bl-37",
+      "bl-12"
+    ],
+    "career_applications": [
+      "bl-15",
+      "bl-17",
+      "bl-19",
+      "bl-27",
+      "bl-33",
+      "bl-38",
+      "cb-03"
+    ],
+    "software_dev": [
+      "cb-05",
+      "bl-34",
+      "bl-36",
+      "bl-37",
+      "bl-38"
+    ],
+    "client_business": [
+      "cb-06",
+      "bl-40"
+    ],
+    "personal_planning": [
+      "bl-16",
+      "bl-29",
+      "bl-31",
+      "bl-39",
+      "bl-20"
+    ],
+    "research": [
+      "cb-10"
+    ],
+    "creative_marketing": [
+      "cb-08",
+      "bl-40"
+    ],
+    "tools_support": [
+      "bl-07",
+      "bl-14",
+      "bl-21"
+    ]
+  },
+  "employer_contexts": [
+    "Accenture (employer; client engagement + onboarding + training, kept separate)",
+    "Kibur College (CO-OP/RAG + AABS client marketing, kept separate)"
+  ],
+  "clusters": 7,
+  "possible_duplicates": 3,
+  "profile_level_knowledge": 4,
+  "recurring_responsibilities": 3,
+  "notes": "Five strict projects (Fleet Command, AI learning roadmap, AI Aggregator, career-mentor, Kibur RAG). Marketing umbrella kept personal/family-only; AABS conference briefing kept as client/professional source. Accenture activities connected by one employer context but not collapsed."
+}

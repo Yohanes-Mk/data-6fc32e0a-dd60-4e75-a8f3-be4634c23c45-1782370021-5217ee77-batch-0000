@@ -1,0 +1,50 @@
+{
+  "batch": "batch_03",
+  "cases": 10,
+  "case_ids": [
+    "bl-11",
+    "bl-12",
+    "bl-13",
+    "bl-14",
+    "bl-15",
+    "bl-16",
+    "bl-17",
+    "bl-18",
+    "bl-19",
+    "bl-20"
+  ],
+  "candidates": 10,
+  "projects": 0,
+  "work_entities": 3,
+  "project_knowledge": 4,
+  "context_entities": 0,
+  "non_project": 3,
+  "empty_cases": [],
+  "relationships": 2,
+  "missing_source_impacts": 2,
+  "unresolved_items": 0,
+  "human_review_candidates": 0,
+  "rules_applied": {
+    "hr-002": 4,
+    "hr-018": 3,
+    "hr-017": 3,
+    "hr-013": 1,
+    "hr-020": 6,
+    "hr-011": 2,
+    "hr-014": 1,
+    "hr-009": 1,
+    "hr-012": 1
+  },
+  "confidence": {
+    "high": 6,
+    "medium": 4
+  },
+  "status_current_confidence": {
+    "low": 3,
+    "medium": 4,
+    "high": 3
+  },
+  "blocking_systemic_defect": false,
+  "checkpoint_status": "complete",
+  "quality_review_note": "Medium blind: SVD/calc/PCA-style homework (assignment), process-control exam prep, group ML contribution statement (group_owned artifact), tool-support one-offs, NSBE pitch/post tasks, Accenture moments-that-matter, Granola tool trace. Rules hr-002/013/018/020 fired cleanly."
+}

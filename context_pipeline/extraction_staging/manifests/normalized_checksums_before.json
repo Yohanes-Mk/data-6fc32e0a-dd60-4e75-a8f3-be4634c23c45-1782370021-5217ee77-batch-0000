@@ -1,0 +1,57 @@
+{
+  "context_pipeline/normalized/attachments.jsonl": {
+    "modified_time_ns": 1782371891126382460,
+    "sha256": "69ac9081d9115bc20fbce524e72dee76d2752d9e93bab8f387ecb6ebe26b15ab",
+    "size_bytes": 19316681
+  },
+  "context_pipeline/normalized/content_blocks.jsonl": {
+    "modified_time_ns": 1782371890942909686,
+    "sha256": "416c3eacbe386a19b28a32e3e654bf39e73df52e2b09cf18f73ab1fb3b4327b1",
+    "size_bytes": 43952050
+  },
+  "context_pipeline/normalized/conversation_branches.jsonl": {
+    "modified_time_ns": 1782371891028991326,
+    "sha256": "23c8534ff77c7998afb3790466bd3d8ab4e197cff45edee173a22edc6e392ea4",
+    "size_bytes": 7919726
+  },
+  "context_pipeline/normalized/conversations.jsonl": {
+    "modified_time_ns": 1782371889844744404,
+    "sha256": "950a35fb62c733022ba3a13cb741aeeef715ab5f3d24793fcabe0293ebbf55d1",
+    "size_bytes": 951782
+  },
+  "context_pipeline/normalized/design_chats.jsonl": {
+    "modified_time_ns": 1782371891196661666,
+    "sha256": "f8e074b2d65c4847e1f7e96dce0761cdb89e76ba368d338b0f56945b6da47e27",
+    "size_bytes": 3093
+  },
+  "context_pipeline/normalized/file_references.jsonl": {
+    "modified_time_ns": 1782371891185581421,
+    "sha256": "442224a03c2985e236c3ad4337ec5d27f6e4a12590a8b1075e461220cf22fc74",
+    "size_bytes": 2080071
+  },
+  "context_pipeline/normalized/messages.jsonl": {
+    "modified_time_ns": 1782371890181919243,
+    "sha256": "1551d193ed80dc4dcbb3aba28d08bee647e031315d387bede4f65f4e5a273658",
+    "size_bytes": 26520379
+  },
+  "context_pipeline/normalized/project_documents.jsonl": {
+    "modified_time_ns": 1782371891195859461,
+    "sha256": "16b9ece8f3f7ee1b1b11b0b075f38d017b947243f00d36f498d4bf430153fd2a",
+    "size_bytes": 1325352
+  },
+  "context_pipeline/normalized/projects.jsonl": {
+    "modified_time_ns": 1782371891187529830,
+    "sha256": "a57ca6f606a15260418ce78f300ab664cb741702c9302cac15d649ea19b7fe14",
+    "size_bytes": 26901
+  },
+  "context_pipeline/normalized/source_files.jsonl": {
+    "modified_time_ns": 1782371891197442955,
+    "sha256": "7fb37e5e7026dd38fa31d755a310309a17a5247dac645a2ee7abb094204ac719",
+    "size_bytes": 22143
+  },
+  "context_pipeline/normalized/users_redacted.jsonl": {
+    "modified_time_ns": 1782371891196864166,
+    "sha256": "31c1d63796bfd21e85aafc8c63a4e411c5170b437d6b6985a7b586397c4b5e94",
+    "size_bytes": 924
+  }
+}

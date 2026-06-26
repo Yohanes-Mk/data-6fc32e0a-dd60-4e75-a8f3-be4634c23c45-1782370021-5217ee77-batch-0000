@@ -1,0 +1,55 @@
+{
+  "batch": "batch_01",
+  "cases": 10,
+  "case_ids": [
+    "cb-01",
+    "cb-02",
+    "cb-03",
+    "cb-04",
+    "cb-05",
+    "bl-01",
+    "bl-02",
+    "bl-03",
+    "bl-04",
+    "bl-05"
+  ],
+  "candidates": 8,
+  "projects": 2,
+  "work_entities": 4,
+  "project_knowledge": 2,
+  "context_entities": 1,
+  "non_project": 1,
+  "empty_cases": [
+    "bl-01",
+    "bl-02",
+    "bl-03",
+    "bl-04",
+    "bl-05"
+  ],
+  "relationships": 3,
+  "missing_source_impacts": 0,
+  "unresolved_items": 0,
+  "human_review_candidates": 0,
+  "rules_applied": {
+    "hr-001": 1,
+    "hr-002": 1,
+    "hr-003": 2,
+    "hr-015": 1,
+    "hr-004": 2,
+    "hr-019": 1,
+    "hr-005": 2,
+    "hr-014": 1
+  },
+  "confidence": {
+    "high": 7,
+    "medium": 1
+  },
+  "status_current_confidence": {
+    "high": 3,
+    "low": 3,
+    "medium": 2
+  },
+  "blocking_systemic_defect": false,
+  "checkpoint_status": "complete",
+  "quality_review_note": "Benchmark policy cases 1-5 (transcript one-off, pesticide assignment, mixed study/career, AI roadmap, Fleet Command) carried from 4D and re-confirmed; 5 empty blind conversations recorded (hr-016), not substituted."
+}

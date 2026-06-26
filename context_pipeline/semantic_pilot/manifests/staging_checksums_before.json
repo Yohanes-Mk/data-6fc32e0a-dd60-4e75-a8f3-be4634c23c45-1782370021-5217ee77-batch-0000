@@ -1,0 +1,32 @@
+{
+  "context_pipeline/extraction_staging/corpus/conversation_paths.jsonl": {
+    "modified_time_ns": 1782373035464689606,
+    "sha256": "27dcee00f68bf5525bfeac573ee0ee43fdbf7350debfaa541af8a8147bd2dcaa",
+    "size_bytes": 5034227
+  },
+  "context_pipeline/extraction_staging/corpus/conversation_profiles.jsonl": {
+    "modified_time_ns": 1782373035609746899,
+    "sha256": "4914fb90e1314d98d926830d70490c2a2910927c0c8e33021373917d4abe12e8",
+    "size_bytes": 233671
+  },
+  "context_pipeline/extraction_staging/corpus/duplicate_groups.jsonl": {
+    "modified_time_ns": 1782373035620345950,
+    "sha256": "24651051e6c639bd13955a5a2ac844c4d13b2907ccf25625519e79e9c2268219",
+    "size_bytes": 695281
+  },
+  "context_pipeline/extraction_staging/corpus/excluded_units.jsonl": {
+    "modified_time_ns": 1782373035854414194,
+    "sha256": "ae081988d8b44339df647e766cf9a7d8add49da0420bcd6a1b68d66b801d7082",
+    "size_bytes": 7715868
+  },
+  "context_pipeline/extraction_staging/corpus/extraction_packets.jsonl": {
+    "modified_time_ns": 1782373035570586489,
+    "sha256": "33feb027633134e4b13243ba2a75b17914ed7248f827739057760c3663d36f02",
+    "size_bytes": 7691448
+  },
+  "context_pipeline/extraction_staging/corpus/source_units.jsonl": {
+    "modified_time_ns": 1782373035424772279,
+    "sha256": "9dfd4561604525e033fa89f8b0f84183d04ae93572e59061c3344d20593a5c7c",
+    "size_bytes": 81158480
+  }
+}

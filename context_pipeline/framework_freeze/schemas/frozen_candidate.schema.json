@@ -1,0 +1,212 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Frozen framework candidate",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "candidate_type",
+    "knowledge_layer",
+    "canonical_title",
+    "ownership_type",
+    "user_role",
+    "status",
+    "temporal_status",
+    "status_current_confidence",
+    "confidence",
+    "explicit_or_inferred",
+    "content_origins",
+    "user_endorsement",
+    "evidence_segment_ids",
+    "applied_decision_rule_ids",
+    "applied_confirmed_resolution_ids",
+    "requires_human_review",
+    "review_classification",
+    "provenance_summary"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string"
+    },
+    "candidate_type": {
+      "type": "string",
+      "enum": [
+        "project",
+        "subproject",
+        "initiative",
+        "recurring_responsibility",
+        "course",
+        "assignment",
+        "exam_preparation",
+        "job_application",
+        "client_engagement",
+        "research_effort",
+        "standalone_idea",
+        "goal",
+        "motivation",
+        "requirement",
+        "constraint",
+        "preference",
+        "decision",
+        "proposed_decision",
+        "task",
+        "open_question",
+        "milestone",
+        "direction_change",
+        "blocker",
+        "output",
+        "artifact",
+        "research_question",
+        "research_finding",
+        "source",
+        "workflow",
+        "status_update",
+        "next_step",
+        "person",
+        "organization",
+        "platform",
+        "tool",
+        "employer",
+        "client",
+        "course",
+        "institution",
+        "one_off_request",
+        "generic_question",
+        "assistant_suggestion",
+        "assistant_draft",
+        "assistant_explanation",
+        "tool_execution_trace",
+        "attachment_source",
+        "transcript_fragment",
+        "unresolved_fragment"
+      ]
+    },
+    "knowledge_layer": {
+      "type": "string",
+      "enum": [
+        "work_entity",
+        "project_knowledge",
+        "context_entity",
+        "non_project_interaction"
+      ]
+    },
+    "canonical_title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ownership_type": {
+      "type": "string",
+      "enum": [
+        "user_owned",
+        "group_owned",
+        "personal_or_family",
+        "client_owned_user_responsible",
+        "third_party",
+        "unknown",
+        "not_applicable"
+      ]
+    },
+    "user_role": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "temporal_status": {
+      "type": "string",
+      "enum": [
+        "current_confirmed",
+        "current_inferred",
+        "historical_confirmed",
+        "historical_status_unknown",
+        "superseded",
+        "unknown",
+        "point_in_time"
+      ]
+    },
+    "status_current_confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "explicit_or_inferred": {
+      "type": "string",
+      "enum": [
+        "explicit",
+        "inferred",
+        "mixed"
+      ]
+    },
+    "content_origins": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "user_endorsement": {
+      "type": "string",
+      "enum": [
+        "explicit_acceptance",
+        "explicit_rejection",
+        "modification",
+        "implicit_continuation",
+        "no_endorsement",
+        "unclear",
+        "not_applicable"
+      ]
+    },
+    "evidence_segment_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "applied_decision_rule_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "applied_confirmed_resolution_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requires_human_review": {
+      "type": "boolean"
+    },
+    "review_classification": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "covered_by_existing_rule",
+        "new_reusable_rule",
+        "case_specific_exception",
+        "genuinely_unresolved",
+        null
+      ]
+    },
+    "provenance_summary": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

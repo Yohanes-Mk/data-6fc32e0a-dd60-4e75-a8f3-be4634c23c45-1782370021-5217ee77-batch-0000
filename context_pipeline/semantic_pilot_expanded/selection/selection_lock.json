@@ -1,0 +1,25 @@
+{
+  "selection_lock_sha256": "9c2411cf23d4dae7f3301bf47947d76c34b2dfb49691fc3bd2f92c1c821c6690",
+  "blind_case_count": 18,
+  "blind_case_ids": [
+    "ex-07",
+    "ex-08",
+    "ex-09",
+    "ex-10",
+    "ex-11",
+    "ex-12",
+    "ex-13",
+    "ex-14",
+    "ex-15",
+    "ex-16",
+    "ex-17",
+    "ex-18",
+    "ex-19",
+    "ex-20",
+    "ex-21",
+    "ex-22",
+    "ex-23",
+    "ex-24"
+  ],
+  "note": "Lock computed over the 18 blind case selections before any semantic content was inspected."
+}

@@ -1,0 +1,75 @@
+{
+  "stage": "4B_claude_cross_review",
+  "structural_validation_status": "pass",
+  "semantic_review_status": "conditional_pass",
+  "semantic_review_status_rationale": "Claude's blind extraction is internally consistent, evidence-grounded, and discipline-compliant (no false projects, descriptive titles, calibrated confidence, provenance-correct endorsement). It is a conditional rather than full pass because several materially-important classifications depend on human decisions captured in the human-review queue (transcript-conversation project, assignment-vs-false-project, the 94f53cfc over-merge boundary, cross-conversation identity, ExamPro/Accenture endorsement, per-project currency). The Codex repair, by contrast, exhibits one false project, one over-merge, copied-opening titles, and template-driven under-extraction.",
+  "checks": [
+    {"name": "all_jsonl_parses", "passed": true},
+    {"name": "all_candidate_ids_unique", "passed": true},
+    {"name": "all_relationship_ids_unique", "passed": true},
+    {"name": "all_evidence_source_units_resolve_to_bundles", "passed": true},
+    {"name": "all_candidates_with_source_units_have_message_ids", "passed": true},
+    {"name": "all_eight_conversations_processed", "passed": true},
+    {"name": "blind_outputs_written_and_checksum_locked_before_comparison", "passed": true},
+    {"name": "every_project_candidate_documents_strict_project_test", "passed": true},
+    {"name": "assistant_only_content_not_treated_as_confirmed_user_fact", "passed": true},
+    {"name": "explicit_endorsement_has_user_authored_evidence", "passed": true},
+    {"name": "generic_tool_operations_not_turned_into_knowledge_candidates", "passed": true},
+    {"name": "all_relationships_have_evidence_and_confidence", "passed": true},
+    {"name": "no_canonical_title_copies_message_opening", "passed": true},
+    {"name": "prior_repair_files_unchanged", "passed": true},
+    {"name": "blind_extraction_files_unchanged_since_phase1_lock", "passed": true},
+    {"name": "all_writes_contained_under_review_directory", "passed": true}
+  ],
+  "counts": {
+    "claude_candidate_entities": 43,
+    "claude_excluded_content": 4,
+    "claude_relationships": 41,
+    "claude_projects": 2,
+    "claude_context_entities": 9,
+    "claude_confidence": {"high": 39, "medium": 7, "low": 1},
+    "claude_candidates_requiring_human_review": 4,
+    "codex_candidate_entities": 21,
+    "codex_excluded_content": 22,
+    "codex_relationships": 12,
+    "codex_projects": 6,
+    "codex_context_entities": 0,
+    "alignment_rows": 33,
+    "alignment_kinds": {
+      "exact_agreement": 1, "conceptual_agreement": 2, "title_only_disagreement": 4,
+      "type_disagreement": 6, "evidence_disagreement": 1, "boundary_disagreement": 1,
+      "claude_only": 18
+    },
+    "missing_from_codex": 18,
+    "missing_from_claude_or_codex_false_positive": 1,
+    "disputed_classifications": 5,
+    "human_review_queue_items": 8
+  },
+  "checksum_status": {
+    "repair_dir_file_count": 22,
+    "repair_dir_changed_files": [],
+    "repair_unchanged": true,
+    "blind_extraction_lock_intact": true,
+    "any_existing_file_changed": false
+  },
+  "codex_findings": {
+    "false_projects": 1,
+    "false_project_conversations": ["14f3c888"],
+    "over_merges": 1,
+    "over_merge_conversations": ["94f53cfc"],
+    "copied_opening_titles": 6,
+    "missing_context_entities": true,
+    "under_extracted_project_knowledge": true,
+    "assistant_or_tool_text_mislabeled_as_user_task": true,
+    "temporal_status_all_marked_current": true,
+    "policy_and_schema_quality": "sound"
+  },
+  "claude_findings": {
+    "false_projects": 0,
+    "self_introduced_risks": [
+      "recurring_responsibility umbrella in 94f53cfc is a modelling choice (flagged)",
+      "cross-conversation same-user / same-preference links are inferred (flagged)",
+      "assistant-inferred Accenture employer kept low-confidence/flagged"
+    ]
+  }
+}

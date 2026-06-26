@@ -1,0 +1,78 @@
+{
+  "discard_reasons": [
+    "one_off_question_not_project",
+    "sentence_fragment_not_entity",
+    "generic_assistant_acknowledgment",
+    "generic_assistant_explanation",
+    "generic_tool_operation",
+    "transcript_or_attachment_fragment_without_context",
+    "unsupported_project_classification",
+    "duplicated_artifact_representation",
+    "insufficient_evidence",
+    "schema_category_misuse"
+  ],
+  "ontology": {
+    "context_entities": [
+      "person",
+      "organization",
+      "platform",
+      "course",
+      "client",
+      "employer"
+    ],
+    "non_knowledge": [
+      "one_off_request",
+      "generic_question",
+      "assistant_suggestion",
+      "assistant_draft",
+      "assistant_explanation",
+      "tool_execution_trace",
+      "attachment_source",
+      "transcript_fragment",
+      "unresolved_fragment"
+    ],
+    "project_knowledge": [
+      "goal",
+      "motivation",
+      "requirement",
+      "constraint",
+      "decision",
+      "proposed_decision",
+      "task",
+      "open_question",
+      "milestone",
+      "direction_change",
+      "blocker",
+      "output",
+      "artifact",
+      "research_question",
+      "research_finding",
+      "source",
+      "workflow"
+    ],
+    "work_entities": [
+      "project",
+      "subproject",
+      "initiative",
+      "recurring_responsibility",
+      "standalone_idea"
+    ]
+  },
+  "policy_name": "stage4a_repair_policy",
+  "relationship_types": [
+    "part_of",
+    "supports",
+    "depends_on",
+    "produces",
+    "uses",
+    "informed_by",
+    "supersedes",
+    "contradicts",
+    "evolved_into",
+    "created_for",
+    "blocked_by",
+    "possible_same_project",
+    "associated_with"
+  ],
+  "strict_project_test_min_signals": 3
+}

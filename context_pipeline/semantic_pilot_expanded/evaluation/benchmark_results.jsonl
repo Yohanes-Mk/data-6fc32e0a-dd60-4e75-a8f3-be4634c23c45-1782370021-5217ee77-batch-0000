@@ -1,0 +1,11 @@
+{"benchmark": "ex-01 transcript not a project", "result": "pass", "detail": "['one_off_request']", "justification": ""}
+{"benchmark": "ex-02 pesticide is assignment", "result": "pass", "detail": "['assignment']", "justification": ""}
+{"benchmark": "ex-03 not one broad project", "result": "pass", "detail": "['initiative']", "justification": ""}
+{"benchmark": "ex-04 roadmap active project", "result": "pass", "detail": "current_confirmed", "justification": ""}
+{"benchmark": "ex-05 Fleet Command real, status unresolved", "result": "pass", "detail": "historical_status_unknown", "justification": ""}
+{"benchmark": "ex-06 Client Radar one engagement two facets co-authored", "result": "pass", "detail": "co_authored=True", "justification": ""}
+{"benchmark": "generic tools not meaningful tool candidates", "result": "pass", "detail": "['b06_tool_claude_code', 'e21_tool_claude_code', 'e22_tool_todoist']", "justification": ""}
+{"benchmark": "pasted/tool/log excluded from user evidence", "result": "pass", "detail": "['tool_execution_trace', 'tool_execution_trace', 'assistant_draft', 'assistant_explanation']", "justification": ""}
+{"benchmark": "unavailable binaries not inspected", "result": "pass", "detail": "[]", "justification": ""}
+{"benchmark": "null filenames preserved (Fleet Command 0 populated)", "result": "pass", "detail": "fleet populated_filenames=0", "justification": ""}
+{"benchmark": "missing sources not reconstructed", "result": "pass", "detail": "6 impacts all do_not_infer", "justification": ""}

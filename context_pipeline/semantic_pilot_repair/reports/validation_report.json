@@ -1,0 +1,133 @@
+{
+  "blocking_issues": [],
+  "checks": [
+    {
+      "details": null,
+      "name": "adjudication_jsonl_parses",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "selected_jsonl_parses",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "bundles_jsonl_parses",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "candidates_jsonl_parses",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "relationships_jsonl_parses",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "excluded_jsonl_parses",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "candidate_ids_unique",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "relationship_ids_unique",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "all_evidence_references_resolve",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "all_selected_conversations_resolve",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "every_project_passes_strict_project_test",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "no_generic_tool_operation_becomes_knowledge_candidate",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "no_generic_assistant_acknowledgment_candidate",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "explicit_acceptance_has_user_evidence",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "confidence_has_written_rationale",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "every_relationship_has_evidence",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "existing_stage4a_and_stage3_files_unchanged",
+      "passed": true
+    }
+  ],
+  "checksum_status": {
+    "changed_existing_files": [],
+    "passed": true
+  },
+  "counts": {
+    "adjudication_totals": {
+      "discard": 31,
+      "keep_with_revision": 26,
+      "reclassify": 5
+    },
+    "confidence_distribution": {
+      "high": 7,
+      "medium": 14
+    },
+    "discarded_noise_counts": {
+      "generic_assistant_acknowledgment": 2,
+      "generic_assistant_explanation": 16,
+      "generic_tool_operation": 13,
+      "unsupported_project_classification": 5
+    },
+    "endorsement_distribution": {
+      "no_endorsement": 7,
+      "not_applicable": 14
+    },
+    "relationship_counts": {
+      "depends_on": 4,
+      "informed_by": 6,
+      "supports": 2
+    },
+    "repaired_candidate_counts_by_type": {
+      "assistant_suggestion": 7,
+      "constraint": 2,
+      "one_off_request": 2,
+      "project": 6,
+      "task": 4
+    },
+    "repaired_candidates": 21,
+    "selected_conversations": 8,
+    "semantic_quality_issues": 27,
+    "stage4a_candidates": 62
+  },
+  "semantic_quality_status": "conditional_pass",
+  "status": "pass"
+}

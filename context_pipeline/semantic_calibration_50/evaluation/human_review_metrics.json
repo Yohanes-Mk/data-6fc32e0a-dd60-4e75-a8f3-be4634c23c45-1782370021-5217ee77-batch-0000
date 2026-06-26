@@ -1,0 +1,94 @@
+{
+  "total_cases": 50,
+  "candidates_touching_review_concern": 16,
+  "human_review_rate_before_recurring_rules": 0.32,
+  "human_review_cases_after_recurring_rules": 5,
+  "human_review_rate_after_recurring_rules": 0.1,
+  "questions_resolved_by_existing_rules": 11,
+  "review_item_classification": {
+    "case_specific_exception": 2,
+    "genuinely_unresolved": 1,
+    "covered_by_existing_rule": 9,
+    "new_reusable_rule": 1
+  },
+  "review_items": [
+    {
+      "case_id": "bl-29",
+      "candidate_id": "cal:cand:bl29_career_mentor_project",
+      "classification": "case_specific_exception",
+      "issue": "Boundary: is the 'career mentor project' the same entity as the per-project context-DB idea (ex-14) and/or the AI Aggregator (bl-36)? Needs human confirmation of identity/merge."
+    },
+    {
+      "case_id": "bl-34",
+      "candidate_id": "cal:cand:bl34_vscode_webview_review",
+      "classification": "genuinely_unresolved",
+      "issue": "Ownership/identity of the reviewed VS Code webview codebase is unclear (user project vs third-party vs coursework). Recommended default: keep as task, ownership unknown, low confidence, until the user clarifies."
+    },
+    {
+      "case_id": "bl-36",
+      "candidate_id": "cal:cand:bl36_ai_aggregator_project",
+      "classification": "covered_by_existing_rule",
+      "issue": "Possible part_of the AI learning roadmap (cb-04) and possible_same_entity with the career-mentor/context-DB work (bl-29/ex-14). Clustering handled by hr-011; relationship emitted, no human review forced."
+    },
+    {
+      "case_id": "bl-38",
+      "candidate_id": "cal:cand:bl38_kibur_rag_chatbot",
+      "classification": "case_specific_exception",
+      "issue": "Is Kibur RAG/CO-OP a user-owned personal project, a client engagement, or coursework? And is it the same Kibur entity as the AABS conference marketing (bl-40)? Recommended default: keep as user-owned project, medium confidence, shared_context_only with the AABS doc."
+    },
+    {
+      "case_id": "bl-40",
+      "candidate_id": "cal:cand:bl40_aabs_campaign_briefing_doc",
+      "classification": "new_reusable_rule",
+      "issue": "Source-vs-artifact + umbrella boundary: a document sharing the 'AD Campigns' project label is professional/client (Kibur/AABS), not personal/family marketing. Propose generalized rule hr-008a (label-collision does not imply umbrella membership)."
+    },
+    {
+      "case_id": "cb-04",
+      "candidate_id": "cal:cand:cb04_b04_exampro_proposal",
+      "classification": "covered_by_existing_rule",
+      "issue": "Carried 4D human-review flag now resolved by confirmed resolution / existing rule hr-004,hr-019."
+    },
+    {
+      "case_id": "cb-05",
+      "candidate_id": "cal:cand:cb05_b05_fleet_command",
+      "classification": "covered_by_existing_rule",
+      "issue": "Completion unresolved (hr-008)"
+    },
+    {
+      "case_id": "cb-06",
+      "candidate_id": "cal:cand:cb06_b06_client_radar",
+      "classification": "covered_by_existing_rule",
+      "issue": "Sentence-level audit authorship unresolved (3R-P): treat report assertions as mixed-origin"
+    },
+    {
+      "case_id": "cb-06",
+      "candidate_id": "cal:cand:cb06_e19_client_radar_followup",
+      "classification": "covered_by_existing_rule",
+      "issue": "Some attachments have null filenames; a11y_issues.md/repo_summary.md are populated"
+    },
+    {
+      "case_id": "cb-07",
+      "candidate_id": "cal:cand:cb07_e16_csci_project3_submission",
+      "classification": "covered_by_existing_rule",
+      "issue": "Attachment author 'Naomie Bambara' differs from the usual user (Yohannes) \u2014 same user helping a peer, a group submission, or a different user?"
+    },
+    {
+      "case_id": "cb-08",
+      "candidate_id": "cal:cand:cb08_e18_ad_campaign",
+      "classification": "covered_by_existing_rule",
+      "issue": "What organization/cause is being promoted is not fully specified in the bundle"
+    },
+    {
+      "case_id": "cb-08",
+      "candidate_id": "cal:cand:cb08_e23_marketing_kb_doc",
+      "classification": "covered_by_existing_rule",
+      "issue": "No verified conversation link; whether user-authored or external is unclear"
+    },
+    {
+      "case_id": "cb-09",
+      "candidate_id": "cal:cand:cb09_e22_accenture_onboarding",
+      "classification": "covered_by_existing_rule",
+      "issue": "Boundary between onboarding workflow and the broader internship role"
+    }
+  ]
+}

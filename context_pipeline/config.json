@@ -1,0 +1,43 @@
+{
+  "pipeline_name": "claude_export_stage2_normalization",
+  "schema_version": "stage2.1",
+  "source_platform": "claude",
+  "raw_paths": {
+    "conversations": "conversations.json",
+    "users": "users.json",
+    "projects_dir": "projects",
+    "design_chats_dir": "design_chats"
+  },
+  "output_paths": {
+    "normalized_dir": "context_pipeline/normalized",
+    "reports_dir": "context_pipeline/reports",
+    "manifests_dir": "context_pipeline/manifests"
+  },
+  "root_parent_sentinel_uuid": "00000000-0000-4000-8000-000000000000",
+  "expected_stage1_counts": {
+    "main_conversations": 292,
+    "main_messages": 7826,
+    "design_chats": 2,
+    "design_chat_messages": 6,
+    "projects": 17,
+    "project_documents": 36,
+    "users": 1,
+    "attachment_entries": 339,
+    "file_reference_entries": 1763
+  },
+  "semantic_provenance_values": [
+    "user_statement",
+    "assistant_output",
+    "tool_input",
+    "tool_output_unverified",
+    "attachment_text",
+    "project_document",
+    "export_metadata",
+    "model_internal_reasoning_excluded"
+  ],
+  "extraction_eligibility_values": [
+    true,
+    false,
+    "conditional"
+  ]
+}

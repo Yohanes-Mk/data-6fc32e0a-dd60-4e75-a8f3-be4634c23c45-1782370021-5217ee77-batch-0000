@@ -1,0 +1,39 @@
+{
+  "stage": "4D",
+  "name": "Final Expanded Semantic Pilot",
+  "evidence_boundary": "stage_3R_with_stage_3R_P_overlay",
+  "overlay_precedence": "stage_3R_P_takes_precedence_on_patched_metadata",
+  "execution_mode": "language_model_semantic_judgment_subscription_only",
+  "scripts_allowed_for": ["deterministic_selection","load_jsonl","write_jsonl","resolve_references","checksums","schema_validation","counting","comparison","reporting_support"],
+  "scripts_forbidden_for": ["decide_candidate_type","decide_project_status","decide_project_boundary","decide_title","decide_status","decide_confidence","decide_endorsement","decide_relationship","decide_merge","keyword_regex_firstline_or_template_substitution"],
+  "ontology": {
+    "work_entities": ["project","subproject","initiative","recurring_responsibility","course","assignment","exam_preparation","job_application","client_engagement","research_effort","standalone_idea"],
+    "project_knowledge": ["goal","motivation","requirement","constraint","preference","decision","proposed_decision","task","open_question","milestone","direction_change","blocker","output","artifact","research_question","research_finding","source","workflow","status_update","next_step"],
+    "context_entities": ["person","organization","platform","tool","employer","client","course","institution"],
+    "non_project_interaction": ["one_off_request","generic_question","assistant_suggestion","assistant_draft","assistant_explanation","tool_execution_trace","attachment_source","transcript_fragment","unresolved_fragment"]
+  },
+  "strict_project_test": {"min_criteria": 3, "criteria": ["intended_outcome","continuing_actions","user_ownership_or_responsibility","tasks_or_milestones","deliverable_or_artifact","resources_or_research","decisions_or_constraints","repeated_appearance","identifiable_state"], "must_consider_alternative_work_entity_type": true, "do_not_force_into_project": true},
+  "confidence_policy": {"values": ["high","medium","low"], "no_default_tier": true, "use_low_when": ["fragmentary_evidence","uncertain_content_origin","unclear_status","ambiguous_boundaries","central_attachment_or_missing_source","conclusion_depends_on_assistant_content","conflicting_evidence"], "absence_of_low_requires_justification": true},
+  "endorsement_policy": {"values": ["explicit_acceptance","explicit_rejection","modification","implicit_continuation","no_endorsement","unclear","not_applicable"], "request_is_not_acceptance": true, "explicit_requires_user_origin_evidence": true, "co_authorship_not_blanket_acceptance": true},
+  "status_policy": {"entity_status": ["idea","exploring","planned","active","paused","blocked","drifted","completed","abandoned","merged","historical","unknown"], "temporal_status": ["current_confirmed","current_inferred","historical_confirmed","historical_status_unknown","superseded","unknown"], "do_not_infer_current_from_date": true, "separate_status_current_confidence": true},
+  "attachment_policy": {"do_not_invent_filenames": true, "preserve_null_filename": true, "distinguish_occurrence_from_unique_hash": true, "occurrences_do_not_inflate_evidence": true, "unavailable_binary_not_inspected": true, "extracted_text_is_evidence": true, "null_filename_not_unusable": true, "fleet_command": {"occurrences": 92, "populated_filenames": 0, "unique_content_hashes": 88, "available_binaries": 0, "extracted_text_available": true, "gdd_sdd_binary_inspected": false}},
+  "missing_source_policy": {"impact_record_when_material": true, "do_not_infer": true, "do_not_reconstruct": true},
+  "relationship_policy": {"types": ["part_of","supports","depends_on","produces","uses","informed_by","supersedes","contradicts","evolved_into","created_for","blocked_by","possible_same_project","associated_with"], "no_co_occurrence_only": true, "every_relationship_requires_evidence": true},
+  "clustering_policy": {"no_auto_merge": true, "outcomes": ["strong_merge_candidate","possible_same_entity","parent_child_candidate","phase_relationship","shared_context_only","insufficient_evidence"]},
+  "profile_level_policy": {"require_recurrence_across_cases": true, "do_not_promote_one_time_statements": true},
+  "evidence_priority": ["eligible_direct_user_evidence","explicit_user_endorsement_rejection_modification","user_provided_source_or_document_context","co_authored_content","assistant_output_with_later_user_interaction","unendorsed_assistant_suggestions","tool_and_log_output","transcript_source_content","missing_source_metadata"],
+  "confirmed_resolutions_applied": {
+    "avatar_bci_lab": "completed_historical_confirmed",
+    "client_radar": "one_user_owned_accenture_client_engagement_two_facets_co_authored_audit",
+    "client_radar_separate_from": ["accenture_interview_preparation","accenture_onboarding"],
+    "fleet_command_card_system": "subproject_or_phase_of_fleet_command",
+    "ai_learning_roadmap": "active",
+    "fleet_command_completion": "unresolved",
+    "tsotsi_completion": "unresolved",
+    "ai_engineer_roadmap_document": "external_source_unless_verified_link",
+    "exampro_skip": "assistant_proposal_not_accepted",
+    "voice_tone_preference": "one_profile_level_preference",
+    "accenture_affiliation": "confirmed",
+    "professor_gdd_sdd": "source_material_not_user_artifact"
+  }
+}

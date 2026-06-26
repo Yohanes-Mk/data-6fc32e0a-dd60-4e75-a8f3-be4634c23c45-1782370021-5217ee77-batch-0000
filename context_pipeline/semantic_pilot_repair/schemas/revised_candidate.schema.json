@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "assistant_origin": {
+      "type": "boolean"
+    },
+    "belongs_in_knowledge_system": {
+      "type": "boolean"
+    },
+    "candidate_id": {
+      "type": "string"
+    },
+    "candidate_type": {
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "confidence_rationale": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "endorsement_evidence_source_unit_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "evidence_message_ids": {
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "type": "array"
+    },
+    "evidence_source_unit_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "explicit_evidence": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "inferred_evidence": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "knowledge_layer": {
+      "enum": [
+        "work_entity",
+        "project_knowledge",
+        "context_entity",
+        "non_knowledge"
+      ]
+    },
+    "project_test_signals": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "requires_review": {
+      "type": "boolean"
+    },
+    "review_reasons": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "source_conversation_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "idea",
+        "exploring",
+        "planned",
+        "active",
+        "paused",
+        "drifted",
+        "blocked",
+        "completed",
+        "abandoned",
+        "merged",
+        "unknown",
+        "not_applicable"
+      ]
+    },
+    "status_basis": {
+      "enum": [
+        "explicit",
+        "inferred",
+        "unknown",
+        "not_applicable"
+      ]
+    },
+    "supersedes_stage4a_candidate_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "supporting_provenance": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "temporal_status": {
+      "enum": [
+        "current",
+        "historical",
+        "superseded",
+        "unknown",
+        "not_applicable"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "user_endorsement": {
+      "enum": [
+        "explicit_acceptance",
+        "explicit_rejection",
+        "modification",
+        "implicit_continuation",
+        "no_endorsement",
+        "unclear",
+        "not_applicable"
+      ]
+    }
+  },
+  "required": [
+    "candidate_id",
+    "source_conversation_id",
+    "candidate_type",
+    "knowledge_layer",
+    "title",
+    "description",
+    "status",
+    "status_basis",
+    "confidence",
+    "confidence_rationale",
+    "temporal_status",
+    "evidence_source_unit_ids",
+    "evidence_message_ids",
+    "explicit_evidence",
+    "inferred_evidence",
+    "supporting_provenance",
+    "assistant_origin",
+    "user_endorsement",
+    "endorsement_evidence_source_unit_ids",
+    "project_test_signals",
+    "belongs_in_knowledge_system",
+    "requires_review",
+    "review_reasons",
+    "supersedes_stage4a_candidate_ids"
+  ],
+  "title": "Revised Candidate",
+  "type": "object"
+}

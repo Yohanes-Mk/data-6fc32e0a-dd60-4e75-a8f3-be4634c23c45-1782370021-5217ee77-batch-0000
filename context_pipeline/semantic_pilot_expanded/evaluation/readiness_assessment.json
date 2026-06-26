@@ -1,0 +1,47 @@
+{
+  "stage": "4D_expanded_pilot",
+  "gates": {
+    "structural_gate": {
+      "status": "pass",
+      "reasons": ["all JSONL parse", "all candidate/relationship IDs unique", "all evidence references resolve to Stage 3R segments/units", "all 24 cases processed (22 with candidates, ex-07/ex-15 recorded as empty)", "no existing prior-stage file changed (174 files identical before/after)"]
+    },
+    "provenance_gate": {
+      "status": "pass",
+      "reasons": [
+        "user evidence kept distinct from assistant/tool/transcript content (content_origins + transport_author_roles carried per candidate)",
+        "pasted assistant errors, notebook run-logs, and assistant task-dumps excluded as tool_execution_trace/assistant_draft (not user evidence)",
+        "Client Radar audit represented as co_authored (3R-P), not as user-only fact",
+        "filenames never invented: Fleet Command 92 occurrences -> 88 unique hashes, 0 populated filenames preserved null, 0 binaries inspected; ex-16/ex-19 used only the 3R-P-populated filenames",
+        "repeated attachment occurrences not counted as independent evidence (occurrence vs unique-hash reported)"
+      ]
+    },
+    "semantic_gate": {
+      "status": "conditional_pass",
+      "reasons_pass": [
+        "no systemic false-project pattern: only 2 strict projects across 24 cases; the 16 work entities are typed at correct granularity (assignment/job_application/client_engagement/initiative/recurring_responsibility/standalone_idea/exam_preparation)",
+        "titles are descriptive (banned-list enforced)",
+        "confidence calibrated across high/medium/low with low used where evidence is fragmentary; status_current_confidence used as a separate axis (low for unresolved Fleet/pesticide/group-project)",
+        "project knowledge not systematically omitted (decisions, tasks, blockers, next steps, open questions, sources, workflows captured)",
+        "relationships specific and evidence-backed; no co-occurrence-only links",
+        "blind cases show genuine per-case semantic variation (empty, one-off, homework, cover letter, marketing campaign, client work, onboarding) — NOT template-driven"
+      ],
+      "reasons_conditional": [
+        "several material entity-boundary/merge decisions need human confirmation (Client Radar ex-06/ex-19 phase merge; Accenture shared-context separation; marketing cluster ex-18/23/24)",
+        "ex-16 author-identity (Naomie Bambara vs the primary user) is unresolved and affects profile assignment",
+        "ex-23 project-document authorship/link is uncertain"
+      ]
+    },
+    "scaling_gate": {
+      "safe_for_another_pilot": {"status": "pass", "reason": "The merged+3R-P framework generalized cleanly to 18 mostly-unseen cases with calibrated confidence and no template behavior."},
+      "safe_for_50_case_subscription_batch": {"status": "conditional_pass", "reason": "Ready once the recurring decision rules (phase-merge of multi-session engagements, employer shared-context vs activity separation, author-identity disambiguation, project-document linkage) are codified, since these patterns recur and currently need human review per case."},
+      "safe_for_full_corpus_subscription_extraction": {"status": "fail", "reason": "Two systemic issues remain: (1) many 'user_authored' segments still carry pasted assistant/tool content that must be split upstream; (2) attachment filenames are largely null in 3R-P, so cross-conversation attachment identity relies on hashes only. Empty/near-empty conversations (ex-07/ex-15) also need a defined handling rule at scale."},
+      "safe_for_later_api_automation": {"status": "fail", "reason": "Defer until the merged schema is stable across the 50-case batch and the human-review decision rules are settled, so automation inherits fixed conventions rather than open boundary/merge/identity questions."}
+    }
+  },
+  "overall": {
+    "structural_validation_status": "pass",
+    "provenance_quality_status": "pass",
+    "semantic_quality_status": "conditional_pass",
+    "scaling_readiness_status": "conditional_pass"
+  }
+}

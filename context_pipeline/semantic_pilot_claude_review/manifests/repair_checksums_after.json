@@ -1,0 +1,28 @@
+{
+  "root": "semantic_pilot_repair",
+  "file_count": 22,
+  "checksums": {
+    "semantic_pilot_repair/README.md": "3e3cccf7b4732e1c5e689335bd180765594087edf60033f8486b8850dea72d31",
+    "semantic_pilot_repair/audit/candidate_adjudication.jsonl": "0f9834da75d54a8ebbe287249f6b5e8bd02515bf4da544e3f6c30fed92469398",
+    "semantic_pilot_repair/audit/stage4a_failure_analysis.md": "8ad2ad8ba8362679418253934b5c77c1f2c378335132afa03b7813b07b4d1abb",
+    "semantic_pilot_repair/config/repair_policy.json": "bd8d54c170f1b1a6c3f06bbe43fa1bc48d923b07c073cc5de474f325e85be2a5",
+    "semantic_pilot_repair/context_bundles/conversation_context_bundles.jsonl": "5275936a6325a49580ac274cb652096f794d38362f017a214b7578b4511bf134",
+    "semantic_pilot_repair/context_bundles/semantic_pilot_claude_review/manifests/repair_checksums_before.json": "ecb2ba607ef479ac75ca437fc664d6b0b50ab374fe3613b4dd4f26706e72821c",
+    "semantic_pilot_repair/manifests/checksums_after.json": "f80366b6497d0f6b08f8b6a31434c59ab2f88f5f27ae5c26e329e5f93c89d776",
+    "semantic_pilot_repair/manifests/checksums_before.json": "f80366b6497d0f6b08f8b6a31434c59ab2f88f5f27ae5c26e329e5f93c89d776",
+    "semantic_pilot_repair/reports/comparison_with_stage4a.md": "dbbd8964b6f9a46a06e1b6cbff455e9f99837b2beda77cf372a8acde323eb258",
+    "semantic_pilot_repair/reports/repair_report.md": "bc2522f9828d94c46b7ed9929420190df51b47372e4e8824438c7fcc2ba0342b",
+    "semantic_pilot_repair/reports/review_sample.md": "3b660b842ac46ccb05df2cc74fec69d8007c82564b1fa4a33b27820f90560c35",
+    "semantic_pilot_repair/reports/semantic_quality_review.md": "38af9a3d34387990d0730afaa9b069fb8758e6ed23ef71773167753ca801ff97",
+    "semantic_pilot_repair/reports/validation_report.json": "4a9ad90750470d6ccb24dd7cba897244df0c7f84b740ffe52d7069ed6aef0f2a",
+    "semantic_pilot_repair/results/candidate_entities.jsonl": "4b35d5cd4cef217c0c07607ee7565b9ff52a7020b350ae7515d0df1b43241708",
+    "semantic_pilot_repair/results/candidate_relationships.jsonl": "c7376ec6585e757e3676bbd4753e47e385a79105837c88a1cdfb7a6e1ee23684",
+    "semantic_pilot_repair/results/conversation_extractions.jsonl": "d7e239bb509c83eeaf19045e842240c9ead8440bae16ee28cd948a63d53f4f05",
+    "semantic_pilot_repair/results/excluded_content.jsonl": "12eae00f3bbe565bbffbac34af19b21d1d8546ddf1fb6df245fc0387e906e943",
+    "semantic_pilot_repair/results/unresolved_items.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "semantic_pilot_repair/schemas/REVISED_KNOWLEDGE_SCHEMA.md": "3bc4af0eeebe6c2d02d2109031b0ea75d2aeae49c4fdc25de28d1cc0a75316d1",
+    "semantic_pilot_repair/schemas/revised_candidate.schema.json": "b8bef23b9cbeee319b93de5c740792194e23c9a842b33846e6601b3b634bad7d",
+    "semantic_pilot_repair/selection/selected_conversations.jsonl": "53d2400e6b9e7aa823a0dd9e1db68873363b1c35cc68d828edb0b9f27e3f328a",
+    "semantic_pilot_repair/selection/selection_report.md": "89e9febaa31ae0cdd4c333b9fee09789c24742dffffd7a5421970664ddca1771"
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "rule_set_id": "stage4e:recurring_decision_rules:001",
+  "stage": "4E",
+  "purpose": "Codified, reusable human-review decision rules. When a new case matches a rule, apply it automatically, record the rule ID, cite the triggering evidence, and DO NOT send the case to human review. These rules are authoritative because they encode confirmed human resolutions and recurring patterns from Stages 3R, 3R-P, and 4A-4D.",
+  "application_protocol": {
+    "on_match": ["apply_rule_automatically", "record_applied_rule_id_on_candidate", "cite_triggering_evidence_segment_ids", "do_not_queue_for_human_review"],
+    "create_human_review_only_when": [
+      "no_existing_rule_applies",
+      "evidence_materially_conflicts_with_an_existing_rule",
+      "applying_the_rule_would_change_ownership_identity_status_or_source_vs_artifact_under_genuine_uncertainty"
+    ],
+    "review_question_classification": ["covered_by_existing_rule", "new_reusable_rule", "case_specific_exception", "genuinely_unresolved"]
+  },
+  "rules": [
+    {
+      "id": "hr-001",
+      "name": "Transcript / formatting one-off is not a project",
+      "trigger": "User pastes third-party transcript/article/text and asks only to reformat, summarize, or return it verbatim, with no ownership of an ongoing effort.",
+      "decision": "Classify as one_off_request (non_project_interaction). Project-shaped content inside the pasted material does NOT make a project.",
+      "origin": "benchmark_case_1 / Stage4D ex-01",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-002",
+      "name": "Academic assignment typing",
+      "trigger": "A graded/submitted course deliverable (homework, problem set, project submission) authored or co-authored by the user or their group.",
+      "decision": "Type as assignment (or exam_preparation when it is study/practice rather than a deliverable). Do NOT escalate to project. Record course context as a context entity when named.",
+      "origin": "benchmark_case_2 (pesticide) / Stage4D ex-02,ex-13,ex-16,ex-20,ex-21",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-003",
+      "name": "Mixed study/career conversation is multiple activities, not one project",
+      "trigger": "A single conversation spans distinct activities (e.g. self-study + career planning) with no unifying deliverable, ownership, or continuing thread linking them.",
+      "decision": "Emit the strongest-supported individual work entity/non_project records; do NOT merge into one broad project. Associate with the user profile rather than merging.",
+      "origin": "benchmark_case_3 / Stage4D ex-03",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-004",
+      "name": "AI learning roadmap is an active project",
+      "trigger": "User's personal applied-AI / engineering learning-and-career roadmap with goals, tasks, decisions, and continuing actions.",
+      "decision": "Type as project, status active. The ExamPro skip is a proposed_decision (assistant-origin proposal), not an accepted decision.",
+      "origin": "benchmark_case_4 / Stage4D ex-04 / 3R-P ai_learning_roadmap=active",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-005",
+      "name": "Fleet Command is a real project; completion unresolved",
+      "trigger": "Fleet Command / Unity hex-grid strategy game (SE coursework) material; card system appears.",
+      "decision": "Type as project. Completion status UNRESOLVED (status_current_confidence low). Card system is a subproject/phase of Fleet Command. Professor-provided GDD/SDD is source material, NOT a user artifact.",
+      "origin": "benchmark_case_5 / Stage4D ex-05 / 3R-P",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-006",
+      "name": "Client Radar is one user-owned Accenture client engagement (co-authored audit)",
+      "trigger": "Client Radar accessibility audit/design, repository implementation, or manager-facing summary/follow-up.",
+      "decision": "One client_engagement, status active, temporal current_confirmed, owned by user as Accenture work. Facets: accessibility audit/design, repository implementation, manager summary. Audit content is co_authored (user+Claude); do NOT treat all audit statements as independently user-authored facts. Separate from onboarding and interview prep.",
+      "origin": "benchmark_case_6 / Stage4D ex-06,ex-19 / 3R-P stage3rp:resolution:client_radar",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-007",
+      "name": "CSCI 430/530 Project 3 group assignment",
+      "trigger": "CSCI 430/530 Project 3 material; the name Naomie Bambara appears.",
+      "decision": "Include in the user's academic landscape. Type assignment, ownership group_owned, user role participant/contributor. Naomie Bambara = group member/contributor/document author. Do NOT infer sole user authorship; do NOT treat the name as evidence the material is unrelated to the user.",
+      "origin": "confirmed_human_decision_stage4e / benchmark_case_7 / Stage4D ex-16",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-008",
+      "name": "Personal/Family Marketing Support umbrella",
+      "trigger": "Paid ad campaign, marketing knowledge-base material, trending-animation request, or related marketing material with sufficient evidence, in a personal/family (non-client) context.",
+      "decision": "Cluster under ONE umbrella 'Personal/Family Marketing Support' (recurring_responsibility or initiative per evidence), operating_mode on_demand, ownership personal_or_family, current state available-when-needed. Paid ad campaign = completed child phase (status completed, historical_confirmed, reactivation_possible true). Preserve separate phases, artifacts, tasks, timestamps. Do NOT pull professional/client marketing work into this umbrella.",
+      "origin": "confirmed_human_decision_stage4e / benchmark_case_8 / Stage4D ex-18,ex-23,ex-24",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-009",
+      "name": "Accenture onboarding completed; activities stay separate under one employer context",
+      "trigger": "Accenture onboarding, interview prep, internship documentation, assigned project work, or other Accenture activity.",
+      "decision": "Onboarding = completed, historical_confirmed (user has moved into assigned project work). Keep onboarding, Client Radar, interview prep, internship docs, networking, and career planning as SEPARATE activities connected through ONE Accenture employer/context entity. Do NOT collapse into one broad Accenture project.",
+      "origin": "confirmed_human_decision_stage4e / benchmark_case_9 / Stage4D ex-22 / employer-context rule",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-010",
+      "name": "AVATAR/BCI lab is completed historical research",
+      "trigger": "SCSU AVATAR/BCI lab work (NAO robot, water project, 3C-SCSU GitHub).",
+      "decision": "Type research_effort, status completed, temporal_status historical_confirmed. Do NOT delete the historical entity. Pasted GitHub issue listings are tool/log content, not direct user evidence of current involvement.",
+      "origin": "benchmark_case_10 / 3R-P stage3rp:resolution:avatar_bci / mc-10",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-011",
+      "name": "Multi-session work clustering",
+      "trigger": "Two or more sessions that could be the same effort.",
+      "decision": "Merge/cluster ONLY when supported by same named project/client/workstream AND compatible dates AND matching files/artifacts/repos/people/outcomes OR continuing tasks/deliverables/phases. Preserve phases and timestamps. Do NOT merge on shared broad topic alone. Default cluster outcome under uncertainty: shared_context_only or possible_same_entity (not strong_merge).",
+      "origin": "Stage4D scaling note (phase-merge of multi-session engagements)",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-012",
+      "name": "Employer context separation",
+      "trigger": "Distinct employer-related activities (application/interview, onboarding, client engagement, assigned internal project, internship documentation, networking, performance/career planning).",
+      "decision": "Use ONE employer context entity; keep the activities separate unless evidence proves they are the same activity. Do NOT create one broad employer project.",
+      "origin": "generalized from hr-009 / Stage4D",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-013",
+      "name": "Group assignment ownership",
+      "trigger": "Assignment with confirmed user participation and other named people.",
+      "decision": "ownership group_owned; user role participant/contributor; other named people = group_member/contributor/document author. Do NOT infer sole authorship.",
+      "origin": "generalized from hr-007",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-014",
+      "name": "Document source-vs-artifact default",
+      "trigger": "A document/attachment whose authorship or creation is uncertain.",
+      "decision": "Default to source. Use artifact ONLY when evidence supports that the user or their group produced it as an output. Do NOT create a conversation-document link on conceptual similarity alone.",
+      "origin": "Stage4D ex-23 / professor GDD-SDD / AI Engineer Roadmap doc",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-015",
+      "name": "Profile-level preference promotion",
+      "trigger": "A user preference (voice/tone, workflow, etc.).",
+      "decision": "Promote to profile level ONLY when it appears across >=2 distinct contexts OR is explicitly stated as a general preference. Preserve scope, evidence dates, contradictions, confidence, status-current confidence. Voice/tone is ONE profile-level preference.",
+      "origin": "3R-P voice_tone_preference / Stage4D ex-17",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-016",
+      "name": "Empty / near-empty conversation handling",
+      "trigger": "No meaningful extractable content.",
+      "decision": "Create a processed case record, emit NO candidate, record exactly one reason: empty | metadata_only | insufficient_evidence | unsupported_content. Do NOT substitute a new case after selection lock. Do NOT send to human review unless emptiness indicates missing/corrupted data.",
+      "origin": "Stage4D ex-07,ex-15 (recorded empty, not substituted)",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-017",
+      "name": "Missing-source non-inference",
+      "trigger": "A referenced source/attachment binary is absent.",
+      "decision": "Do NOT reconstruct. Create a missing-source impact with do_not_infer=true, related entity/case, missing source type, conclusions that cannot be made, and whether a later upload could resolve it.",
+      "origin": "Stage3R/4D missing_source policy",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-018",
+      "name": "Attachment provenance discipline",
+      "trigger": "Any attachment.",
+      "decision": "Never invent filenames; preserve null filenames; use content hashes to identify repeated content; retain each occurrence for provenance; do NOT multiply evidence weight for duplicate occurrences; do NOT claim visual inspection when binaries are unavailable; extracted text MAY be used as evidence.",
+      "origin": "3R-P attachment overlay / Stage4D Fleet Command 92 occ -> 88 hashes",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-019",
+      "name": "Assistant-generated proposal is not a user decision",
+      "trigger": "An assistant suggestion/draft/recommendation.",
+      "decision": "Type as proposed_decision/assistant_suggestion/assistant_draft. It becomes a user decision ONLY with user-origin evidence of explicit acceptance, modification, rejection, or clear dependent continuation. Silence is NOT acceptance.",
+      "origin": "3R-P exampro_skip / Stage4D endorsement policy",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-020",
+      "name": "One-off interaction is not a project",
+      "trigger": "A one-time question, tutoring request, scheduling request, formatting request, or isolated draft request.",
+      "decision": "Use the most accurate non-project or work-entity classification (generic_question, one_off_request, task, assistant_draft, etc.). Do NOT promote to project.",
+      "origin": "Stage4D ex-08,ex-09,ex-11,ex-12",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-021",
+      "name": "Current status discipline (no inference from recency)",
+      "trigger": "Any status assignment.",
+      "decision": "Do NOT infer current status from recency alone. current_confirmed only with direct confirmation or authoritative resolution; current_inferred only with continuing actions and no conflicting evidence; historical_confirmed when completion confirmed; historical_status_unknown when historical but completion unclear; unknown when insufficient. Report status_current_confidence separately from overall confidence.",
+      "origin": "Stage4D status policy",
+      "auto_apply": true
+    },
+    {
+      "id": "hr-022",
+      "name": "On-demand recurring responsibility representation",
+      "trigger": "A recurring responsibility executed on demand (e.g. marketing support).",
+      "decision": "availability=on_demand; current execution active|inactive; record last completed phase; reactivation_possible=true. Represent as available-when-needed rather than continuously active.",
+      "origin": "generalized from hr-008",
+      "auto_apply": true
+    }
+  ],
+  "stopping_policy": {
+    "do_not_recommend_new_pilot_for": ["isolated_case_specific_exceptions"],
+    "recommend_new_pilot_only_if_systemic_failure_across_at_least_3_cases": true,
+    "systemic_failure_types": [
+      "same_false_project_pattern_recurring",
+      "same_provenance_error_recurring",
+      "same_ownership_error_recurring",
+      "entire_content_type_mishandled",
+      "important_evidence_systematically_lost",
+      "human_review_volume_high_because_rules_not_generalizing"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "policy_name": "stage3_extraction_staging_policy",
+  "schema_version": "stage3.1",
+  "token_estimate": {
+    "method": "ceil(character_count / 4)",
+    "characters_per_estimated_token": 4
+  },
+  "packet_limits": {
+    "target_estimated_tokens": 6000,
+    "maximum_estimated_tokens": 8000,
+    "context_overlap_estimated_tokens": 500,
+    "maximum_characters": 32000,
+    "target_characters": 24000,
+    "overlap_characters": 2000
+  },
+  "oversized_unit_splitting": {
+    "enabled": true,
+    "split_on_blank_lines_first": true,
+    "maximum_subunit_characters": 32000
+  },
+  "direct_text_reconciliation": {
+    "normalization": "Unicode NFC, CRLF/CR to LF, trim outer whitespace",
+    "exact_match_policy": "Create one primary message source unit from direct message text and retain text-block references.",
+    "direct_only_policy": "Create one source unit from direct message text.",
+    "content_block_only_policy": "Create source units from eligible content blocks.",
+    "mismatch_policy": "Create source units for direct text and eligible text blocks with reconciliation warnings.",
+    "partial_match_threshold": 0.8
+  },
+  "duplicate_detection": {
+    "exact_normalization": "Unicode NFC, CRLF/CR to LF, trim outer whitespace, collapse repeated whitespace",
+    "near_exact_method": "Bucket by conservative line fingerprints, then compare prefiltered pairs with difflib.SequenceMatcher.",
+    "near_exact_min_similarity": 0.92,
+    "near_exact_max_length_ratio": 1.25,
+    "near_exact_min_characters": 120,
+    "near_exact_max_compare_characters": 20000,
+    "near_exact_max_bucket_size": 40
+  },
+  "conversation_complexity": {
+    "large_message_threshold": 120,
+    "extreme_message_threshold": 400,
+    "medium_branch_threshold": 2,
+    "high_branch_threshold": 4,
+    "extreme_branch_threshold": 10,
+    "tool_heavy_threshold": 25,
+    "large_character_threshold": 100000,
+    "extreme_character_threshold": 500000
+  },
+  "redaction": {
+    "markers": {
+      "email": "[REDACTED_EMAIL]",
+      "phone": "[REDACTED_PHONE]",
+      "api_key": "[REDACTED_API_KEY]",
+      "bearer_token": "[REDACTED_BEARER_TOKEN]",
+      "private_key": "[REDACTED_PRIVATE_KEY]",
+      "password": "[REDACTED_PASSWORD]",
+      "auth_cookie": "[REDACTED_AUTH_COOKIE]"
+    }
+  },
+  "eligibility_policy": {
+    "user_statement": true,
+    "assistant_output": "conditional",
+    "tool_input": "conditional",
+    "tool_output_unverified": "conditional",
+    "attachment_text": "conditional",
+    "project_document": true,
+    "project_metadata": true,
+    "conversation_metadata": "conditional",
+    "model_internal_reasoning_excluded": false,
+    "structural_metadata_excluded": false
+  }
+}

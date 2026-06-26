@@ -1,0 +1,72 @@
+{
+  "stage": "4C",
+  "name": "Merged-Schema Semantic Pilot",
+  "evidence_boundary": "stage_3R",
+  "evidence_boundary_note": "Stage 3R (extraction_staging_repair/corpus) is authoritative. Original Stage 3 packets are not used as semantic input where a 3R equivalent exists.",
+  "execution_mode": "language_model_semantic_judgment_subscription_only",
+  "scripts_allowed_for": ["load_jsonl","select_cases","resolve_references","write_outputs","schema_validation","checksums","counting","comparison"],
+  "scripts_forbidden_for": ["decide_candidate_type","decide_project_boundary","decide_title","decide_status","decide_confidence","decide_relationship","keyword_or_regex_or_template_substitution"],
+  "merged_ontology": {
+    "work_entities": ["project","subproject","initiative","recurring_responsibility","course","assignment","exam_preparation","job_application","client_engagement","research_effort","standalone_idea"],
+    "project_knowledge": ["goal","motivation","requirement","constraint","preference","decision","proposed_decision","task","open_question","milestone","direction_change","blocker","output","artifact","research_question","research_finding","source","workflow","status_update","next_step"],
+    "context_entities": ["person","organization","platform","tool","employer","client","course","institution"],
+    "non_project_interaction": ["one_off_request","generic_question","assistant_suggestion","assistant_draft","assistant_explanation","tool_execution_trace","attachment_source","transcript_fragment","unresolved_fragment"]
+  },
+  "strict_project_test": {
+    "min_criteria": 3,
+    "criteria": ["intended_outcome","continuing_actions","user_ownership_or_responsibility","tasks_or_milestones","deliverable_or_artifact","resources_or_research","decisions_or_constraints","repeated_appearance","identifiable_state"],
+    "must_be_better_than": ["assignment","exam_preparation","job_application","recurring_responsibility","client_engagement","one_off_request","standalone_idea"],
+    "do_not_force_into_project": true
+  },
+  "status_policy": {
+    "entity_status": ["idea","exploring","planned","active","paused","blocked","drifted","completed","abandoned","merged","historical","unknown"],
+    "temporal_status": ["current_confirmed","current_inferred","historical_confirmed","historical_status_unknown","superseded","unknown"],
+    "separate_entity_status_from_evidence_recency_from_confidence": true,
+    "do_not_mark_every_project_current": true,
+    "confirmed_resolutions": {
+      "AI learning roadmap": "active",
+      "Fleet Command": "status_unresolved",
+      "Tsotsi film work": "status_unresolved",
+      "ExamPro skip recommendation": "assistant_proposal_not_accepted",
+      "Accenture affiliation": "confirmed_technology_summer_analyst_start_2026-06-08",
+      "professor GDD/SDD": "source_material_not_user_artifact"
+    }
+  },
+  "endorsement_policy": {
+    "values": ["explicit_acceptance","explicit_rejection","modification","implicit_continuation","no_endorsement","unclear","not_applicable"],
+    "request_is_not_acceptance": true,
+    "explicit_requires_user_authored_evidence": true
+  },
+  "attachment_policy": {
+    "distinguish_occurrence_from_unique_content": true,
+    "dedup_by_hash_and_filename": true,
+    "occurrences_do_not_inflate_evidence": true,
+    "retain_each_occurrence_for_provenance": true,
+    "extracted_text_is_content": true,
+    "unavailable_binary_not_inspected": true,
+    "attachment_is_not_artifact_unless_role_supports": true
+  },
+  "missing_source_policy": {
+    "every_missing_source_produces_impact_record": true,
+    "do_not_infer": true,
+    "do_not_reconstruct_findings": true
+  },
+  "relationship_policy": {
+    "types": ["part_of","supports","depends_on","produces","uses","informed_by","supersedes","contradicts","evolved_into","created_for","blocked_by","possible_same_project","associated_with"],
+    "no_co_occurrence_only_relationships": true,
+    "every_relationship_requires_evidence": true
+  },
+  "clustering_policy": {
+    "no_automatic_merge": true,
+    "cluster_relationship_values": ["possible_same_project","possible_parent_child","possible_evolution","shared_context_only"]
+  },
+  "evidence_priority": [
+    "eligible_direct_user_evidence",
+    "explicit_user_endorsement_rejection_modification",
+    "user_provided_source_or_document_context",
+    "assistant_output_with_later_user_interaction",
+    "unendorsed_assistant_suggestions",
+    "tool_and_log_output",
+    "missing_source_metadata"
+  ]
+}

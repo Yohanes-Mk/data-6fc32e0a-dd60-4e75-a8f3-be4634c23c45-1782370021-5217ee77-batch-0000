@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Expanded Pilot Relationship",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "relationship_id",
+    "source_candidate_id",
+    "target_candidate_id",
+    "relationship_type",
+    "confidence",
+    "evidence_segment_ids",
+    "explicit_or_inferred",
+    "temporal_qualification",
+    "requires_human_review",
+    "rationale"
+  ],
+  "properties": {
+    "relationship_id": {
+      "type": "string",
+      "pattern": "^ex:rel:[a-z0-9_]+$"
+    },
+    "source_candidate_id": {
+      "type": "string"
+    },
+    "target_candidate_id": {
+      "type": "string"
+    },
+    "relationship_type": {
+      "type": "string",
+      "enum": [
+        "part_of",
+        "supports",
+        "depends_on",
+        "produces",
+        "uses",
+        "informed_by",
+        "supersedes",
+        "contradicts",
+        "evolved_into",
+        "created_for",
+        "blocked_by",
+        "possible_same_project",
+        "associated_with"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "evidence_segment_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "explicit_or_inferred": {
+      "type": "string",
+      "enum": [
+        "explicit",
+        "inferred",
+        "mixed"
+      ]
+    },
+    "temporal_qualification": {
+      "type": "string"
+    },
+    "requires_human_review": {
+      "type": "boolean"
+    },
+    "rationale": {
+      "type": "string"
+    }
+  }
+}

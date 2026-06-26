@@ -1,0 +1,217 @@
+{
+  "blocking_issues": [],
+  "checks": [
+    {
+      "details": [],
+      "name": "every_jsonl_line_parses",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "deterministic_ids_unique_within_entity_type",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "every_source_unit_resolves_to_normalized_record",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "every_excluded_unit_resolves_to_normalized_record",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "every_packet_source_unit_reference_resolves",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "every_conversation_path_message_reference_resolves",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "packet_ordering_follows_timestamps",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "oversized_units_have_valid_source_offsets",
+      "passed": true
+    },
+    {
+      "details": {
+        "missing_exclusions": [],
+        "thinking_source_units": []
+      },
+      "name": "all_thinking_blocks_are_excluded",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "no_known_thinking_hash_appears_in_corpus",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "email_addresses_and_phone_numbers_from_users_json_absent",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "detected_secrets_are_redacted",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "no_eligible_user_text_disappears_without_exclusion",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "no_assistant_text_labeled_as_user_statement",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "no_tool_result_labeled_as_verified_fact",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "duplicate_groups_preserve_original_source_unit_members",
+      "passed": true
+    },
+    {
+      "details": {
+        "after_count": 11,
+        "before_count": 11,
+        "changed_between_manifests": [],
+        "changed_since_after_manifest": [],
+        "current_count": 11,
+        "passed": true
+      },
+      "name": "stage2_normalized_files_remain_unchanged",
+      "passed": true
+    },
+    {
+      "details": {
+        "changed_since_stage2_manifest": [],
+        "manifest_count": 21,
+        "missing_raw_files": [],
+        "passed": true
+      },
+      "name": "raw_files_remain_unchanged_since_stage2_manifest",
+      "passed": true
+    },
+    {
+      "details": {
+        "context_pipeline/extraction_staging/corpus/conversation_paths.jsonl": "27dcee00f68bf5525bfeac573ee0ee43fdbf7350debfaa541af8a8147bd2dcaa",
+        "context_pipeline/extraction_staging/corpus/conversation_profiles.jsonl": "4914fb90e1314d98d926830d70490c2a2910927c0c8e33021373917d4abe12e8",
+        "context_pipeline/extraction_staging/corpus/duplicate_groups.jsonl": "24651051e6c639bd13955a5a2ac844c4d13b2907ccf25625519e79e9c2268219",
+        "context_pipeline/extraction_staging/corpus/excluded_units.jsonl": "ae081988d8b44339df647e766cf9a7d8add49da0420bcd6a1b68d66b801d7082",
+        "context_pipeline/extraction_staging/corpus/extraction_packets.jsonl": "33feb027633134e4b13243ba2a75b17914ed7248f827739057760c3663d36f02",
+        "context_pipeline/extraction_staging/corpus/source_units.jsonl": "9dfd4561604525e033fa89f8b0f84183d04ae93572e59061c3344d20593a5c7c",
+        "context_pipeline/extraction_staging/reports/extraction_staging_report.md": "3413686c13c015908157ac9b9a59eaa91b26f100f805c0937bbcd78f8498346c",
+        "context_pipeline/extraction_staging/reports/review_sample.md": "3ab2da638a9cec48c40e1e9da33d882b80bcb06798e6722a517a4cc3a56f10dc",
+        "context_pipeline/extraction_staging/reports/warnings.jsonl": "f2df917c5a686984387b58c7096f77ea9d09877558ba74c2fc01cc5f04d821ff"
+      },
+      "name": "stable_output_hashes_recorded_for_determinism",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "packet_size_limits_respected_except_documented_oversized_cases",
+      "passed": true
+    },
+    {
+      "details": {
+        "has_design_chat": true,
+        "has_project_document": true
+      },
+      "name": "design_chat_and_project_document_content_represented",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "extraction_eligibility_values_comply_with_policy",
+      "passed": true
+    }
+  ],
+  "checksum_result": {
+    "normalized": {
+      "after_count": 11,
+      "before_count": 11,
+      "changed_between_manifests": [],
+      "changed_since_after_manifest": [],
+      "current_count": 11,
+      "passed": true
+    },
+    "passed": true,
+    "raw": {
+      "changed_since_stage2_manifest": [],
+      "manifest_count": 21,
+      "missing_raw_files": [],
+      "passed": true
+    }
+  },
+  "counts": {
+    "conversation_paths": 496,
+    "conversation_profiles": 292,
+    "duplicate_groups": 718,
+    "duplicate_groups_by_type": {
+      "exact": 270,
+      "near_exact": 448
+    },
+    "excluded_units": 12754,
+    "excluded_units_by_reason": {
+      "empty_content": 732,
+      "exact_redundant_representation": 5031,
+      "model_internal_reasoning_not_project_knowledge": 2667,
+      "token_budget_metadata": 472,
+      "unsupported_content_type": 3852
+    },
+    "extraction_packets": 3551,
+    "source_units": 16371,
+    "source_units_by_provenance": {
+      "assistant_output": 7742,
+      "attachment_text": 860,
+      "conversation_metadata": 244,
+      "project_document": 73,
+      "project_metadata": 21,
+      "tool_input": 3886,
+      "user_statement": 3545
+    },
+    "warnings": 2440
+  },
+  "determinism_checks": {
+    "output_hashes": {
+      "context_pipeline/extraction_staging/corpus/conversation_paths.jsonl": "27dcee00f68bf5525bfeac573ee0ee43fdbf7350debfaa541af8a8147bd2dcaa",
+      "context_pipeline/extraction_staging/corpus/conversation_profiles.jsonl": "4914fb90e1314d98d926830d70490c2a2910927c0c8e33021373917d4abe12e8",
+      "context_pipeline/extraction_staging/corpus/duplicate_groups.jsonl": "24651051e6c639bd13955a5a2ac844c4d13b2907ccf25625519e79e9c2268219",
+      "context_pipeline/extraction_staging/corpus/excluded_units.jsonl": "ae081988d8b44339df647e766cf9a7d8add49da0420bcd6a1b68d66b801d7082",
+      "context_pipeline/extraction_staging/corpus/extraction_packets.jsonl": "33feb027633134e4b13243ba2a75b17914ed7248f827739057760c3663d36f02",
+      "context_pipeline/extraction_staging/corpus/source_units.jsonl": "9dfd4561604525e033fa89f8b0f84183d04ae93572e59061c3344d20593a5c7c",
+      "context_pipeline/extraction_staging/reports/extraction_staging_report.md": "3413686c13c015908157ac9b9a59eaa91b26f100f805c0937bbcd78f8498346c",
+      "context_pipeline/extraction_staging/reports/review_sample.md": "3ab2da638a9cec48c40e1e9da33d882b80bcb06798e6722a517a4cc3a56f10dc",
+      "context_pipeline/extraction_staging/reports/warnings.jsonl": "f2df917c5a686984387b58c7096f77ea9d09877558ba74c2fc01cc5f04d821ff"
+    }
+  },
+  "discrepancies": {},
+  "packet_size_checks": {
+    "maximum_estimated_tokens": 8000,
+    "violations": []
+  },
+  "redaction_checks": {
+    "private_value_leaks": [],
+    "secret_hits": []
+  },
+  "status": "pass",
+  "unresolved_references": {
+    "packet_source_units": [],
+    "path_messages": [],
+    "source_units": []
+  }
+}

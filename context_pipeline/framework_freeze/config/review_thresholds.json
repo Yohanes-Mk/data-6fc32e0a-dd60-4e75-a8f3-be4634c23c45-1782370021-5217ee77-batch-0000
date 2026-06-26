@@ -1,0 +1,32 @@
+{
+  "stage": "5A",
+  "review_categories": [
+    "covered_by_existing_rule",
+    "new_reusable_rule",
+    "case_specific_exception",
+    "genuinely_unresolved"
+  ],
+  "ask_user_only_when": [
+    "ownership_is_unclear",
+    "identity_is_unclear",
+    "merge_would_change_project_boundaries",
+    "current_status_materially_matters",
+    "source_vs_artifact_changes_ownership_or_output",
+    "no_frozen_rule_applies",
+    "evidence_conflicts_with_a_frozen_rule"
+  ],
+  "do_not_ask_user_about": [
+    "known_null_filenames",
+    "empty_conversations",
+    "already_confirmed_statuses",
+    "already_confirmed_ownership",
+    "already_confirmed_project_boundaries",
+    "repeated_cases_covered_by_frozen_rules"
+  ],
+  "escalation_thresholds": {
+    "isolated_exception": "keep_as_case_specific_exception",
+    "repeat_in_2_cases": "monitor_for_pattern",
+    "repeat_in_3_or_more_cases": "propose_new_reusable_rule",
+    "never_restart_calibration_for_isolated_cases": true
+  }
+}

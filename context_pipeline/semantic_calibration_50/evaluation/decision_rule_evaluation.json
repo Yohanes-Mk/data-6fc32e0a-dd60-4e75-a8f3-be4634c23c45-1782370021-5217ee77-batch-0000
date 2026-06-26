@@ -1,0 +1,91 @@
+{
+  "rules_defined": 22,
+  "rules_applied_at_least_once": 22,
+  "rule_usage_counts": {
+    "hr-020": 34,
+    "hr-019": 6,
+    "hr-002": 22,
+    "hr-018": 16,
+    "hr-017": 16,
+    "hr-013": 4,
+    "hr-011": 18,
+    "hr-014": 17,
+    "hr-009": 6,
+    "hr-012": 8,
+    "hr-021": 7,
+    "hr-005": 7,
+    "hr-015": 4,
+    "hr-008": 6,
+    "hr-001": 2,
+    "hr-003": 3,
+    "hr-004": 3,
+    "hr-006": 3,
+    "hr-007": 2,
+    "hr-022": 4,
+    "hr-010": 2,
+    "hr-016": 7
+  },
+  "rules_never_triggered": [],
+  "proposed_new_reusable_rules": [
+    {
+      "proposed_id": "hr-008a",
+      "name": "Project-label collision does not imply marketing-umbrella membership",
+      "trigger": "A document/conversation shares a project label (e.g. 'AD Campigns') with personal/family marketing items but is professional/client work.",
+      "decision": "Do NOT pull it into the Personal/Family Marketing Support umbrella; classify by actual ownership/context (client/professional). Default to shared_context_only.",
+      "seen_in_cases": [
+        "bl-40"
+      ],
+      "recur_likelihood": "medium (project labels are reused across professional and personal marketing)",
+      "status": "proposed_not_authoritative"
+    }
+  ],
+  "case_specific_exceptions": [
+    {
+      "unresolved_id": "cal:unres:bl-29_career_mentor_project",
+      "case_id": "bl-29",
+      "candidate_id": "cal:cand:bl29_career_mentor_project",
+      "classification": "case_specific_exception",
+      "issue": "Boundary: is the 'career mentor project' the same entity as the per-project context-DB idea (ex-14) and/or the AI Aggregator (bl-36)? Needs human confirmation of identity/merge.",
+      "affects": "identity_or_boundary_or_ownership_or_status"
+    },
+    {
+      "unresolved_id": "cal:unres:bl-38_kibur_rag_chatbot",
+      "case_id": "bl-38",
+      "candidate_id": "cal:cand:bl38_kibur_rag_chatbot",
+      "classification": "case_specific_exception",
+      "issue": "Is Kibur RAG/CO-OP a user-owned personal project, a client engagement, or coursework? And is it the same Kibur entity as the AABS conference marketing (bl-40)? Recommended default: keep as user-owned project, medium confidence, shared_context_only with the AABS doc.",
+      "affects": "identity_or_boundary_or_ownership_or_status"
+    }
+  ],
+  "genuinely_unresolved": [
+    {
+      "unresolved_id": "cal:unres:bl-34_vscode_webview_review",
+      "case_id": "bl-34",
+      "candidate_id": "cal:cand:bl34_vscode_webview_review",
+      "classification": "genuinely_unresolved",
+      "issue": "Ownership/identity of the reviewed VS Code webview codebase is unclear (user project vs third-party vs coursework). Recommended default: keep as task, ownership unknown, low confidence, until the user clarifies.",
+      "affects": "identity_or_boundary_or_ownership_or_status"
+    }
+  ],
+  "covered_by_existing_rule": [
+    {
+      "unresolved_id": "cal:unres:bl-36_ai_aggregator_project",
+      "case_id": "bl-36",
+      "candidate_id": "cal:cand:bl36_ai_aggregator_project",
+      "classification": "covered_by_existing_rule",
+      "issue": "Possible part_of the AI learning roadmap (cb-04) and possible_same_entity with the career-mentor/context-DB work (bl-29/ex-14). Clustering handled by hr-011; relationship emitted, no human review forced.",
+      "affects": "identity_or_boundary_or_ownership_or_status"
+    }
+  ],
+  "new_reusable_rule_items": [
+    {
+      "unresolved_id": "cal:unres:bl-40_aabs_campaign_briefing_doc",
+      "case_id": "bl-40",
+      "candidate_id": "cal:cand:bl40_aabs_campaign_briefing_doc",
+      "classification": "new_reusable_rule",
+      "issue": "Source-vs-artifact + umbrella boundary: a document sharing the 'AD Campigns' project label is professional/client (Kibur/AABS), not personal/family marketing. Propose generalized rule hr-008a (label-collision does not imply umbrella membership).",
+      "affects": "identity_or_boundary_or_ownership_or_status"
+    }
+  ],
+  "note": "All 22 codified rules; every human-review item classified into one of four categories; no rule failed to generalize across >=3 cases."
+}

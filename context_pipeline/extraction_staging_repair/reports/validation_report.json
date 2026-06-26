@@ -1,0 +1,271 @@
+{
+  "blocking_issues": [],
+  "checks": [
+    {
+      "details": [],
+      "name": "all_jsonl_parses",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "all_ids_unique",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "all_segment_parent_references_resolve",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "segment_offsets_are_valid",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "retained_segments_cover_container_text_without_gaps_or_overlaps",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "transport_author_and_content_origin_are_separate_fields",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "pasted_assistant_content_not_direct_user_evidence",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "tool_or_log_output_not_direct_user_evidence",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "eligible_user_evidence_has_valid_user_authored_origin",
+      "passed": true
+    },
+    {
+      "details": {
+        "links": 339,
+        "normalized": 339
+      },
+      "name": "every_attachment_occurrence_has_link",
+      "passed": true
+    },
+    {
+      "details": {
+        "fleet_links": 92,
+        "map_attachment_ids": 92
+      },
+      "name": "attachment_heavy_conversation_surfaces_attachments",
+      "passed": true
+    },
+    {
+      "details": {
+        "document_links": 36,
+        "project_document_packets": 36
+      },
+      "name": "project_documents_have_dedicated_packets",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "no_unverified_conversation_document_link_fabricated",
+      "passed": true
+    },
+    {
+      "details": {
+        "design_chat_packets": 30,
+        "design_source_units": 30
+      },
+      "name": "all_design_chats_have_packets",
+      "passed": true
+    },
+    {
+      "details": {
+        "track_a": 1,
+        "unresolved_binaries": 339
+      },
+      "name": "missing_sources_are_explicitly_represented",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "no_thinking_content_enters_repaired_staging",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "previous_files_remain_unchanged",
+      "passed": true
+    },
+    {
+      "details": [
+        {
+          "details": null,
+          "name": "user_framing_plus_pasted_assistant_output",
+          "passed": true
+        },
+        {
+          "details": null,
+          "name": "unity_or_terminal_logs_not_user_evidence",
+          "passed": true
+        },
+        {
+          "details": null,
+          "name": "transcript_formatting_request_not_user_project",
+          "passed": true
+        },
+        {
+          "details": null,
+          "name": "fleet_attachment_heavy_conversation",
+          "passed": true
+        },
+        {
+          "details": null,
+          "name": "project_document_without_verified_conversation_link",
+          "passed": true
+        },
+        {
+          "details": null,
+          "name": "design_chat_packet",
+          "passed": true
+        },
+        {
+          "details": null,
+          "name": "pure_user_authored_message",
+          "passed": true
+        },
+        {
+          "details": null,
+          "name": "assistant_proposal_later_explicitly_accepted",
+          "passed": true
+        },
+        {
+          "details": null,
+          "name": "assistant_proposal_without_user_endorsement",
+          "passed": true
+        },
+        {
+          "details": null,
+          "name": "missing_external_research_source",
+          "passed": true
+        }
+      ],
+      "name": "targeted_regression_tests_pass",
+      "passed": true
+    }
+  ],
+  "checksum_status": {
+    "changed_existing_files": [],
+    "passed": true
+  },
+  "counts": {
+    "attachment_occurrences": 339,
+    "content_origin_counts": {
+      "assistant_generated": 3730,
+      "attachment_content": 339,
+      "console_or_log_output": 35,
+      "document_content": 36,
+      "transcript_content": 5620,
+      "user_authored": 12167
+    },
+    "content_segments": 21927,
+    "design_chat_packet_count": 30,
+    "eligible_direct_user_evidence_count": 12167,
+    "fleet": {
+      "extracted_text_attachment_count": 92,
+      "gdd_sdd_reference_count": 0,
+      "linked_attachment_count": 92,
+      "reported_attachment_count": 92,
+      "screenshot_or_image_reference_count": 1,
+      "unresolved_binary_count": 92
+    },
+    "linked_attachment_count": 339,
+    "missing_source_count": 341,
+    "pasted_assistant_segments": 1,
+    "project_document_packet_count": 36,
+    "repaired_source_units": 21927,
+    "source_containers": 8207,
+    "tool_log_segments": 35,
+    "transport_author_counts": {
+      "assistant": 3911,
+      "attachment": 339,
+      "document": 36,
+      "user": 3921
+    },
+    "unique_attachment_filenames": 44,
+    "unresolved_attachment_binary_count": 339
+  },
+  "determinism": {
+    "packet_hash_count": 987,
+    "packet_hash_sample": {
+      "stage3r:packet:005d1e5d37eabbd91efd:00000": "a96ce3885e4dd96f9f9f9ba18395ec5e83e8f97b119e65253b4886031d021f14",
+      "stage3r:packet:007323a3bab346561c83:00000": "78551d7d980171f8c1137b6508e9112dbf965e15e23803f0229b8b950486b67f",
+      "stage3r:packet:0082529380c147992b34:00000": "52c467ab52c3c1561117a7cf8c000a2e4ad0b9887f636e61c291247675e4959f",
+      "stage3r:packet:012239ff73511ddf4121:00000": "8134a0d805db8efc09f2cc007b941e38675231b11ce0dbe4e76dd1a3e66c3f88",
+      "stage3r:packet:0134b5bbfda3d6383aed:00000": "2e6c77a6644f6500ee7d18ec3b47cdae62effa7f1e8b0dad09a1f62a8a4b9c0c",
+      "stage3r:packet:018f95d3c4b01d86cdf6:00000": "17ce90c63750cb6910f1d2e0863389545138dd833228a60029b0151c253f091b",
+      "stage3r:packet:01ce0d09a176a89ff31d:00000": "74c3a8a8f3f50e4f090885852b27b8a56e3b7ba61df0dc0014d98a7942425d20",
+      "stage3r:packet:022ff430669280421813:00000": "5f0aa33630b2b4004eb32d0e815f104209dee616ede29e19e188714fb16b4ddd",
+      "stage3r:packet:0270bd74834727233796:00000": "5a0aa13e31ab54af7d02c370b48b72ea76208102e278d7064bcb8ba0b2776596",
+      "stage3r:packet:02d206e56ca83cc4921b:00000": "e9a9921ea058e3981aa8a0181626c52eaeb795b074528ab068c22d608a9aa8ac"
+    }
+  },
+  "provenance_quality_status": "pass",
+  "status": "pass",
+  "targeted_regression_tests": [
+    {
+      "details": null,
+      "name": "user_framing_plus_pasted_assistant_output",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "unity_or_terminal_logs_not_user_evidence",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "transcript_formatting_request_not_user_project",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "fleet_attachment_heavy_conversation",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "project_document_without_verified_conversation_link",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "design_chat_packet",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pure_user_authored_message",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "assistant_proposal_later_explicitly_accepted",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "assistant_proposal_without_user_endorsement",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "missing_external_research_source",
+      "passed": true
+    }
+  ]
+}

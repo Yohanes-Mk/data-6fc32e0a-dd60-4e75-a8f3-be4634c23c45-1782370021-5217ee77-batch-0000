@@ -1,0 +1,1031 @@
+{
+  "rule_set_id": "stage5a:frozen_decision_rules:001",
+  "stage": "5A",
+  "frozen_from_stage": "4E",
+  "purpose": "Authoritative frozen decision rules for production extraction. Matching cases are auto-resolved, tagged with the applied rule ID, and not sent back to the user unless a frozen-rule conflict exists.",
+  "application_protocol": {
+    "on_match": [
+      "apply_rule_automatically",
+      "record_applied_rule_id_on_candidate",
+      "cite_triggering_evidence_segment_ids",
+      "do_not_queue_for_human_review"
+    ],
+    "create_human_review_only_when": [
+      "no_existing_rule_applies",
+      "evidence_materially_conflicts_with_an_existing_rule",
+      "applying_the_rule_would_change_ownership_identity_status_or_source_vs_artifact_under_genuine_uncertainty"
+    ],
+    "review_question_classification": [
+      "covered_by_existing_rule",
+      "new_reusable_rule",
+      "case_specific_exception",
+      "genuinely_unresolved"
+    ]
+  },
+  "rule_count": 23,
+  "precedence_order": [
+    "direct_human_resolution",
+    "frozen_confirmed_resolution",
+    "frozen_decision_rule",
+    "schema_and_policy_defaults",
+    "human_review_for_true_conflict_or_gap"
+  ],
+  "rules": [
+    {
+      "id": "hr-001",
+      "name": "Transcript / formatting one-off is not a project",
+      "trigger": "User pastes third-party transcript/article/text and asks only to reformat, summarize, or return it verbatim, with no ownership of an ongoing effort.",
+      "decision": "Classify as one_off_request (non_project_interaction). Project-shaped content inside the pasted material does NOT make a project.",
+      "origin": "benchmark_case_1 / Stage4D ex-01",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "cb-01 transcript formatting one-off"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-002",
+      "name": "Academic assignment typing",
+      "trigger": "A graded/submitted course deliverable (homework, problem set, project submission) authored or co-authored by the user or their group.",
+      "decision": "Type as assignment (or exam_preparation when it is study/practice rather than a deliverable). Do NOT escalate to project. Record course context as a context entity when named.",
+      "origin": "benchmark_case_2 (pesticide) / Stage4D ex-02,ex-13,ex-16,ex-20,ex-21",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "cb-02 pesticide assignment",
+        "cb-07 CSCI 430/530 Project 3"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-003",
+      "name": "Mixed study/career conversation is multiple activities, not one project",
+      "trigger": "A single conversation spans distinct activities (e.g. self-study + career planning) with no unifying deliverable, ownership, or continuing thread linking them.",
+      "decision": "Emit the strongest-supported individual work entity/non_project records; do NOT merge into one broad project. Associate with the user profile rather than merging.",
+      "origin": "benchmark_case_3 / Stage4D ex-03",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "cb-03 mixed study/career conversation"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-004",
+      "name": "AI learning roadmap is an active project",
+      "trigger": "User's personal applied-AI / engineering learning-and-career roadmap with goals, tasks, decisions, and continuing actions.",
+      "decision": "Type as project, status active. The ExamPro skip is a proposed_decision (assistant-origin proposal), not an accepted decision.",
+      "origin": "benchmark_case_4 / Stage4D ex-04 / 3R-P ai_learning_roadmap=active",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "cb-04 AI learning roadmap"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-005",
+      "name": "Fleet Command is a real project; completion unresolved",
+      "trigger": "Fleet Command / Unity hex-grid strategy game (SE coursework) material; card system appears.",
+      "decision": "Type as project. Completion status UNRESOLVED (status_current_confidence low). Card system is a subproject/phase of Fleet Command. Professor-provided GDD/SDD is source material, NOT a user artifact.",
+      "origin": "benchmark_case_5 / Stage4D ex-05 / 3R-P",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "cb-05 Fleet Command"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-006",
+      "name": "Client Radar is one user-owned Accenture client engagement (co-authored audit)",
+      "trigger": "Client Radar accessibility audit/design, repository implementation, or manager-facing summary/follow-up.",
+      "decision": "One client_engagement, status active, temporal current_confirmed, owned by user as Accenture work. Facets: accessibility audit/design, repository implementation, manager summary. Audit content is co_authored (user+Claude); do NOT treat all audit statements as independently user-authored facts. Separate from onboarding and interview prep.",
+      "origin": "benchmark_case_6 / Stage4D ex-06,ex-19 / 3R-P stage3rp:resolution:client_radar",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "cb-06 Client Radar accessibility and repo implementation"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-007",
+      "name": "CSCI 430/530 Project 3 group assignment",
+      "trigger": "CSCI 430/530 Project 3 material; the name Naomie Bambara appears.",
+      "decision": "Include in the user's academic landscape. Type assignment, ownership group_owned, user role participant/contributor. Naomie Bambara = group member/contributor/document author. Do NOT infer sole user authorship; do NOT treat the name as evidence the material is unrelated to the user.",
+      "origin": "confirmed_human_decision_stage4e / benchmark_case_7 / Stage4D ex-16",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "cb-07 CSCI 430/530 Project 3"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-008",
+      "name": "Personal/Family Marketing Support umbrella",
+      "trigger": "Paid ad campaign, marketing knowledge-base material, trending-animation request, or related marketing material with sufficient evidence, in a personal/family (non-client) context.",
+      "decision": "Cluster under ONE umbrella 'Personal/Family Marketing Support' (recurring_responsibility or initiative per evidence), operating_mode on_demand, ownership personal_or_family, current state available-when-needed. Paid ad campaign = completed child phase (status completed, historical_confirmed, reactivation_possible true). Preserve separate phases, artifacts, tasks, timestamps. Do NOT pull professional/client marketing work into this umbrella.",
+      "origin": "confirmed_human_decision_stage4e / benchmark_case_8 / Stage4D ex-18,ex-23,ex-24",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "cb-08 Personal/Family Marketing Support umbrella"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-009",
+      "name": "Accenture onboarding completed; activities stay separate under one employer context",
+      "trigger": "Accenture onboarding, interview prep, internship documentation, assigned project work, or other Accenture activity.",
+      "decision": "Onboarding = completed, historical_confirmed (user has moved into assigned project work). Keep onboarding, Client Radar, interview prep, internship docs, networking, and career planning as SEPARATE activities connected through ONE Accenture employer/context entity. Do NOT collapse into one broad Accenture project.",
+      "origin": "confirmed_human_decision_stage4e / benchmark_case_9 / Stage4D ex-22 / employer-context rule",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "cb-09 Accenture onboarding"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-010",
+      "name": "AVATAR/BCI lab is completed historical research",
+      "trigger": "SCSU AVATAR/BCI lab work (NAO robot, water project, 3C-SCSU GitHub).",
+      "decision": "Type research_effort, status completed, temporal_status historical_confirmed. Do NOT delete the historical entity. Pasted GitHub issue listings are tool/log content, not direct user evidence of current involvement.",
+      "origin": "benchmark_case_10 / 3R-P stage3rp:resolution:avatar_bci / mc-10",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "cb-10 AVATAR/BCI lab"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-011",
+      "name": "Multi-session work clustering",
+      "trigger": "Two or more sessions that could be the same effort.",
+      "decision": "Merge/cluster ONLY when supported by same named project/client/workstream AND compatible dates AND matching files/artifacts/repos/people/outcomes OR continuing tasks/deliverables/phases. Preserve phases and timestamps. Do NOT merge on shared broad topic alone. Default cluster outcome under uncertainty: shared_context_only or possible_same_entity (not strong_merge).",
+      "origin": "Stage4D scaling note (phase-merge of multi-session engagements)",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "bl-36 AI Aggregator clustering",
+        "multi-session client engagements"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-012",
+      "name": "Employer context separation",
+      "trigger": "Distinct employer-related activities (application/interview, onboarding, client engagement, assigned internal project, internship documentation, networking, performance/career planning).",
+      "decision": "Use ONE employer context entity; keep the activities separate unless evidence proves they are the same activity. Do NOT create one broad employer project.",
+      "origin": "generalized from hr-009 / Stage4D",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "Accenture employer-context separation"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-013",
+      "name": "Group assignment ownership",
+      "trigger": "Assignment with confirmed user participation and other named people.",
+      "decision": "ownership group_owned; user role participant/contributor; other named people = group_member/contributor/document author. Do NOT infer sole authorship.",
+      "origin": "generalized from hr-007",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "group-owned academic assignments"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-014",
+      "name": "Document source-vs-artifact default",
+      "trigger": "A document/attachment whose authorship or creation is uncertain.",
+      "decision": "Default to source. Use artifact ONLY when evidence supports that the user or their group produced it as an output. Do NOT create a conversation-document link on conceptual similarity alone.",
+      "origin": "Stage4D ex-23 / professor GDD-SDD / AI Engineer Roadmap doc",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "professor-provided GDD/SDD",
+        "AI Engineer Roadmap document"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-015",
+      "name": "Profile-level preference promotion",
+      "trigger": "A user preference (voice/tone, workflow, etc.).",
+      "decision": "Promote to profile level ONLY when it appears across >=2 distinct contexts OR is explicitly stated as a general preference. Preserve scope, evidence dates, contradictions, confidence, status-current confidence. Voice/tone is ONE profile-level preference.",
+      "origin": "3R-P voice_tone_preference / Stage4D ex-17",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "voice/tone preference across contexts"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-016",
+      "name": "Empty / near-empty conversation handling",
+      "trigger": "No meaningful extractable content.",
+      "decision": "Create a processed case record, emit NO candidate, record exactly one reason: empty | metadata_only | insufficient_evidence | unsupported_content. Do NOT substitute a new case after selection lock. Do NOT send to human review unless emptiness indicates missing/corrupted data.",
+      "origin": "Stage4D ex-07,ex-15 (recorded empty, not substituted)",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "empty cases bl-01..06"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-017",
+      "name": "Missing-source non-inference",
+      "trigger": "A referenced source/attachment binary is absent.",
+      "decision": "Do NOT reconstruct. Create a missing-source impact with do_not_infer=true, related entity/case, missing source type, conclusions that cannot be made, and whether a later upload could resolve it.",
+      "origin": "Stage3R/4D missing_source policy",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "missing source references bl-11/13/28/33/37"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-018",
+      "name": "Attachment provenance discipline",
+      "trigger": "Any attachment.",
+      "decision": "Never invent filenames; preserve null filenames; use content hashes to identify repeated content; retain each occurrence for provenance; do NOT multiply evidence weight for duplicate occurrences; do NOT claim visual inspection when binaries are unavailable; extracted text MAY be used as evidence.",
+      "origin": "3R-P attachment overlay / Stage4D Fleet Command 92 occ -> 88 hashes",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "duplicate attachment occurrences in Fleet Command and Client Radar"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-019",
+      "name": "Assistant-generated proposal is not a user decision",
+      "trigger": "An assistant suggestion/draft/recommendation.",
+      "decision": "Type as proposed_decision/assistant_suggestion/assistant_draft. It becomes a user decision ONLY with user-origin evidence of explicit acceptance, modification, rejection, or clear dependent continuation. Silence is NOT acceptance.",
+      "origin": "3R-P exampro_skip / Stage4D endorsement policy",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "ExamPro skip proposal in AI learning roadmap"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-020",
+      "name": "One-off interaction is not a project",
+      "trigger": "A one-time question, tutoring request, scheduling request, formatting request, or isolated draft request.",
+      "decision": "Use the most accurate non-project or work-entity classification (generic_question, one_off_request, task, assistant_draft, etc.). Do NOT promote to project.",
+      "origin": "Stage4D ex-08,ex-09,ex-11,ex-12",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "isolated tutoring, scheduling, and formatting requests"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-021",
+      "name": "Current status discipline (no inference from recency)",
+      "trigger": "Any status assignment.",
+      "decision": "Do NOT infer current status from recency alone. current_confirmed only with direct confirmation or authoritative resolution; current_inferred only with continuing actions and no conflicting evidence; historical_confirmed when completion confirmed; historical_status_unknown when historical but completion unclear; unknown when insufficient. Report status_current_confidence separately from overall confidence.",
+      "origin": "Stage4D status policy",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "status assignments across all Stage 4E cases"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-022",
+      "name": "On-demand recurring responsibility representation",
+      "trigger": "A recurring responsibility executed on demand (e.g. marketing support).",
+      "decision": "availability=on_demand; current execution active|inactive; record last completed phase; reactivation_possible=true. Represent as available-when-needed rather than continuously active.",
+      "origin": "generalized from hr-008",
+      "auto_apply": true,
+      "original_source_stage": "4E",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "ad_hoc_merge_inference"
+        ]
+      },
+      "examples": [
+        "Personal/Family Marketing Support as on-demand responsibility"
+      ],
+      "conflicts": [
+        "Do not apply when direct evidence conflicts with the rule.",
+        "Escalate only when applying the rule would materially change ownership, identity, status, or source-vs-artifact under genuine uncertainty."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "codified",
+          "status": "authoritative_in_stage4e",
+          "note": "Rule validated during 50-case calibration batch."
+        },
+        {
+          "stage": "5A",
+          "change_type": "framework_freeze",
+          "status": "frozen_authoritative",
+          "note": "Carried forward unchanged into the frozen framework."
+        }
+      ]
+    },
+    {
+      "id": "hr-008a",
+      "name": "Project-label collision does not imply umbrella membership",
+      "trigger": "Files, conversations, or documents share a folder or project label but differ in ownership, client, organization, or deliverable context.",
+      "decision": "Do not merge or umbrella-classify based on shared labels alone. Actual ownership, client, organization, deliverable, people, workstream, and frozen resolutions take priority. Default to shared_context_only when evidence is insufficient. Professional or client marketing must not be placed under Personal/Family Marketing Support without supporting evidence.",
+      "origin": "proposed in Stage 4E rule evaluation from bl-40; promoted by direct human instruction in Stage 5A",
+      "auto_apply": true,
+      "original_source_stage": "4E_proposed / 5A_authoritative",
+      "rule_status": "frozen_authoritative",
+      "rule_precedence": {
+        "priority_class": "authoritative_recurring_rule",
+        "applies_after": [
+          "direct_human_resolution",
+          "frozen_confirmed_resolution"
+        ],
+        "applies_before": [
+          "new_human_review_question",
+          "folder_name_based_merge"
+        ]
+      },
+      "examples": [
+        "bl-40 AABS Conference Marketing Campaign / AD Campigns label collision"
+      ],
+      "conflicts": [
+        "Do not override explicit evidence that two records are the same client deliverable or project.",
+        "Do not override a confirmed resolution that already establishes created_for or part_of."
+      ],
+      "change_history": [
+        {
+          "stage": "4E",
+          "change_type": "proposed_rule",
+          "status": "proposed_not_authoritative",
+          "note": "Observed as a reusable pattern in bl-40."
+        },
+        {
+          "stage": "5A",
+          "change_type": "promoted_to_authoritative",
+          "status": "frozen_authoritative",
+          "note": "Promoted by direct human instruction and added to the frozen rule set."
+        }
+      ]
+    }
+  ],
+  "change_history": [
+    {
+      "stage": "5A",
+      "change_type": "rule_set_frozen",
+      "note": "All 22 Stage 4E rules frozen for production extraction."
+    },
+    {
+      "stage": "5A",
+      "change_type": "rule_added",
+      "rule_id": "hr-008a",
+      "note": "Promoted from proposed Stage 4E rule to authoritative frozen rule."
+    }
+  ],
+  "stopping_policy": {
+    "do_not_recommend_new_pilot_for": [
+      "isolated_case_specific_exceptions"
+    ],
+    "recommend_new_pilot_only_if_systemic_failure_across_at_least_3_cases": true,
+    "systemic_failure_types": [
+      "same_false_project_pattern_recurring",
+      "same_provenance_error_recurring",
+      "same_ownership_error_recurring",
+      "entire_content_type_mishandled",
+      "important_evidence_systematically_lost",
+      "human_review_volume_high_because_rules_not_generalizing"
+    ]
+  }
+}

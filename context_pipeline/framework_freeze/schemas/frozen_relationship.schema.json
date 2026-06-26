@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Frozen framework relationship",
+  "type": "object",
+  "required": [
+    "relationship_id",
+    "source_candidate_id",
+    "target_candidate_id",
+    "relationship_type",
+    "confidence",
+    "evidence_segment_ids",
+    "explicit_or_inferred",
+    "rationale"
+  ],
+  "properties": {
+    "relationship_id": {
+      "type": "string"
+    },
+    "source_candidate_id": {
+      "type": "string"
+    },
+    "target_candidate_id": {
+      "type": "string"
+    },
+    "relationship_type": {
+      "type": "string",
+      "enum": [
+        "part_of",
+        "supports",
+        "depends_on",
+        "produces",
+        "uses",
+        "informed_by",
+        "supersedes",
+        "contradicts",
+        "evolved_into",
+        "created_for",
+        "blocked_by",
+        "possible_same_project",
+        "associated_with"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "evidence_segment_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "explicit_or_inferred": {
+      "type": "string",
+      "enum": [
+        "explicit",
+        "inferred",
+        "mixed"
+      ]
+    },
+    "cluster_outcome": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "strong_merge_candidate",
+        "possible_same_entity",
+        "parent_child_candidate",
+        "phase_relationship",
+        "shared_context_only",
+        "insufficient_evidence",
+        null
+      ]
+    },
+    "applied_decision_rule_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "project_status": {
+    "AI learning roadmap": "active",
+    "Fleet Command": "unresolved",
+    "Tsotsi film project": "unresolved"
+  },
+  "resolutions": [
+    {
+      "confidence": "high",
+      "decision": "one-off transcript-formatting request, not a project",
+      "evidence_basis": "human review resolution",
+      "resolution_id": "hr-001",
+      "semantic_stage_applicability": "later extraction must not classify as project",
+      "subject": "conversation 14f3c888-fb33-40af-9039-e8cf89a97bb5",
+      "unresolved_qualifiers": []
+    },
+    {
+      "confidence": "high",
+      "decision": "academic assignment",
+      "evidence_basis": "human review resolution",
+      "resolution_id": "hr-002",
+      "semantic_stage_applicability": "classify as coursework/assignment rather than project by default",
+      "subject": "conversation 2838a734-4192-4c0c-93b5-d72976f21da8",
+      "unresolved_qualifiers": []
+    },
+    {
+      "confidence": "high",
+      "decision": "contains multiple distinct activities, not one project",
+      "evidence_basis": "human review resolution",
+      "resolution_id": "hr-003",
+      "semantic_stage_applicability": "do not merge activities automatically",
+      "subject": "conversation 94f53cfc-057a-4aa6-a827-4ec3bb332f9a",
+      "unresolved_qualifiers": []
+    },
+    {
+      "confidence": "high",
+      "decision": "belong to the same user profile",
+      "evidence_basis": "human review resolution",
+      "resolution_id": "hr-004",
+      "semantic_stage_applicability": "profile continuity allowed",
+      "subject": "2024 and 2026 conversations",
+      "unresolved_qualifiers": []
+    },
+    {
+      "confidence": "high",
+      "decision": "assistant-origin proposed direction, not confirmed decision",
+      "evidence_basis": "human review resolution",
+      "resolution_id": "hr-005",
+      "semantic_stage_applicability": "requires user endorsement before decision",
+      "subject": "ExamPro skip recommendation",
+      "unresolved_qualifiers": []
+    },
+    {
+      "confidence": "high",
+      "decision": "confirmed Technology Summer Analyst / Tech Architecture Analyst, starting June 8, 2026",
+      "evidence_basis": "human review resolution",
+      "resolution_id": "hr-006",
+      "semantic_stage_applicability": "may be used as confirmed profile fact with timestamp",
+      "subject": "Accenture affiliation",
+      "unresolved_qualifiers": []
+    },
+    {
+      "confidence": "high",
+      "decision": "active",
+      "evidence_basis": "human review resolution",
+      "resolution_id": "hr-007",
+      "semantic_stage_applicability": "project status seed for later semantic extraction",
+      "subject": "AI learning roadmap",
+      "unresolved_qualifiers": []
+    },
+    {
+      "confidence": "medium",
+      "decision": "completion status unresolved",
+      "evidence_basis": "human review resolution",
+      "resolution_id": "hr-008",
+      "semantic_stage_applicability": "do not infer completion",
+      "subject": "Fleet Command",
+      "unresolved_qualifiers": [
+        "status unresolved"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "decision": "completion status unresolved",
+      "evidence_basis": "human review resolution",
+      "resolution_id": "hr-009",
+      "semantic_stage_applicability": "do not infer completion",
+      "subject": "Tsotsi film project",
+      "unresolved_qualifiers": [
+        "status unresolved"
+      ]
+    },
+    {
+      "confidence": "high",
+      "decision": "source/reference documents, not user-authored artifacts",
+      "evidence_basis": "human review resolution",
+      "resolution_id": "hr-010",
+      "semantic_stage_applicability": "document provenance must remain source/reference",
+      "subject": "professor GDD/SDD documents",
+      "unresolved_qualifiers": []
+    }
+  ]
+}

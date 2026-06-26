@@ -1,0 +1,81 @@
+{
+  "stage": "4C_merged_schema_pilot",
+  "evidence_boundary": "stage_3R",
+  "structural_validation_status": "pass",
+  "semantic_quality_status": "conditional_pass",
+  "semantic_quality_status_rationale": "Clean classification and provenance discipline (no false projects, descriptive titles, correct source-vs-artifact, occurrence-vs-unique attachment accounting, missing-source impacts with do_not_infer, calibrated confidence, all 9 benchmarks pass). Conditional because five material structural decisions (mc-08/09 merge, mc-05/11 parent-child, mc-10 lab currency, mc-07 doc link, mc-08 authorship) require human confirmation before the data is promoted.",
+  "validation_checks": [
+    {"name": "all_jsonl_parses", "passed": true},
+    {"name": "all_ids_unique", "passed": true},
+    {"name": "all_evidence_references_resolve_to_stage3R", "passed": true},
+    {"name": "all_12_cases_processed", "passed": true},
+    {"name": "stage_3R_is_input_boundary", "passed": true},
+    {"name": "every_project_passes_strict_project_test", "passed": true},
+    {"name": "pasted_assistant_not_direct_user_evidence", "passed": true},
+    {"name": "tool_log_output_not_direct_user_evidence", "passed": true},
+    {"name": "explicit_endorsement_has_user_evidence", "passed": true},
+    {"name": "repeated_attachments_do_not_inflate_evidence", "passed": true},
+    {"name": "unavailable_binaries_not_represented_as_inspected", "passed": true},
+    {"name": "missing_sources_not_reconstructed", "passed": true},
+    {"name": "all_relationships_have_evidence", "passed": true},
+    {"name": "canonical_titles_descriptive", "passed": true},
+    {"name": "temporal_statuses_justified", "passed": true},
+    {"name": "benchmark_expectations_evaluated", "passed": true},
+    {"name": "prior_files_unchanged", "passed": true},
+    {"name": "semantic_review_separate_from_structural_validation", "passed": true}
+  ],
+  "benchmark_results": [
+    {"benchmark": "mc-01 transcript not a project", "result": "pass"},
+    {"benchmark": "mc-02 pesticide is assignment", "result": "pass"},
+    {"benchmark": "mc-03 mixed 2024 not one broad project", "result": "pass"},
+    {"benchmark": "mc-04 AI roadmap active project", "result": "pass"},
+    {"benchmark": "mc-05 Fleet Command real entity, status unresolved", "result": "pass"},
+    {"benchmark": "mc-06 Tsotsi not marked current", "result": "pass"},
+    {"benchmark": "generic tool ops not tools/platform", "result": "pass"},
+    {"benchmark": "pasted assistant output not direct user evidence", "result": "pass"},
+    {"benchmark": "project doc not linked to conversation without verified evidence", "result": "pass"}
+  ],
+  "benchmarks_passed": "9/9",
+  "counts": {
+    "selected_cases": 12,
+    "candidate_entities": 48,
+    "by_layer": {"work_entity": 13, "project_knowledge": 23, "context_entity": 10, "non_project_interaction": 2},
+    "work_entities": 13,
+    "projects": 2,
+    "work_entity_by_type": {"project": 2, "assignment": 3, "job_application": 2, "client_engagement": 2, "initiative": 1, "exam_preparation": 1, "research_effort": 1, "subproject": 1},
+    "non_project_interaction_candidates": 2,
+    "excluded_interactions": 5,
+    "confidence": {"high": 38, "medium": 10, "low": 0},
+    "endorsement": {"not_applicable": 28, "implicit_continuation": 10, "modification": 6, "explicit_acceptance": 4},
+    "relationships": 39,
+    "relationship_types": {"part_of": 12, "associated_with": 12, "uses": 4, "created_for": 4, "informed_by": 3, "supports": 2, "produces": 2},
+    "assistant_origin_candidates": 6,
+    "candidates_requiring_human_review": 10,
+    "evidence_coverage": "48/48",
+    "clusters": 6,
+    "possible_duplicates": 5,
+    "missing_source_impacts": 9
+  },
+  "attachment_dedup": {
+    "fleet_command_mc05": {
+      "occurrences": 92,
+      "unique_filenames_populated": 0,
+      "unique_content_hashes": 88,
+      "binary_present": 0,
+      "extracted_text_available": 92,
+      "gdd_sdd_binary_directly_present": false,
+      "evidence_contribution_after_dedup": "Up to 88 unique text-extracted attachments contribute; 92 occurrences do not multiply evidence weight; image/screenshot binaries are unavailable and were not inspected."
+    }
+  },
+  "missing_source_impacts_summary": {
+    "impact_records": 9,
+    "missing_refs_covered": 143,
+    "do_not_infer_all": true,
+    "findings_reconstructed": false
+  },
+  "checksum_status": {
+    "files_tracked": 130,
+    "changed_existing_files": [],
+    "any_existing_file_changed": false
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "assistant_origin": {
+      "type": "boolean"
+    },
+    "candidate_id": {
+      "type": "string"
+    },
+    "candidate_type": {
+      "enum": [
+        "project",
+        "subproject",
+        "standalone_idea",
+        "goal",
+        "motivation",
+        "research_question",
+        "source",
+        "research_finding",
+        "decision",
+        "proposed_decision",
+        "constraint",
+        "requirement",
+        "preference",
+        "task",
+        "open_question",
+        "output",
+        "file_or_artifact",
+        "prompt",
+        "workflow",
+        "milestone",
+        "direction_change",
+        "abandoned_thread",
+        "unresolved_reference",
+        "person",
+        "organization",
+        "tool_or_platform"
+      ]
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "contradictions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "description": {
+      "type": "string"
+    },
+    "evidence_message_ids": {
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "type": "array"
+    },
+    "evidence_source_unit_ids": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "extraction_notes": {
+      "type": "string"
+    },
+    "first_observed_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_observed_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "packet_id": {
+      "type": "string"
+    },
+    "related_candidate_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "requires_review": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "idea",
+        "exploring",
+        "planned",
+        "active",
+        "paused",
+        "drifted",
+        "blocked",
+        "completed",
+        "abandoned",
+        "merged",
+        "unknown"
+      ]
+    },
+    "supporting_provenance": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "temporal_status": {
+      "enum": [
+        "current_at_observation",
+        "historical",
+        "superseded",
+        "unknown"
+      ]
+    },
+    "title": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "uncertainties": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "user_endorsement": {
+      "enum": [
+        "explicit_acceptance",
+        "explicit_rejection",
+        "modification",
+        "implicit_continuation",
+        "no_endorsement",
+        "unclear"
+      ]
+    }
+  },
+  "required": [
+    "candidate_id",
+    "packet_id",
+    "candidate_type",
+    "title",
+    "description",
+    "status",
+    "confidence",
+    "temporal_status",
+    "evidence_source_unit_ids",
+    "evidence_message_ids",
+    "supporting_provenance",
+    "user_endorsement",
+    "assistant_origin",
+    "first_observed_at",
+    "last_observed_at",
+    "related_candidate_ids",
+    "contradictions",
+    "uncertainties",
+    "requires_review",
+    "extraction_notes"
+  ],
+  "title": "Stage 4A Candidate Knowledge",
+  "type": "object"
+}

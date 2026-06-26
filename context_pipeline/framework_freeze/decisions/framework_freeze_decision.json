@@ -1,0 +1,12 @@
+{
+  "stage": "5A",
+  "decision": "framework_frozen",
+  "freeze_scope_confirmed": true,
+  "frozen_rule_count": 23,
+  "framework_freeze_status": "approved",
+  "production_readiness": "conditional_pass",
+  "next_stage": "Stage 5B staged extraction under frozen framework",
+  "do_not_run_another_pilot": true,
+  "do_not_begin_extraction_in_stage5a": true,
+  "rationale": "All freeze criteria met: 5 real projects with no false-project pattern, zero provenance violations, every prior recurring question now auto-resolved by a codified rule, genuinely-unresolved review rate 2.0% (<10%), and empty cases handled with no forced candidates. Isolated exceptions (Kibur RAG identity, career-mentor merge, webview ownership) are case-specific and do not block freeze."
+}

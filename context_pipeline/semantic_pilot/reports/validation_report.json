@@ -1,0 +1,94 @@
+{
+  "blocking_issues": [],
+  "checks": [
+    {
+      "details": [],
+      "name": "every_selected_packet_exists",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "every_selected_source_unit_reference_resolves",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "every_candidate_conforms_to_schema",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "every_candidate_evidence_reference_resolves",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "no_assistant_only_item_marked_confirmed_user_decision",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "no_tool_output_labeled_verified_user_fact",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "every_relationship_has_valid_candidates_and_evidence",
+      "passed": true
+    },
+    {
+      "details": 0,
+      "name": "thinking_content_absent",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "redacted_values_remain_redacted",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "stage3_corpus_files_unchanged",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "deterministic_identifiers_present",
+      "passed": true
+    }
+  ],
+  "checksum_status": {
+    "passed": true,
+    "stage3_corpus_changed": []
+  },
+  "counts": {
+    "assistant_origin_candidates": 31,
+    "candidate_counts_by_type": {
+      "constraint": 4,
+      "file_or_artifact": 5,
+      "open_question": 2,
+      "output": 3,
+      "project": 10,
+      "proposed_decision": 8,
+      "standalone_idea": 9,
+      "tool_or_platform": 13,
+      "workflow": 8
+    },
+    "candidates": 62,
+    "endorsement_distribution": {
+      "explicit_acceptance": 25,
+      "no_endorsement": 31,
+      "unclear": 6
+    },
+    "low_confidence_candidates": 0,
+    "project_subproject_candidates": 10,
+    "quality_review_issues": 0,
+    "relationship_counts_by_type": {
+      "related_to": 14
+    },
+    "relationships": 14,
+    "requires_review_candidates": 37,
+    "selected_packets": 24
+  },
+  "status": "pass"
+}

@@ -1,0 +1,64 @@
+{
+  "stage": "4E",
+  "checks": {
+    "1_all_jsonl_parses": true,
+    "2_ids_unique": true,
+    "3_references_resolve": true,
+    "4_exactly_50_cases": true,
+    "5_selection_locked_before_semantic_inspection": true,
+    "6_five_batches_completed": true,
+    "7_stage3rp_overlay_applied": true,
+    "8_benchmark_resolutions_honored": true,
+    "9_group_assignment_group_owned": true,
+    "10_marketing_items_one_umbrella": true,
+    "11_client_radar_active_and_separate": true,
+    "12_onboarding_completed": true,
+    "13_avatar_historical_completed": true,
+    "14_pasted_content_not_direct_user_evidence": true,
+    "15_null_filenames_remain_null": true,
+    "16_unavailable_binaries_not_inspected": true,
+    "17_duplicate_attachments_do_not_inflate": true,
+    "18_relationships_have_evidence": true,
+    "19_temporal_statuses_have_rationale": true,
+    "20_prior_files_unchanged": true,
+    "21_existing_rules_auto_applied": true,
+    "22_rule_covered_cases_not_sent_to_human_review": true,
+    "23_every_review_item_classified": true,
+    "24_no_pilot_without_systemic_failure_across_3_cases": true
+  },
+  "all_checks_pass": true,
+  "status_blocks": {
+    "structural_validation_status": "pass",
+    "provenance_quality_status": "pass",
+    "semantic_quality_status": "pass",
+    "calibration_quality_status": "pass",
+    "framework_freeze_status": "recommended",
+    "scaling_readiness_status": "conditional_pass"
+  },
+  "counts": {
+    "cases": 50,
+    "candidates": 63,
+    "relationships": 22,
+    "strict_projects": 5,
+    "false_projects": 0,
+    "empty_cases": 7,
+    "missing_source_impacts": 13,
+    "provenance_violations": 0
+  },
+  "human_review": {
+    "before_rules": 0.32,
+    "after_rules": 0.1,
+    "questions_resolved_by_rules": 11,
+    "classification": {
+      "case_specific_exception": 2,
+      "genuinely_unresolved": 1,
+      "covered_by_existing_rule": 9,
+      "new_reusable_rule": 1
+    }
+  },
+  "checksums": {
+    "prior_files_tracked": 209,
+    "changed": 0,
+    "identical": 209
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "stage": "5A",
+  "status": "authoritative",
+  "applied_on": "2026-06-25",
+  "resolutions": [
+    {
+      "resolution_id": "stage5a:resolution:personal_career_mentor",
+      "canonical_entity_id": "stage5a:entity:personal_career_mentor",
+      "canonical_title": "Personal Career Mentor",
+      "work_entity_type": "initiative",
+      "parent_area": "Career Development",
+      "ownership_type": "user_owned",
+      "status": "active",
+      "temporal_status": "current_confirmed",
+      "operating_mode": "ongoing",
+      "scope": [
+        "career path planning",
+        "learning roadmaps",
+        "job-search strategy",
+        "resume/portfolio/LinkedIn development",
+        "internship and employer research",
+        "Accenture career preparation",
+        "NSBE and networking preparation",
+        "opportunity and startup research",
+        "immigration-related career research",
+        "career tradeoff and decision analysis"
+      ],
+      "keep_separate_from": [
+        "Multi-LLM Context Hub",
+        "AI Aggregator"
+      ],
+      "keep_individual_efforts_separate": [
+        "specific job applications",
+        "specific resume revisions",
+        "NSBE preparation",
+        "AI learning roadmap",
+        "Accenture interview preparation",
+        "employer-specific work"
+      ],
+      "relationships": [
+        {
+          "target": "Multi-LLM Context Hub",
+          "allowed_relationships": [
+            "supports",
+            "used_by"
+          ]
+        },
+        {
+          "target": "AI Aggregator",
+          "allowed_relationships": [
+            "associated_with"
+          ]
+        }
+      ],
+      "source": "direct_human_resolution_stage5a",
+      "confidence": "high"
+    },
+    {
+      "resolution_id": "stage5a:resolution:kibur_rag_coop_build",
+      "canonical_entity_id": "stage5a:entity:kibur_rag_coop_build",
+      "canonical_title": "Kibur RAG/CO-OP Build",
+      "work_entity_type": "client_engagement",
+      "parent_area": "Freelancing / Client Work",
+      "client_or_organization": "Kibur",
+      "ownership_type": "client_owned_user_responsible",
+      "user_role": "builder / freelancer / technical contributor",
+      "status": "historical_status_unknown",
+      "status_rule": "preserve evidence-supported status; use historical_status_unknown when unclear",
+      "directives": [
+        "not_coursework",
+        "not_personal_project",
+        "not_same_project_as_aabs_conference_marketing"
+      ],
+      "source": "direct_human_resolution_stage5a",
+      "confidence": "high"
+    },
+    {
+      "resolution_id": "stage5a:resolution:aabs_conference_marketing",
+      "canonical_entity_id": "stage5a:entity:aabs_conference_marketing_campaign",
+      "canonical_title": "AABS Conference Marketing Campaign",
+      "work_entity_type": "initiative_or_client_engagement_or_project_per_evidence",
+      "parent_area": "Marketing",
+      "context": "professional_or_organizational_marketing",
+      "keep_separate_from": [
+        "Kibur RAG/CO-OP Build",
+        "Personal/Family Marketing Support"
+      ],
+      "relationship_to_kibur": "associated_with unless evidence proves created_for",
+      "source": "direct_human_resolution_stage5a",
+      "confidence": "high"
+    },
+    {
+      "resolution_id": "stage5a:resolution:vscode_webview_codebase",
+      "canonical_entity_id": "stage5a:entity:vscode_webview_codebase",
+      "canonical_title_policy": "use the most descriptive evidence-supported title",
+      "work_entity_type": "project",
+      "ownership_type": "user_owned",
+      "status": "unknown",
+      "temporal_status": "unknown",
+      "confidence": "medium",
+      "note": "Ownership is provisionally confirmed by direct human resolution.",
+      "source": "direct_human_resolution_stage5a"
+    },
+    {
+      "resolution_id": "stage5a:resolution:hr008a_authoritative",
+      "canonical_rule_id": "hr-008a",
+      "directive": "Project-label collision does not imply umbrella membership is authoritative and auto-applied.",
+      "source": "direct_human_resolution_stage5a"
+    }
+  ],
+  "preserved_authoritative_stage4e_results": [
+    "Client Radar remains active and separate from Accenture onboarding and interview preparation.",
+    "Accenture onboarding remains completed / historical_confirmed.",
+    "AVATAR/BCI lab remains completed / historical_confirmed.",
+    "CSCI 430/530 Project 3 remains a group-owned assignment.",
+    "Personal/Family Marketing Support remains a separate personal/family umbrella and does not absorb professional/client marketing."
+  ],
+  "unresolved_stage4e_questions_remaining": []
+}

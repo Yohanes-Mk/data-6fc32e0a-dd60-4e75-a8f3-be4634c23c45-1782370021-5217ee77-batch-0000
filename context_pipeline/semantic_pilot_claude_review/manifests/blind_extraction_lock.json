@@ -1,0 +1,11 @@
+{
+  "phase": "1_blind_extraction_lock",
+  "note": "Checksums of blind extraction files recorded at end of Phase 1, before any Codex repair file was read.",
+  "files": {
+    "candidate_entities.jsonl": "13ce3ca31f75cbf4a983b017e7d7eda1f99e0e74a9ad0035b3f379911b27d83b",
+    "candidate_relationships.jsonl": "f5e3d18d10d79f202fbbf83964267be7ae8a9bc773311a033665b33beec32058",
+    "conversation_extractions.jsonl": "af621a699655f14a3264db04f684184f90ca29d9d927ebf5f742b0fbe5e6d182",
+    "excluded_content.jsonl": "d8acfc63bc73564843594cca7e0f6bc01a93f6a7a18da674cf76c9e4a6d9d5f4",
+    "unresolved_items.jsonl": "5575bd3dde7efc8928581ed866b030e2502dd249b1e5f72f7cc742b510ad25b9"
+  }
+}

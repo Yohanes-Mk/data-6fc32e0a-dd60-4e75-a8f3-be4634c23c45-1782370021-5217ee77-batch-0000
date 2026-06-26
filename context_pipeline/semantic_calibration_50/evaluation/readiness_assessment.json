@@ -1,0 +1,46 @@
+{
+  "stage": "4E_calibration_50",
+  "metrics_snapshot": {
+    "cases": 50,
+    "candidates": 63,
+    "strict_projects": 5,
+    "false_projects": 0,
+    "provenance_violations": 0,
+    "human_review_rate_before_rules": 0.32,
+    "human_review_rate_after_rules": 0.1,
+    "genuinely_unresolved": 1,
+    "genuinely_unresolved_rate": 0.02,
+    "missing_source_impacts": 13,
+    "empty_cases": 7
+  },
+  "framework_freeze": {
+    "status": "recommended",
+    "criteria": {
+      "no_recurring_false_project_pattern": true,
+      "provenance_violations_effectively_zero": true,
+      "prior_question_types_auto_resolved_by_rules": true,
+      "genuinely_unresolved_rate_below_10pct": true,
+      "no_ambiguity_pattern_repeats_across_3plus_cases_without_a_rule": true,
+      "titles_ownership_status_relationships_useful": true,
+      "empty_cases_handled_without_forced_candidates": true
+    },
+    "reason": "All freeze criteria met: 5 real projects with no false-project pattern, zero provenance violations, every prior recurring question now auto-resolved by a codified rule, genuinely-unresolved review rate 2.0% (<10%), and empty cases handled with no forced candidates. Isolated exceptions (Kibur RAG identity, career-mentor merge, webview ownership) are case-specific and do not block freeze."
+  },
+  "ready_for_another_pilot": {
+    "status": "no",
+    "reason": "No systemic failure recurred across >=3 cases. Remaining items are isolated case-specific exceptions, which by policy must not trigger another pilot."
+  },
+  "ready_for_50_100_case_subscription_batch": {
+    "status": "yes",
+    "reason": "Recurring rules generalized across the 40 blind cases with low residual human review; the frozen rule set is ready to scale to 50-100 cases."
+  },
+  "ready_for_full_corpus_subscription_extraction": {
+    "status": "conditional",
+    "reason": "Ready for staged scale-up under the frozen schema, BUT two upstream data issues persist from 4D and should be monitored: (1) some 'user_authored' segments still embed pasted assistant/tool content (mixed-origin segmentation), and (2) attachment filenames remain largely null in 3R-P so cross-conversation attachment identity relies on hashes. Neither blocks correctness here (handled by hr-018), but both add review load at full scale."
+  },
+  "ready_for_api_automation": {
+    "status": "conditional",
+    "reason": "Now that the schema and 22 rules are frozen, automation can inherit fixed conventions. Gate behind one 50-100 case subscription batch confirming the genuinely-unresolved rate stays <10% at larger N before enabling batch-API automation."
+  },
+  "scaling_readiness_status": "conditional_pass"
+}

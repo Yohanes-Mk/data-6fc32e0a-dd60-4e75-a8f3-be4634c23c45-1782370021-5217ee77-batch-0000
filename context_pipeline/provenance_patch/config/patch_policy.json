@@ -1,0 +1,35 @@
+{
+  "stage": "3R-P",
+  "name": "Provenance Metadata Patch and Human-Resolution Update",
+  "purpose": "Add a compatibility overlay that preserves attachment filename metadata and records confirmed human resolutions without modifying earlier pipeline outputs.",
+  "write_scope": "context_pipeline/provenance_patch/",
+  "immutable_inputs": [
+    "raw exports",
+    "context_pipeline/normalized/",
+    "context_pipeline/extraction_staging/",
+    "context_pipeline/extraction_staging_repair/",
+    "context_pipeline/semantic_pilot/",
+    "context_pipeline/semantic_pilot_repair/",
+    "context_pipeline/semantic_pilot_claude_review/",
+    "context_pipeline/semantic_pilot_merged/"
+  ],
+  "rules": {
+    "do_not_rerun_semantic_extraction": true,
+    "do_not_modify_prior_stage_outputs": true,
+    "do_not_invent_filenames": true,
+    "preserve_null_when_upstream_filename_absent": true,
+    "retain_stage3r_evidence_ids": true,
+    "record_confirmed_human_resolutions": true,
+    "represent_client_radar_audit_as_co_authored": true,
+    "represent_avatar_bci_as_historical_completed": true
+  },
+  "target_conversations": {
+    "fleet_command": "claude:conversations:conversation:e2fc5641-6bd8-41c3-80d2-1e1e71b1e491"
+  },
+  "target_candidates": {
+    "client_radar_accessibility": "mc:cand:m08_client_radar_a11y",
+    "client_radar_repository": "mc:cand:m09_client_radar_repo",
+    "avatar_bci_lab": "mc:cand:m10_avatar_lab"
+  },
+  "stage4c_compatibility_input": "context_pipeline/provenance_patch/corpus/patched_semantic_evidence_inputs.jsonl"
+}

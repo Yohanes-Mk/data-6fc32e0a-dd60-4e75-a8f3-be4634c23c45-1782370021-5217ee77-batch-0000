@@ -1,0 +1,16 @@
+{"benchmark": "cb-01 transcript not a project", "result": "pass", "detail": "['one_off_request']"}
+{"benchmark": "cb-02 pesticide is assignment", "result": "pass", "detail": "['assignment']"}
+{"benchmark": "cb-03 mixed not one broad project", "result": "pass", "detail": "['initiative', 'person']"}
+{"benchmark": "cb-04 AI roadmap active project", "result": "pass", "detail": "[('project', 'active'), ('proposed_decision', 'exploring')]"}
+{"benchmark": "cb-04 ExamPro skip is proposed_decision", "result": "pass", "detail": "['project', 'proposed_decision']"}
+{"benchmark": "cb-05 Fleet Command project, completion unresolved", "result": "pass", "detail": "[('project', 'low'), ('source', 'medium')]"}
+{"benchmark": "cb-05 GDD/SDD is source", "result": "pass", "detail": "['project', 'source']"}
+{"benchmark": "cb-06 Client Radar active client_engagement, co-authored", "result": "pass", "detail": "[('active', 'current_confirmed', True), ('active', 'current_confirmed', True)]"}
+{"benchmark": "cb-06 Client Radar separate from onboarding", "result": "pass", "detail": "employer entity present; onboarding separate+completed"}
+{"benchmark": "cb-07 CSCI Project 3 group_owned assignment", "result": "pass", "detail": "[('assignment', 'group_owned')]"}
+{"benchmark": "cb-08 marketing umbrella (campaign completed, items together)", "result": "pass", "detail": "[('initiative', 'completed'), ('decision', 'completed'), ('source', 'active'), ('standalone_idea', 'exploring')]"}
+{"benchmark": "cb-09 Accenture onboarding completed/historical", "result": "pass", "detail": "[('recurring_responsibility', 'completed', 'historical_confirmed'), ('workflow', 'active', 'current_confirmed'), ('tool', 'active', 'current_confirmed')]"}
+{"benchmark": "cb-10 AVATAR completed/historical_confirmed", "result": "pass", "detail": "[('completed', 'historical_confirmed'), ('active', 'historical_status_unknown'), ('active', 'historical_status_unknown')]"}
+{"benchmark": "bl-01..06/10 empty recorded not substituted", "result": "pass", "detail": "7 empty cases recorded"}
+{"benchmark": "bl-40 AABS doc kept OUT of personal/family umbrella", "result": "pass", "detail": "source, professional/client, not in umbrella"}
+{"benchmark": "pasted/transcript not user-authored direct evidence", "result": "pass", "detail": "transcript content typed as source/tool not user fact"}

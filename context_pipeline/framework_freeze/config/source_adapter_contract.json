@@ -1,0 +1,76 @@
+{
+  "stage": "5A",
+  "contract_name": "provider_export_to_frozen_schema_adapter",
+  "pipeline": [
+    "provider_export",
+    "provider_specific_adapter",
+    "common_normalized_schema",
+    "frozen_provenance_layer",
+    "frozen_semantic_extractor",
+    "common_context_database"
+  ],
+  "required_provider_fields": {
+    "conversation": [
+      "provider_name",
+      "conversation_id",
+      "message_ids",
+      "authors",
+      "timestamps",
+      "content_blocks"
+    ],
+    "branching": [
+      "branch_id",
+      "parent_branch_id",
+      "root_message_id",
+      "leaf_message_id"
+    ],
+    "attachments": [
+      "attachment_id",
+      "filename_or_null",
+      "content_hash_when_available",
+      "mime_type",
+      "source_reference"
+    ],
+    "tools": [
+      "tool_call_id",
+      "tool_name",
+      "arguments",
+      "result_reference"
+    ],
+    "metadata": [
+      "workspace_or_project_context_when_available",
+      "source_file_reference",
+      "export_timestamp"
+    ]
+  },
+  "normalized_requirements": [
+    "stable_conversation_id",
+    "stable_message_id",
+    "ordered_messages",
+    "ordered_source_units",
+    "content_origin",
+    "transport_author_roles",
+    "attachment_occurrence_tracking",
+    "missing_source_tracking",
+    "source_reference_resolvability"
+  ],
+  "provenance_requirements": [
+    "user_authored_vs_co_authored_vs_assistant_generated",
+    "pasted_assistant_not_direct_user_evidence",
+    "tool_and_log_output_distinguished_from_user_assertions",
+    "document_source_vs_user_artifact_discipline"
+  ],
+  "chatgpt_adapter_must_produce": [
+    "conversation_ids",
+    "message_ids",
+    "authors",
+    "timestamps",
+    "branches",
+    "attachments",
+    "tool_calls",
+    "projects_or_gpt_contexts_when_available",
+    "content_blocks",
+    "source_references",
+    "provenance_fields"
+  ]
+}

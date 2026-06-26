@@ -1,0 +1,264 @@
+{
+  "checks_performed": [
+    {
+      "details": [],
+      "name": "all_jsonl_lines_parse",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "normalized_ids_unique_within_each_entity_type",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "deterministic_id_pattern",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "stage1_counts_reconcile_with_raw_export",
+      "passed": true
+    },
+    {
+      "details": {},
+      "name": "normalized_counts_reconcile_with_raw_export",
+      "passed": true
+    },
+    {
+      "details": {
+        "observed": 292,
+        "raw": 292
+      },
+      "name": "conversation_counts_reconcile",
+      "passed": true
+    },
+    {
+      "details": {
+        "observed": 7826,
+        "raw": 7826
+      },
+      "name": "message_counts_reconcile",
+      "passed": true
+    },
+    {
+      "details": {
+        "observed": 17,
+        "raw": 17
+      },
+      "name": "project_counts_reconcile",
+      "passed": true
+    },
+    {
+      "details": {
+        "observed": 36,
+        "raw": 36
+      },
+      "name": "project_document_counts_reconcile",
+      "passed": true
+    },
+    {
+      "details": {
+        "observed": {
+          "attachment_entries": 339,
+          "content_blocks": 20241,
+          "conversation_branch_records": 496,
+          "design_chat_messages": 6,
+          "design_chats": 2,
+          "file_reference_entries": 1763,
+          "main_conversations": 292,
+          "main_messages": 7826,
+          "project_documents": 36,
+          "projects": 17,
+          "source_files": 21,
+          "users": 1
+        },
+        "raw": {
+          "attachment_entries": 339,
+          "design_chat_messages": 6,
+          "design_chats": 2,
+          "file_reference_entries": 1763,
+          "main_conversations": 292,
+          "main_messages": 7826,
+          "project_documents": 36,
+          "projects": 17,
+          "users": 1
+        }
+      },
+      "name": "design_chat_counts_reconcile",
+      "passed": true
+    },
+    {
+      "details": {
+        "observed": {
+          "attachment_entries": 339,
+          "content_blocks": 20241,
+          "conversation_branch_records": 496,
+          "design_chat_messages": 6,
+          "design_chats": 2,
+          "file_reference_entries": 1763,
+          "main_conversations": 292,
+          "main_messages": 7826,
+          "project_documents": 36,
+          "projects": 17,
+          "source_files": 21,
+          "users": 1
+        },
+        "raw": {
+          "attachment_entries": 339,
+          "design_chat_messages": 6,
+          "design_chats": 2,
+          "file_reference_entries": 1763,
+          "main_conversations": 292,
+          "main_messages": 7826,
+          "project_documents": 36,
+          "projects": 17,
+          "users": 1
+        }
+      },
+      "name": "attachment_and_file_reference_counts_reconcile",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "normalized_parent_references_resolve_when_expected",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "tool_result_tool_use_ids_resolve_when_possible",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "branch_roots_and_leaves_internally_consistent",
+      "passed": true
+    },
+    {
+      "details": {
+        "after_manifest_count": 21,
+        "before_manifest_count": 21,
+        "changed_between_manifests": [],
+        "changed_since_after_manifest": [],
+        "current_raw_file_count": 21,
+        "passed": true
+      },
+      "name": "raw_source_checksums_unchanged",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "timestamps_valid_or_absent",
+      "passed": true
+    },
+    {
+      "details": {
+        "checked_secret_count": 2,
+        "leaks": [],
+        "passed": true
+      },
+      "name": "users_redacted_and_reports_do_not_contain_user_email_or_phone",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "thinking_text_not_duplicated_into_normalized_searchable_content",
+      "passed": true
+    },
+    {
+      "details": {
+        "counts_match_raw": true,
+        "observed_counts": {
+          "attachment_entries": 339,
+          "content_blocks": 20241,
+          "conversation_branch_records": 496,
+          "design_chat_messages": 6,
+          "design_chats": 2,
+          "file_reference_entries": 1763,
+          "main_conversations": 292,
+          "main_messages": 7826,
+          "project_documents": 36,
+          "projects": 17,
+          "source_files": 21,
+          "users": 1
+        },
+        "raw_counts": {
+          "attachment_entries": 339,
+          "design_chat_messages": 6,
+          "design_chats": 2,
+          "file_reference_entries": 1763,
+          "main_conversations": 292,
+          "main_messages": 7826,
+          "project_documents": 36,
+          "projects": 17,
+          "users": 1
+        }
+      },
+      "name": "rerun_stable_record_counts_supported_by_raw_reconciliation",
+      "passed": true
+    }
+  ],
+  "checksum_status": {
+    "after_manifest_count": 21,
+    "before_manifest_count": 21,
+    "changed_between_manifests": [],
+    "changed_since_after_manifest": [],
+    "current_raw_file_count": 21,
+    "passed": true
+  },
+  "deterministic_id_checks": {
+    "duplicate_ids": {},
+    "id_pattern_failures": {}
+  },
+  "discrepancies": {
+    "raw_vs_normalized": {},
+    "stage1_vs_raw": {}
+  },
+  "expected_counts": {
+    "attachment_entries": 339,
+    "design_chat_messages": 6,
+    "design_chats": 2,
+    "file_reference_entries": 1763,
+    "main_conversations": 292,
+    "main_messages": 7826,
+    "project_documents": 36,
+    "projects": 17,
+    "users": 1
+  },
+  "observed_counts": {
+    "attachment_entries": 339,
+    "content_blocks": 20241,
+    "conversation_branch_records": 496,
+    "design_chat_messages": 6,
+    "design_chats": 2,
+    "file_reference_entries": 1763,
+    "main_conversations": 292,
+    "main_messages": 7826,
+    "project_documents": 36,
+    "projects": 17,
+    "source_files": 21,
+    "users": 1
+  },
+  "privacy_checks": {
+    "checked_secret_count": 2,
+    "leaks": [],
+    "passed": true
+  },
+  "raw_counts": {
+    "attachment_entries": 339,
+    "design_chat_messages": 6,
+    "design_chats": 2,
+    "file_reference_entries": 1763,
+    "main_conversations": 292,
+    "main_messages": 7826,
+    "project_documents": 36,
+    "projects": 17,
+    "users": 1
+  },
+  "status": "pass",
+  "timestamp_warnings": [],
+  "unresolved_references": {
+    "parents": [],
+    "tool_results": []
+  }
+}

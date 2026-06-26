@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Frozen framework project record",
+  "type": "object",
+  "required": [
+    "canonical_id",
+    "canonical_title",
+    "type",
+    "area",
+    "status",
+    "ownership",
+    "user_role",
+    "context_brief",
+    "goals",
+    "requirements",
+    "decisions",
+    "tasks",
+    "outputs",
+    "sources",
+    "artifacts",
+    "people",
+    "organizations",
+    "relationships",
+    "timeline",
+    "provenance",
+    "unresolved_items"
+  ],
+  "properties": {
+    "canonical_id": {
+      "type": "string"
+    },
+    "canonical_title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "area": {
+      "type": "string"
+    },
+    "status": {
+      "type": "object"
+    },
+    "ownership": {
+      "type": "object"
+    },
+    "user_role": {
+      "type": "string"
+    },
+    "context_brief": {
+      "type": "string"
+    },
+    "goals": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "people": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "organizations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "policy_name": "stage3r_extraction_staging_provenance_repair",
+  "schema_version": "stage3r.1",
+  "token_estimate": {
+    "method": "ceil(character_count / 4)",
+    "characters_per_estimated_token": 4
+  },
+  "packet_limits": {
+    "target_estimated_tokens": 6000,
+    "maximum_estimated_tokens": 8000,
+    "maximum_characters": 32000
+  },
+  "transport_author_roles": [
+    "user",
+    "assistant",
+    "tool",
+    "document",
+    "attachment",
+    "system",
+    "unknown"
+  ],
+  "content_origins": [
+    "user_authored",
+    "assistant_generated",
+    "tool_generated",
+    "console_or_log_output",
+    "quoted_external_source",
+    "transcript_content",
+    "document_content",
+    "attachment_content",
+    "mixed_origin",
+    "unknown"
+  ],
+  "assertion_relationships": [
+    "direct_user_statement",
+    "user_instruction",
+    "user_question",
+    "user_endorsement",
+    "user_rejection",
+    "user_modification",
+    "pasted_for_analysis",
+    "quoted_as_evidence",
+    "generated_response",
+    "execution_trace",
+    "source_material",
+    "unknown"
+  ],
+  "eligible_user_evidence_pairs": [
+    ["user_authored", "direct_user_statement"],
+    ["user_authored", "user_instruction"],
+    ["user_authored", "user_question"],
+    ["user_authored", "user_endorsement"],
+    ["user_authored", "user_rejection"],
+    ["user_authored", "user_modification"]
+  ],
+  "origin_detection": {
+    "assistant_labels": ["Assistant:", "Claude:", "ChatGPT:"],
+    "tool_log_labels": ["Tool result:", "Console:", "Output:", "Traceback", "Error:", "bash", "npm ", "python "],
+    "transcript_patterns": ["^[A-Z][A-Za-z ]{1,32}: ", "^\\\\[?\\\\d{1,2}:\\\\d{2}"],
+    "external_framing_patterns": ["here is what claude said", "here is what chatgpt said", "pasted", "transcript", "console", "log"]
+  },
+  "attachment_roles": [
+    "attachment_source",
+    "transcript_source",
+    "assignment_material",
+    "project_reference",
+    "screenshot_or_image_reference",
+    "unknown_attachment"
+  ],
+  "confirmed_regression_conversations": {
+    "fleet_command": "claude:conversations:conversation:e2fc5641-6bd8-41c3-80d2-1e1e71b1e491",
+    "track_a_missing_research": "claude:conversations:conversation:b8366901-9272-45e8-af3f-864fe1629fc8",
+    "transcript_formatting": "claude:conversations:conversation:14f3c888-fb33-40af-9039-e8cf89a97bb5"
+  }
+}
