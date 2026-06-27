@@ -1,0 +1,57 @@
+{
+  "manifest_type": "source_layer_checksums_before_batch_01",
+  "batch_id": "batch_01",
+  "captured": "2026-06-25T00:00:00Z",
+  "source_files": {
+    "stage3r_conversation_evidence_maps": {
+      "path": "context_pipeline/extraction_staging_repair/corpus/conversation_evidence_maps.jsonl",
+      "sha256": "8f6a4f5596c94d319b97bcd69f129090e3fe1cee303c78d37221ed022bf654da",
+      "size_bytes": 2123707
+    },
+    "stage3r_repaired_source_units": {
+      "path": "context_pipeline/extraction_staging_repair/corpus/repaired_source_units.jsonl",
+      "sha256": "6df16112734689f5f8890a57e8a0084b1f25558598f2f76f3e8c5aeaa62664ab",
+      "size_bytes": 90863036
+    },
+    "stage3r_content_segments": {
+      "path": "context_pipeline/extraction_staging_repair/corpus/content_segments.jsonl",
+      "sha256": "36168c72400509536ac3934144216c34f65e50be97fecec3756257fe93124296",
+      "size_bytes": 86433014
+    },
+    "stage3r_extraction_packets": {
+      "path": "context_pipeline/extraction_staging_repair/corpus/extraction_packets.jsonl",
+      "sha256": "d81f3c274d1e46c2334bffec0b76a8b762add9730b05d3541f813e6ec2af8eb1",
+      "size_bytes": 3038734
+    },
+    "stage3r_attachment_links": {
+      "path": "context_pipeline/extraction_staging_repair/corpus/attachment_links.jsonl",
+      "sha256": "592a214928e8a79d4e255766b22322f2e012e9fa7a1d79a6971cce2e4063e2de",
+      "size_bytes": 315112
+    },
+    "stage3r_document_links": {
+      "path": "context_pipeline/extraction_staging_repair/corpus/document_links.jsonl",
+      "sha256": "626f43caaa8f390020f0cdfdce162fdc9216a77ede1fb016150b6bb047322aee",
+      "size_bytes": 27923
+    },
+    "stage3r_missing_source_references": {
+      "path": "context_pipeline/extraction_staging_repair/corpus/missing_source_references.jsonl",
+      "sha256": "cf0472772400be3a7f94419e6d699d1d3f2fb18a1fe589b5027cced562de0d01",
+      "size_bytes": 182176
+    },
+    "stage3rp_patched_attachment_links": {
+      "path": "context_pipeline/provenance_patch/corpus/patched_attachment_links.jsonl",
+      "sha256": "8a58bff10eb8a6864ccff824be02adf572ac7098bc909d25b9d0728eeaf0c064",
+      "size_bytes": 581038
+    },
+    "stage3rp_patched_conversation_evidence_maps": {
+      "path": "context_pipeline/provenance_patch/corpus/patched_conversation_evidence_maps.jsonl",
+      "sha256": "85a07f981b7abd48da9b4d682cdd67439aeaa344214eb629edd5bb1b90ba66cd",
+      "size_bytes": 332197
+    },
+    "stage3rp_patched_semantic_evidence_inputs": {
+      "path": "context_pipeline/provenance_patch/corpus/patched_semantic_evidence_inputs.jsonl",
+      "sha256": "cbff5095df2cd815346ab8148d57c3fc09544cd255265393741caa4bde3cb9f3",
+      "size_bytes": 331673
+    }
+  }
+}

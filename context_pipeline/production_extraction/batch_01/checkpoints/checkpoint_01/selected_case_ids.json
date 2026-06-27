@@ -1,0 +1,18 @@
+{
+  "checkpoint_id": "checkpoint_01",
+  "batch_id": "batch_01",
+  "selection_lock_hash": "a5e7a23d9ac3b86f040a4deccf0b5cc322d3fed4b3f33a1c08a55fd59fe92383",
+  "case_count": 10,
+  "cases": [
+    {"batch_case_id": "B01-001", "conversation_id": "claude:conversations:conversation:0206a1dc-d703-4126-ad61-95f05b9cf919"},
+    {"batch_case_id": "B01-002", "conversation_id": "claude:conversations:conversation:02070b0e-80cc-4798-bd09-95b7114967f4"},
+    {"batch_case_id": "B01-003", "conversation_id": "claude:conversations:conversation:0397cf43-832b-4fe8-9d61-ba629a8007a4"},
+    {"batch_case_id": "B01-004", "conversation_id": "claude:conversations:conversation:07deebd3-bef3-4aa1-9600-ffe191d69309"},
+    {"batch_case_id": "B01-005", "conversation_id": "claude:conversations:conversation:0c7085d8-3b38-4bde-a4a9-a6d08ee44f5b"},
+    {"batch_case_id": "B01-006", "conversation_id": "claude:conversations:conversation:10a1f086-b44a-47a0-9512-7491d42fb70b"},
+    {"batch_case_id": "B01-007", "conversation_id": "claude:conversations:conversation:1116ed38-9f96-4152-a4e6-40788ee7461c"},
+    {"batch_case_id": "B01-008", "conversation_id": "claude:conversations:conversation:14ab51d9-6dc8-4d00-bfea-f5c190fb63df"},
+    {"batch_case_id": "B01-009", "conversation_id": "claude:conversations:conversation:1e6c006c-a300-4dec-9797-5724cd81cf82"},
+    {"batch_case_id": "B01-010", "conversation_id": "claude:conversations:conversation:1f4044fa-4514-4e68-9a98-d5b893e5a9b5"}
+  ]
+}

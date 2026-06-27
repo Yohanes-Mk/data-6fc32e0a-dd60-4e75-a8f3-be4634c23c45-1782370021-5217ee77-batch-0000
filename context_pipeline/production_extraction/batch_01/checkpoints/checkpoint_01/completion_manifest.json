@@ -1,0 +1,174 @@
+{
+  "manifest_id": "b01c1:manifest:001",
+  "batch_id": "batch_01",
+  "checkpoint_id": "checkpoint_01",
+  "completion_timestamp": "2026-06-26T00:00:00Z",
+  "completed_by": "Claude Code (claude-sonnet-4-6) — post-recovery checkpoint completion",
+
+  "processed_cases": [
+    {"batch_case_id": "B01-001", "conversation_id": "claude:conversations:conversation:0206a1dc-d703-4126-ad61-95f05b9cf919", "candidates_created": 0, "excluded_interactions": 3},
+    {"batch_case_id": "B01-002", "conversation_id": "claude:conversations:conversation:02070b0e-80cc-4798-bd09-95b7114967f4", "candidates_created": 1, "excluded_interactions": 0},
+    {"batch_case_id": "B01-003", "conversation_id": "claude:conversations:conversation:0397cf43-832b-4fe8-9d61-ba629a8007a4", "candidates_created": 2, "excluded_interactions": 1},
+    {"batch_case_id": "B01-004", "conversation_id": "claude:conversations:conversation:07deebd3-bef3-4aa1-9600-ffe191d69309", "candidates_created": 0, "excluded_interactions": 1},
+    {"batch_case_id": "B01-005", "conversation_id": "claude:conversations:conversation:0c7085d8-3b38-4bde-a4a9-a6d08ee44f5b", "candidates_created": 0, "excluded_interactions": 1},
+    {"batch_case_id": "B01-006", "conversation_id": "claude:conversations:conversation:10a1f086-b44a-47a0-9512-7491d42fb70b", "candidates_created": 0, "excluded_interactions": 1},
+    {"batch_case_id": "B01-007", "conversation_id": "claude:conversations:conversation:1116ed38-9f96-4152-a4e6-40788ee7461c", "candidates_created": 2, "excluded_interactions": 0},
+    {"batch_case_id": "B01-008", "conversation_id": "claude:conversations:conversation:14ab51d9-6dc8-4d00-bfea-f5c190fb63df", "candidates_created": 0, "excluded_interactions": 1},
+    {"batch_case_id": "B01-009", "conversation_id": "claude:conversations:conversation:1e6c006c-a300-4dec-9797-5724cd81cf82", "candidates_created": 1, "excluded_interactions": 0},
+    {"batch_case_id": "B01-010", "conversation_id": "claude:conversations:conversation:1f4044fa-4514-4e68-9a98-d5b893e5a9b5", "candidates_created": 0, "excluded_interactions": 0}
+  ],
+
+  "selection_lock_hash": "a5e7a23d9ac3b86f040a4deccf0b5cc322d3fed4b3f33a1c08a55fd59fe92383",
+
+  "files": [
+    {
+      "filename": "selected_case_ids.json",
+      "status": "pre_existing_verified",
+      "size_bytes": 1465,
+      "sha256": "4d51e039918d8fdd1fae0cf50c8ea32de03c3cc9dd5ac2b4994f3bf55c4771bc",
+      "record_count": 10,
+      "record_type": "selected_case"
+    },
+    {
+      "filename": "case_extractions.jsonl",
+      "status": "pre_existing_verified",
+      "size_bytes": 22174,
+      "sha256": "258629f311c1d5162603459df29c2452d205a36409235cb9b69f958119ffddba",
+      "record_count": 10,
+      "record_type": "case_extraction"
+    },
+    {
+      "filename": "candidate_entities.jsonl",
+      "status": "created",
+      "size_bytes": 21815,
+      "sha256": "dcfc0a2bf4c111d98c22688a4493a32822d6e860d0bb2d2f5751506046e3531c",
+      "record_count": 6,
+      "record_type": "candidate_entity"
+    },
+    {
+      "filename": "candidate_relationships.jsonl",
+      "status": "created",
+      "size_bytes": 4443,
+      "sha256": "accb5d9bc45b8df6fbe59ac24d2168699487780960e675a44b3a0059e993d10f",
+      "record_count": 3,
+      "record_type": "candidate_relationship"
+    },
+    {
+      "filename": "candidate_evidence.jsonl",
+      "status": "created",
+      "size_bytes": 23958,
+      "sha256": "1930d3e4eac030a1e3951177aceca4afa12aeee2f17ad52c7d4ec6b26100ec17",
+      "record_count": 16,
+      "record_type": "candidate_evidence"
+    },
+    {
+      "filename": "excluded_interactions.jsonl",
+      "status": "created",
+      "size_bytes": 10423,
+      "sha256": "2263f17f381bf83f5ffec96073d4f29e8f9845cd12ce1fffbc28161ffb781736",
+      "record_count": 8,
+      "record_type": "excluded_interaction"
+    },
+    {
+      "filename": "missing_source_impacts.jsonl",
+      "status": "created",
+      "size_bytes": 8008,
+      "sha256": "9113ca9461c7f23cb1cd2cfedcb107d88aaf5f6a645879ab3c3eeed46b238d33",
+      "record_count": 4,
+      "record_type": "missing_source_impact"
+    },
+    {
+      "filename": "unresolved_items.jsonl",
+      "status": "created",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "record_count": 0,
+      "record_type": "unresolved_item",
+      "note": "Zero records — no unresolved items referenced in case_extractions.jsonl"
+    },
+    {
+      "filename": "rule_application_log.jsonl",
+      "status": "created",
+      "size_bytes": 20642,
+      "sha256": "0f0db3510d5b97afbf5e34a57cb34a8a86e991185746b52dadeef34c84072175",
+      "record_count": 20,
+      "record_type": "rule_application"
+    },
+    {
+      "filename": "quality_review.md",
+      "status": "created",
+      "size_bytes": 14553,
+      "sha256": "5ded9fd15d8199bd4a329365697b702bb0265924c7b879081bea18922cc11d17",
+      "record_count": 1,
+      "record_type": "quality_review_document"
+    },
+    {
+      "filename": "validation_report.json",
+      "status": "created",
+      "size_bytes": 16006,
+      "sha256": "eda612e69a30e55705d109dc95ef5cb218028caa2998788120ec6dbdb65120c9",
+      "record_count": 1,
+      "record_type": "validation_report"
+    },
+    {
+      "filename": "completion_manifest.json",
+      "status": "created",
+      "size_bytes": null,
+      "sha256": null,
+      "record_count": 1,
+      "record_type": "completion_manifest",
+      "note": "Self-referential — size and hash not computed at write time"
+    }
+  ],
+
+  "counts": {
+    "total_files": 12,
+    "cases_processed": 10,
+    "candidates_created": 6,
+    "relationships_created": 3,
+    "excluded_interactions_created": 8,
+    "missing_source_impacts_created": 4,
+    "unresolved_items_created": 0,
+    "rule_applications_logged": 20,
+    "unique_rule_ids_applied": 13,
+    "evidence_records_created": 16
+  },
+
+  "candidates_by_layer_and_type": [
+    {"candidate_id": "CAND-B01C1-001", "knowledge_layer": "work_entity", "candidate_type": "recurring_responsibility", "batch_case_id": "B01-002"},
+    {"candidate_id": "CAND-B01C1-002", "knowledge_layer": "work_entity", "candidate_type": "assignment", "batch_case_id": "B01-003"},
+    {"candidate_id": "CAND-B01C1-003", "knowledge_layer": "work_entity", "candidate_type": "assignment", "batch_case_id": "B01-003"},
+    {"candidate_id": "CAND-B01C1-004", "knowledge_layer": "work_entity", "candidate_type": "assignment", "batch_case_id": "B01-007"},
+    {"candidate_id": "CAND-B01C1-005", "knowledge_layer": "work_entity", "candidate_type": "assignment", "batch_case_id": "B01-007"},
+    {"candidate_id": "CAND-B01C1-006", "knowledge_layer": "work_entity", "candidate_type": "job_application", "batch_case_id": "B01-009"}
+  ],
+
+  "validation_statuses": {
+    "structural_validation_status": "pass",
+    "provenance_validation_status": "pass",
+    "semantic_quality_status": "pass",
+    "checkpoint_completion_status": "pass"
+  },
+
+  "integrity_result": {
+    "all_files_present": true,
+    "all_files_parse": true,
+    "all_referenced_ids_resolved": true,
+    "no_protected_files_modified": true,
+    "selection_lock_hash_verified": true,
+    "b01_006_expansion_verified": true,
+    "b01_010_no_forced_candidate": true,
+    "frozen_framework_unchanged": true
+  },
+
+  "completion_state": "complete_valid",
+
+  "notes": [
+    "This checkpoint was completed via post-recovery output generation. Semantic extraction and full-evidence expansion were performed in a prior session; this session generated the 10 missing output files from the verified case_extractions.jsonl.",
+    "B01-006 expansion: PASS. full_evidence_expansion_performed: true, 38 eligible segments, 20 in bundle, 18 retrieved, 18 Stage 3R references recorded.",
+    "b01c1:rule:012 carries validation_status: conditional_pass (hr-007 name-match 'Naomi' vs. 'Naomie Bambara'). Documented in rule application log and candidate provenance. Does not reduce completion_state below complete_valid.",
+    "Batch 01 remains in_progress. Checkpoint 01 is the first completed checkpoint. latest_completed_checkpoint updated to 'checkpoint_01' in batch_registry.jsonl.",
+    "Pre-batch denominator: 221 conversations. Batch 01 selected_case_count: 75. Checkpoint 01 processed: 10 cases.",
+    "Chronological skew in Batch 01 selection does not invalidate this checkpoint."
+  ]
+}

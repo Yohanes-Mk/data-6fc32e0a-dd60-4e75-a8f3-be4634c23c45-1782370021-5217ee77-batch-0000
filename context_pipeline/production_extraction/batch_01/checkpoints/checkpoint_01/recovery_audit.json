@@ -1,0 +1,347 @@
+{
+  "audit_metadata": {
+    "audit_id": "recovery_audit_checkpoint_01",
+    "checkpoint_id": "checkpoint_01",
+    "batch_id": "batch_01",
+    "audit_timestamp": "2026-06-26T00:00:00Z",
+    "audited_by": "Claude Code (claude-sonnet-4-6) — post-stream-failure recovery audit",
+    "recovery_verdict": "checkpoint_core_complete_outputs_missing"
+  },
+
+  "part_1_inventory": {
+    "files_present": [
+      {
+        "filename": "selected_case_ids.json",
+        "size_bytes": 1465,
+        "line_count": 18,
+        "parse_status": "valid_json",
+        "record_count": 10,
+        "status": "complete"
+      },
+      {
+        "filename": "case_extractions.jsonl",
+        "size_bytes": 22174,
+        "line_count": 10,
+        "parse_status": "valid_jsonl_all_lines",
+        "record_count": 10,
+        "status": "complete"
+      }
+    ],
+    "files_missing": [
+      "candidate_entities.jsonl",
+      "candidate_relationships.jsonl",
+      "candidate_evidence.jsonl",
+      "excluded_interactions.jsonl",
+      "missing_source_impacts.jsonl",
+      "unresolved_items.jsonl",
+      "rule_application_log.jsonl",
+      "quality_review.md",
+      "validation_report.json",
+      "completion_manifest.json"
+    ],
+    "files_partial_or_malformed": [],
+    "total_expected": 12,
+    "total_present": 2,
+    "total_missing": 10,
+    "total_partial": 0
+  },
+
+  "part_2_selected_case_ids_validation": {
+    "file": "selected_case_ids.json",
+    "case_count": 10,
+    "expected_case_count": 10,
+    "case_count_valid": true,
+    "ids_sequential_b01001_to_b01010": true,
+    "selection_lock_hash_in_file": "a5e7a23d9ac3b86f040a4deccf0b5cc322d3fed4b3f33a1c08a55fd59fe92383",
+    "selection_lock_hash_expected": "a5e7a23d9ac3b86f040a4deccf0b5cc322d3fed4b3f33a1c08a55fd59fe92383",
+    "selection_lock_hash_valid": true,
+    "conversation_ids": [
+      {"batch_case_id": "B01-001", "conversation_id": "claude:conversations:conversation:0206a1dc-d703-4126-ad61-95f05b9cf919"},
+      {"batch_case_id": "B01-002", "conversation_id": "claude:conversations:conversation:02070b0e-80cc-4798-bd09-95b7114967f4"},
+      {"batch_case_id": "B01-003", "conversation_id": "claude:conversations:conversation:0397cf43-832b-4fe8-9d61-ba629a8007a4"},
+      {"batch_case_id": "B01-004", "conversation_id": "claude:conversations:conversation:07deebd3-bef3-4aa1-9600-ffe191d69309"},
+      {"batch_case_id": "B01-005", "conversation_id": "claude:conversations:conversation:0c7085d8-3b38-4bde-a4a9-a6d08ee44f5b"},
+      {"batch_case_id": "B01-006", "conversation_id": "claude:conversations:conversation:10a1f086-b44a-47a0-9512-7491d42fb70b"},
+      {"batch_case_id": "B01-007", "conversation_id": "claude:conversations:conversation:1116ed38-9f96-4152-a4e6-40788ee7461c"},
+      {"batch_case_id": "B01-008", "conversation_id": "claude:conversations:conversation:14ab51d9-6dc8-4d00-bfea-f5c190fb63df"},
+      {"batch_case_id": "B01-009", "conversation_id": "claude:conversations:conversation:1e6c006c-a300-4dec-9797-5724cd81cf82"},
+      {"batch_case_id": "B01-010", "conversation_id": "claude:conversations:conversation:1f4044fa-4514-4e68-9a98-d5b893e5a9b5"}
+    ],
+    "overall_valid": true
+  },
+
+  "part_3_case_extractions_validation": {
+    "file": "case_extractions.jsonl",
+    "parse_errors": 0,
+    "total_records": 10,
+    "expected_records": 10,
+    "record_count_valid": true,
+    "duplicate_batch_case_ids": [],
+    "has_duplicate_ids": false,
+    "all_ids_present": ["B01-001","B01-002","B01-003","B01-004","B01-005","B01-006","B01-007","B01-008","B01-009","B01-010"],
+    "file_ends_cleanly": true,
+    "b01_010_forced_candidate": false,
+    "full_evidence_expansion_cases": {
+      "B01-002": {
+        "performed": true,
+        "segments_retrieved": 13,
+        "stage3r_references_count": 13,
+        "interpretation_changed": true
+      },
+      "B01-003": {
+        "performed": true,
+        "segments_retrieved": 50,
+        "stage3r_references_count": 50,
+        "interpretation_changed": true,
+        "note": "Mandatory — 144 of 164 eligible segments omitted in bundle"
+      },
+      "B01-006": {
+        "performed": true,
+        "segments_retrieved": 18,
+        "stage3r_references_count": 18,
+        "interpretation_changed": false
+      },
+      "B01-009": {
+        "performed": true,
+        "segments_retrieved": 30,
+        "stage3r_references_count": 30,
+        "interpretation_changed": true
+      }
+    },
+    "referenced_ids": {
+      "candidate_entity_ids": [
+        "CAND-B01C1-001",
+        "CAND-B01C1-002",
+        "CAND-B01C1-003",
+        "CAND-B01C1-004",
+        "CAND-B01C1-005",
+        "CAND-B01C1-006"
+      ],
+      "relationship_ids": [
+        "b01c1:rel:001",
+        "b01c1:rel:002",
+        "b01c1:rel:003"
+      ],
+      "excluded_interaction_ids": [
+        "b01c1:excl:001",
+        "b01c1:excl:002",
+        "b01c1:excl:003",
+        "b01c1:excl:004",
+        "b01c1:excl:005",
+        "b01c1:excl:006",
+        "b01c1:excl:007",
+        "b01c1:excl:008"
+      ],
+      "missing_source_impact_ids": [
+        "b01c1:msi:001",
+        "b01c1:msi:002",
+        "b01c1:msi:003",
+        "b01c1:msi:004"
+      ],
+      "unresolved_item_ids": [],
+      "frozen_rule_ids": [
+        "hr-002",
+        "hr-003",
+        "hr-007",
+        "hr-009",
+        "hr-012",
+        "hr-013",
+        "hr-014",
+        "hr-016",
+        "hr-017",
+        "hr-018",
+        "hr-019",
+        "hr-020",
+        "hr-021"
+      ]
+    }
+  },
+
+  "part_4_referential_completeness": {
+    "summary": "All dependent output files are missing. Every ID referenced in case_extractions.jsonl is therefore unresolved. No cross-file resolution is possible at this time.",
+    "candidate_entities_jsonl": {
+      "file_exists": false,
+      "ids_referenced": ["CAND-B01C1-001","CAND-B01C1-002","CAND-B01C1-003","CAND-B01C1-004","CAND-B01C1-005","CAND-B01C1-006"],
+      "ids_resolved": [],
+      "ids_missing": ["CAND-B01C1-001","CAND-B01C1-002","CAND-B01C1-003","CAND-B01C1-004","CAND-B01C1-005","CAND-B01C1-006"],
+      "records_unreferenced": null,
+      "duplicates": null,
+      "partially_written_records": null
+    },
+    "candidate_relationships_jsonl": {
+      "file_exists": false,
+      "ids_referenced": ["b01c1:rel:001","b01c1:rel:002","b01c1:rel:003"],
+      "ids_resolved": [],
+      "ids_missing": ["b01c1:rel:001","b01c1:rel:002","b01c1:rel:003"],
+      "records_unreferenced": null
+    },
+    "candidate_evidence_jsonl": {
+      "file_exists": false,
+      "note": "Not directly referenced by ID in case_extractions.jsonl; expected to contain evidence records keyed to candidate IDs"
+    },
+    "excluded_interactions_jsonl": {
+      "file_exists": false,
+      "ids_referenced": ["b01c1:excl:001","b01c1:excl:002","b01c1:excl:003","b01c1:excl:004","b01c1:excl:005","b01c1:excl:006","b01c1:excl:007","b01c1:excl:008"],
+      "ids_resolved": [],
+      "ids_missing": ["b01c1:excl:001","b01c1:excl:002","b01c1:excl:003","b01c1:excl:004","b01c1:excl:005","b01c1:excl:006","b01c1:excl:007","b01c1:excl:008"]
+    },
+    "missing_source_impacts_jsonl": {
+      "file_exists": false,
+      "ids_referenced": ["b01c1:msi:001","b01c1:msi:002","b01c1:msi:003","b01c1:msi:004"],
+      "ids_resolved": [],
+      "ids_missing": ["b01c1:msi:001","b01c1:msi:002","b01c1:msi:003","b01c1:msi:004"]
+    },
+    "unresolved_items_jsonl": {
+      "file_exists": false,
+      "ids_referenced": [],
+      "note": "No unresolved items referenced in case_extractions.jsonl — expected to be empty or contain zero records"
+    },
+    "rule_application_log_jsonl": {
+      "file_exists": false,
+      "frozen_rule_ids_referenced": ["hr-002","hr-003","hr-007","hr-009","hr-012","hr-013","hr-014","hr-016","hr-017","hr-018","hr-019","hr-020","hr-021"],
+      "ids_resolved": [],
+      "ids_missing": ["hr-002","hr-003","hr-007","hr-009","hr-012","hr-013","hr-014","hr-016","hr-017","hr-018","hr-019","hr-020","hr-021"]
+    },
+    "total_unresolved_ids": 34,
+    "resolution_blocked_by": "All 10 dependent output files are absent — not a data error in case_extractions.jsonl but a write-failure during post-extraction output generation"
+  },
+
+  "part_5_semantic_consistency": {
+    "overall_result": "pass",
+    "issues_found": [],
+    "case_checks": [
+      {
+        "batch_case_id": "B01-001",
+        "topic": "Italian resume assistance and third-party resumes",
+        "classification": "one_off_request (no candidates)",
+        "issues": [],
+        "notes": "Three requests (user + 2 friends) all correctly classified as one_off. Friends' resumes correctly placed in excluded_interaction_ids (b01c1:excl:001–003). hr-020 correctly applied (no project criteria met)."
+      },
+      {
+        "batch_case_id": "B01-002",
+        "topic": "Accenture TPS/CPT and I-9 work-authorization navigation",
+        "classification": "recurring_responsibility (CAND-B01C1-001)",
+        "issues": [],
+        "notes": "Full expansion confirmed active ongoing situation. Candidate creation appropriate. Missing source impact b01c1:msi:001 expected. hr-009, hr-012, hr-021 all plausible rule applications."
+      },
+      {
+        "batch_case_id": "B01-003",
+        "topic": "Academic genre reflection, quiz, rewrite, and short-film assignment",
+        "classification": "academic coursework (CAND-B01C1-002, CAND-B01C1-003)",
+        "issues": [],
+        "minor_notes": [
+          "Genre Quiz #4 score subsumed into Blade Runner assignment record (CAND-B01C1-002) rather than created as a separate candidate — borderline but acceptable since it was a supporting measure within the same session.",
+          "94 middle segments not retrieved — documented and explained consistently."
+        ],
+        "notes": "hr-002, hr-003, hr-021 correctly applied for academic coursework. No project misclassification."
+      },
+      {
+        "batch_case_id": "B01-004",
+        "topic": "DCA startup and AI walk networking",
+        "classification": "one_off_request (no candidates)",
+        "issues": [],
+        "notes": "4-segment conversation. Networking context correctly treated as background, not a user-owned project. hr-020 correct."
+      },
+      {
+        "batch_case_id": "B01-005",
+        "topic": "Python/Homebrew troubleshooting",
+        "classification": "one_off_request (no candidates)",
+        "issues": [],
+        "notes": "4-segment technical troubleshooting. hr-020 correct."
+      },
+      {
+        "batch_case_id": "B01-006",
+        "topic": "Bank closure, ChexSystems, credit-report review, and personal-finance monitoring",
+        "classification": "one_off_request (no candidates)",
+        "issues": [],
+        "notes": "Full expansion confirmed: all omitted segments are pasted credit data and follow-up questions. Reactive advisory assistance, not a project. hr-020 correct."
+      },
+      {
+        "batch_case_id": "B01-007",
+        "topic": "CSCI 430 learning logs and group logs",
+        "classification": "academic coursework (CAND-B01C1-004, CAND-B01C1-005)",
+        "issues": [],
+        "minor_notes": [
+          "hr-007 applied with note that 'Naomi' is a probable but not explicitly confirmed match for Naomie Bambara. Note is documented in the extraction record itself."
+        ],
+        "notes": "Relationship b01c1:rel:001 correctly links two academic activity candidates. hr-002, hr-007, hr-013, hr-014, hr-017, hr-018 applied for CSCI 430 group structure."
+      },
+      {
+        "batch_case_id": "B01-008",
+        "topic": "Power-bank purchase advice",
+        "classification": "one_off_request (no candidates)",
+        "issues": [],
+        "notes": "5-segment product advice request. hr-020 correct."
+      },
+      {
+        "batch_case_id": "B01-009",
+        "topic": "OpenAI Safety Fellowship application",
+        "classification": "user-owned project/application (CAND-B01C1-006)",
+        "issues": [],
+        "notes": "Full expansion correctly elevated to substantive user-owned activity. Relationships b01c1:rel:002 and b01c1:rel:003 expected to link to related portfolio entities (AI Aggregator, BCI Lab). hr-019 (fellowship application pattern), hr-021 applied correctly. Work authorization opt-out documented."
+      },
+      {
+        "batch_case_id": "B01-010",
+        "topic": "Empty conversation",
+        "classification": "empty — no candidate",
+        "issues": [],
+        "notes": "0 eligible user segments. No forced candidate. hr-016 correctly applied (assistant-only content not promoted)."
+      }
+    ]
+  },
+
+  "part_6_registry_state": {
+    "file": "context_pipeline/production_extraction/batch_registry.jsonl",
+    "batch_id": "batch_01",
+    "selected_case_count": 75,
+    "selection_lock_hash": "a5e7a23d9ac3b86f040a4deccf0b5cc322d3fed4b3f33a1c08a55fd59fe92383",
+    "latest_completed_checkpoint": null,
+    "completion_timestamp": null,
+    "validation_status": "in_progress",
+    "completion_status": "in_progress",
+    "latest_completed_checkpoint_is_null": true,
+    "batch_status_is_in_progress": true,
+    "checkpoint_01_not_marked_complete": true,
+    "denominator_note": "Registry records selected_case_count: 75 for batch_01. The 221-conversation pre-batch denominator is not tracked directly in the registry entry — it is established by Stage 4 output. The registry has not been updated incorrectly; no completion markers have been set.",
+    "registry_state_valid": true,
+    "registry_updated_during_audit": false
+  },
+
+  "part_7_recovery_verdict": {
+    "verdict": "checkpoint_core_complete_outputs_missing",
+    "rationale": "selected_case_ids.json is complete and valid (10 cases, lock hash verified). case_extractions.jsonl is complete and valid (10 records, all parse clean, full-evidence expansion performed where required, B01-010 has no forced candidate). The response stream stalled before or during generation of the 10 dependent output files. The core semantic work is fully complete and does not need to be repeated.",
+    "files_present": [
+      "selected_case_ids.json",
+      "case_extractions.jsonl"
+    ],
+    "files_missing": [
+      "candidate_entities.jsonl",
+      "candidate_relationships.jsonl",
+      "candidate_evidence.jsonl",
+      "excluded_interactions.jsonl",
+      "missing_source_impacts.jsonl",
+      "unresolved_items.jsonl",
+      "rule_application_log.jsonl",
+      "quality_review.md",
+      "validation_report.json",
+      "completion_manifest.json"
+    ],
+    "files_partial_or_malformed": [],
+    "case_extraction_record_count": 10,
+    "all_10_extractions_usable": true,
+    "unresolved_referenced_ids": {
+      "candidate_entity_ids": ["CAND-B01C1-001","CAND-B01C1-002","CAND-B01C1-003","CAND-B01C1-004","CAND-B01C1-005","CAND-B01C1-006"],
+      "relationship_ids": ["b01c1:rel:001","b01c1:rel:002","b01c1:rel:003"],
+      "excluded_interaction_ids": ["b01c1:excl:001","b01c1:excl:002","b01c1:excl:003","b01c1:excl:004","b01c1:excl:005","b01c1:excl:006","b01c1:excl:007","b01c1:excl:008"],
+      "missing_source_impact_ids": ["b01c1:msi:001","b01c1:msi:002","b01c1:msi:003","b01c1:msi:004"],
+      "unresolved_item_ids": [],
+      "frozen_rule_ids": ["hr-002","hr-003","hr-007","hr-009","hr-012","hr-013","hr-014","hr-016","hr-017","hr-018","hr-019","hr-020","hr-021"],
+      "total_unresolved": 34
+    },
+    "schema_problems": [],
+    "semantic_consistency_problems": [],
+    "registry_state_valid": true,
+    "can_resume_without_repeating_evidence_expansion": true,
+    "next_action": "Generate the 10 missing output files from case_extractions.jsonl. Required files in order: (1) candidate_entities.jsonl — 6 candidate records (CAND-B01C1-001 through CAND-B01C1-006); (2) candidate_relationships.jsonl — 3 relationship records; (3) candidate_evidence.jsonl — evidence bundles keyed to candidates; (4) excluded_interactions.jsonl — 8 excluded interaction records (b01c1:excl:001 through b01c1:excl:008); (5) missing_source_impacts.jsonl — 4 records (b01c1:msi:001 through b01c1:msi:004); (6) unresolved_items.jsonl — expected empty or zero records; (7) rule_application_log.jsonl — 13 frozen rules applied across 10 cases; (8) quality_review.md — narrative quality summary; (9) validation_report.json — cross-file validation; (10) completion_manifest.json — checkpoint completion record. Do not re-run semantic extraction or evidence expansion. The Stage 3R segment references in case_extractions.jsonl are sufficient to reconstruct all output records."
+  }
+}

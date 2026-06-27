@@ -1,0 +1,58 @@
+{
+  "batch_id": "batch_01",
+  "production_stage": "5B",
+  "frozen_framework_version": "5A",
+  "frozen_rule_count": 23,
+  "planned_conversation_count": 75,
+  "planned_document_count": 0,
+  "planned_design_chat_count": 0,
+  "checkpoint_count": 8,
+  "checkpoint_sizes": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    5
+  ],
+  "complexity_bias": "low_medium",
+  "selection_method": "deterministic_stratified_alphabetical",
+  "evidence_boundary": "stage_3R_with_stage_3R_P_overlay",
+  "semantic_execution_mode": "language_model_semantic_judgment_subscription_only",
+  "script_allowed_operations": [
+    "loading",
+    "writing",
+    "counting",
+    "checksums",
+    "reference_resolution",
+    "schema_validation",
+    "comparison",
+    "reporting"
+  ],
+  "script_forbidden_operations": [
+    "candidate_type",
+    "title_assignment",
+    "project_identity",
+    "ownership",
+    "user_role",
+    "status",
+    "confidence",
+    "endorsement",
+    "relationship_assignment",
+    "clustering"
+  ],
+  "stopping_conditions": {
+    "genuinely_unresolved_rate_max": 0.1,
+    "systemic_defect_threshold": 3,
+    "provenance_regression": "stop_immediately"
+  },
+  "review_categories": [
+    "covered_by_existing_rule",
+    "new_reusable_rule",
+    "case_specific_exception",
+    "genuinely_unresolved"
+  ],
+  "created": "2026-06-25T00:00:00Z"
+}

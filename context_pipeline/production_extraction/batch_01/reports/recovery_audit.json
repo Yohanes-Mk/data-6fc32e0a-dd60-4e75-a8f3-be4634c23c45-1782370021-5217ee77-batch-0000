@@ -1,0 +1,236 @@
+{
+  "audit_id": "B01-RECOVERY-AUDIT-2026-06-25",
+  "audit_date": "2026-06-25",
+  "auditor": "Claude Code (claude-sonnet-4-6)",
+  "batch_id": "batch_01",
+  "production_stage": "5B",
+
+  "audit_1_completion_state": {
+    "verdict": "safely_resumable",
+    "infrastructure_complete": true,
+    "semantic_extraction_started": false,
+    "checkpoints_with_semantic_records": 0,
+    "checkpoints_empty": 8,
+    "batch_registry_latest_completed_checkpoint": null,
+    "batch_registry_validation_status": "in_progress",
+    "batch_registry_completion_status": "in_progress",
+    "false_completion_marking": false,
+    "files_confirmed_complete": [
+      "batch_01/config/batch_policy.json",
+      "batch_01/manifests/checksums_before.json",
+      "batch_01/selection/selected_cases.jsonl",
+      "batch_01/selection/selection_lock.json",
+      "batch_01/selection/excluded_cases.jsonl",
+      "batch_01/selection/selection_report.md",
+      "batch_01/evidence_bundles/semantic_evidence_bundles.jsonl",
+      "batch_01/README.md",
+      "production_extraction/batch_registry.jsonl",
+      "production_extraction/production_manifest.json",
+      "production_extraction/README.md"
+    ],
+    "files_missing": [
+      "batch_01/checkpoints/checkpoint_01/* (all semantic outputs)",
+      "batch_01/checkpoints/checkpoint_02/* through checkpoint_08/*"
+    ]
+  },
+
+  "audit_2_denominator_reconciliation": {
+    "verdict": "partial_initialization_denominator_221_confirmed",
+    "evidence_map_universe_confirmed": 286,
+    "prior_processed_unique_count_actual": 65,
+    "prior_processed_count_per_plan": 63,
+    "discrepancy": 2,
+    "discrepancy_explanation": "The Stage 5A plan counted 63 previously processed cases. Scripts found 65 unique IDs across semantic_pilot_expanded, semantic_pilot_merged, and semantic_calibration_50. The 2 extra cases are from pilot_expanded and pilot_merged, within the 286-universe, not counted in the plan's 63-case baseline.",
+    "eligible_pool_actual": 221,
+    "eligible_pool_per_plan": 223,
+    "selected_for_batch_01": 75,
+    "reserved_for_later_batches": 146,
+    "deferred_outside_universe": 6,
+    "prior_stage_sources": {
+      "semantic_pilot_expanded": {"raw_count": 24, "semantically_completed": true},
+      "semantic_pilot_merged": {"raw_count": 12, "semantically_completed": true},
+      "semantic_calibration_50": {"raw_count": 50, "semantically_completed": true, "has_completion_manifests": true}
+    },
+    "benchmark_reuse_ids": [
+      "claude:conversations:conversation:14f3c888-fb33-40af-9039-e8cf89a97bb5",
+      "claude:conversations:conversation:2838a734-4192-4c0c-93b5-d72976f21da8",
+      "claude:conversations:conversation:94f53cfc-057a-4aa6-a827-4ec3bb332f9a",
+      "claude:conversations:conversation:b8366901-9272-45e8-af3f-864fe1629fc8",
+      "claude:conversations:conversation:e2fc5641-6bd8-41c3-80d2-1e1e71b1e491",
+      "claude:conversations:conversation:f04cc5a5-5827-471c-95eb-2820ad9e9b0d",
+      "claude:conversations:conversation:dd1aabd1-ec6d-491f-b971-ac04795728ea",
+      "claude:conversations:conversation:965b21a5-438f-47d2-b4e4-daee3630a16c",
+      "claude:conversations:conversation:8cdf0ae5-9235-4ab9-a7b5-1cc498eafbdd",
+      "claude:conversations:conversation:c2701642-ab8d-4158-9857-1686c83f817b"
+    ],
+    "benchmark_reuse_count": 10,
+    "all_65_semantically_processed": true,
+    "all_65_in_286_universe": true,
+    "all_65_must_be_excluded": true,
+    "stage5a_denominator_223_confirmed": false,
+    "initialization_denominator_221_confirmed": true
+  },
+
+  "audit_3_selection_validation": {
+    "verdict": "selection_valid",
+    "checks": {
+      "exactly_75_unique_conversations": "PASS",
+      "no_design_chats": "PASS",
+      "no_project_documents": "PASS",
+      "all_ids_resolve_in_stage3r": "PASS",
+      "no_prior_processed_overlap": "PASS",
+      "no_deferred_ids": "PASS",
+      "lock_hash_recomputes": "PASS",
+      "checkpoint_sizes_correct": "PASS",
+      "complexity_from_structural_only": "PASS",
+      "tier_quotas_met": "PASS"
+    },
+    "lock_hash_stored": "a5e7a23d9ac3b86f040a4deccf0b5cc322d3fed4b3f33a1c08a55fd59fe92383",
+    "lock_hash_recomputed": "a5e7a23d9ac3b86f040a4deccf0b5cc322d3fed4b3f33a1c08a55fd59fe92383",
+    "lock_hash_match": true,
+    "checkpoint_sizes": [10, 10, 10, 10, 10, 10, 10, 5],
+    "tier_counts": {"low": 35, "medium": 30, "high": 10},
+    "selection_method": "deterministic_stratified_alphabetical",
+    "timestamps_used_in_selection": false,
+    "date_spread": {
+      "earliest_timestamp": "2024-11-14T01:41:07.264275Z",
+      "earliest_case": "B01-047",
+      "latest_timestamp": "2026-06-23T21:14:17.735242Z",
+      "latest_case": "B01-050",
+      "distribution_by_quarter": {
+        "2024_Q4": 4,
+        "2025_Q1": 0,
+        "2025_Q2": 0,
+        "2025_Q3": 0,
+        "2025_Q4": 5,
+        "2026_Q1": 32,
+        "2026_Q2": 24,
+        "empty_no_timestamps": 10
+      },
+      "pct_in_2026_Q1_Q2": 86.2,
+      "uuid_ordering_accepted_as_chronological_diversity": false,
+      "date_spread_adequate": false,
+      "date_spread_note": "86% of non-empty cases (56/65) fall within 2026 Q1-Q2. No cases from 2025 Q1-Q3. Date spread is poor but no explicit date-diversity criterion exists in the frozen batch strategy or batch_policy.json. The selection satisfies all stated criteria."
+    }
+  },
+
+  "audit_4_evidence_bundle_completeness": {
+    "verdict": "bundles_resolvable_but_require_case_expansion",
+    "total_bundles": 75,
+    "bundles_cover_all_selected": true,
+    "source_references_present": true,
+    "null_filenames_preserved": true,
+    "missing_sources_not_reconstructed": true,
+    "origin_distinctions_preserved": true,
+    "truncation_summary": {
+      "fully_complete_bundles": 39,
+      "bundles_with_user_cap": 30,
+      "bundles_with_assistant_cap_only": 6,
+      "bundles_with_both_caps": 30,
+      "total_with_any_omission": 36,
+      "user_evidence_cap": 20,
+      "assistant_evidence_cap": 10,
+      "total_eligible_user_segments": 1792,
+      "total_included_user_segments": 837,
+      "total_omitted_user_segments": 955,
+      "pct_user_segments_omitted": 53.3
+    },
+    "severe_truncation_cases": [
+      {"case": "B01-003", "eligible_user": 164, "included_user": 20, "omitted_user": 144, "tier": "high"},
+      {"case": "B01-066", "eligible_user": 123, "included_user": 20, "omitted_user": 103, "tier": "high"},
+      {"case": "B01-054", "eligible_user": 112, "included_user": 20, "omitted_user": 92, "tier": "high"},
+      {"case": "B01-019", "eligible_user": 108, "included_user": 20, "omitted_user": 88, "tier": "high"}
+    ],
+    "cases_requiring_expansion": [
+      "B01-002", "B01-003", "B01-006", "B01-009", "B01-011", "B01-013",
+      "B01-017", "B01-019", "B01-022", "B01-023", "B01-025", "B01-028",
+      "B01-030", "B01-033", "B01-034", "B01-036", "B01-044", "B01-045",
+      "B01-046", "B01-048", "B01-051", "B01-054", "B01-056", "B01-059",
+      "B01-062", "B01-063", "B01-065", "B01-066", "B01-067", "B01-071"
+    ],
+    "cases_requiring_expansion_count": 30,
+    "omitted_content_retrievable": true,
+    "retrieval_path": "Load full segments from stage3r repaired_source_units.jsonl or content_segments.jsonl via bundle's stage3r_map_reference and structural.message_container_ids"
+  },
+
+  "audit_5_integrity": {
+    "git_status_untracked": ["context_pipeline/production_extraction/"],
+    "git_status_modified": [],
+    "changes_outside_production_extraction": false,
+    "source_layer_checksums": {
+      "stage3r_conversation_evidence_maps": {"size_match": true, "sha256_match": true},
+      "stage3r_repaired_source_units": {"size_match": true, "sha256_match": true},
+      "stage3r_content_segments": {"size_match": true, "sha256_match": true},
+      "stage3r_extraction_packets": {"size_match": true, "sha256_match": "not_verified"},
+      "stage3r_attachment_links": {"size_match": true, "sha256_match": "not_verified"},
+      "stage3r_document_links": {"size_match": true, "sha256_match": "not_verified"},
+      "stage3r_missing_source_references": {"size_match": true, "sha256_match": "not_verified"},
+      "stage3rp_patched_attachment_links": {"size_match": true, "sha256_match": "not_verified"},
+      "stage3rp_patched_conversation_evidence_maps": {"size_match": true, "sha256_match": true},
+      "stage3rp_patched_semantic_evidence_inputs": {"size_match": true, "sha256_match": true}
+    },
+    "framework_freeze_checksums_note": "CORRECTED 2026-06-25. Original note contained two errors. (1) Chronology error: Stage 3R-P (provenance patch) ran before Stage 4E, which ran before Stage 5A. The provenance patch was already applied when Stage 5A created the framework_freeze manifests. Those manifests correctly record post-patch file content. (2) Count and nature error: The claim that '21 files differed' was incorrect. The framework_freeze manifests hash files in their LF (Unix) line-ending form as written by Python scripts. The current Windows working tree has CRLF line endings (git core.autocrlf=true). Every differing file satisfies disk_bytes - manifest_bytes = file_line_count exactly (confirmed for 13+ files across all types), which is the exclusive signature of LF->CRLF normalization. This affects essentially all text files tracked in the manifest, not just 21. No semantic content changed in any file. The batch_01/manifests/checksums_before.json correctly records CRLF disk-state hashes; all 10 source files verified against current filesystem.",
+    "framework_freeze_checksums_differences_nature": "crlf_normalization_only",
+    "framework_freeze_checksums_original_count_21_correct": false,
+    "framework_freeze_checksums_original_chronology_correct": false,
+    "framework_freeze_checksums_any_sha256_content_change": false,
+    "frozen_framework_files_changed": false,
+    "prior_stage_corpus_files_changed": false
+  },
+
+  "audit_6_recovery": {
+    "recommended_option": "A",
+    "option": "resume_existing_batch_01",
+    "rationale": "Denominator resolved, selection valid, evidence bundles resolvable, no frozen or prior-stage files changed, no semantic records exist to conflict with resumption.",
+    "preconditions_met": {
+      "denominator_resolved": true,
+      "selection_valid": true,
+      "bundles_sufficient_or_expandable": true,
+      "no_frozen_files_changed": true,
+      "no_prior_stage_files_changed": true
+    },
+    "required_caveats": [
+      "BUNDLE_EXPANSION: For all 30 cases with omitted_evidence entries, load full conversation from Stage 3R before semantic judgment. Do not treat the 20-segment excerpt as complete evidence.",
+      "DATE_SPREAD: Document that 86% of non-empty cases are from 2026 Q1-Q2. This is a selection limitation arising from UUID alphabetical ordering, not a defect.",
+      "DENOMINATOR: Record operative denominator as 221 (not 223). The 2-case conservative exclusion is correct."
+    ],
+    "do_not_delete_current_attempt": true,
+    "do_not_regenerate_selection": true,
+    "do_not_mark_batch_complete": true
+  },
+
+  "final_summary": {
+    "current_completion_state": "Infrastructure complete, all 8 checkpoints empty, no semantic extraction performed. Safely resumable.",
+    "files_successfully_created": [
+      "batch_01/config/batch_policy.json",
+      "batch_01/manifests/checksums_before.json",
+      "batch_01/selection/selected_cases.jsonl (75 cases)",
+      "batch_01/selection/selection_lock.json",
+      "batch_01/selection/excluded_cases.jsonl (217 cases)",
+      "batch_01/selection/selection_report.md",
+      "batch_01/evidence_bundles/semantic_evidence_bundles.jsonl (75 bundles)",
+      "batch_01/README.md",
+      "batch_01/checkpoints/checkpoint_01 through checkpoint_08 (empty scaffolds)",
+      "production_extraction/batch_registry.jsonl",
+      "production_extraction/production_manifest.json",
+      "production_extraction/README.md",
+      "batch_01/reports/recovery_audit.md (this audit)",
+      "batch_01/reports/recovery_audit.json (this audit)"
+    ],
+    "files_missing": [
+      "batch_01/checkpoints/checkpoint_01/* (all semantic outputs)",
+      "All checkpoint_02 through checkpoint_08 semantic outputs"
+    ],
+    "correct_prior_processed_count": 65,
+    "correct_remaining_denominator": 221,
+    "denominator_discrepancy_explanation": "Plan used 63 (baseline count missed 2 cases from pilot_expanded and pilot_merged that are within the 286-universe). Actual unique count is 65. The 2-case conservative exclusion is correct. Denominator 221 is authoritative.",
+    "selection_validity": "selection_valid",
+    "date_spread_validity": "inadequate — 86% of non-empty cases in 2026 Q1-Q2; UUID ordering is not correlated with chronological order; not a criterion failure under the frozen batch strategy but must be documented as a batch limitation",
+    "evidence_bundle_completeness": "bundles_resolvable_but_require_case_expansion",
+    "cases_requiring_full_evidence_expansion": 30,
+    "checksum_integrity": "all source-layer checksums pass; 5 SHA-256 hashes verified; all 10 file sizes match; no prior-stage or framework-freeze files changed",
+    "recommended_recovery_option": "A — resume existing Batch 01",
+    "existing_batch_01_can_be_resumed": true,
+    "next_action": "Begin semantic extraction at checkpoint_01 (B01-001 through B01-010). For each case check omitted_evidence; expand from Stage 3R where non-empty. Write checkpoint_01 outputs and update batch_registry only after validation passes."
+  }
+}
